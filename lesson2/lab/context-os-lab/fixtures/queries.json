@@ -1,0 +1,10 @@
+[
+  {"id": "q1",  "text": "how do I get a refund for my order"},
+  {"id": "q1b", "text": "how do I get a refund for this order"},
+  {"id": "q2",  "text": "when will my package arrive after pickup"},
+  {"id": "q2b", "text": "when will my package arrive for this order"},
+  {"id": "q3",  "text": "I forgot my password and cannot log in"},
+  {"id": "q4",  "text": "what happens if a charge on my card fails"},
+  {"id": "q4b", "text": "what happens if a charge on this card fails"},
+  {"id": "q5",  "text": "what uptime does the SLA actually promise"}
+]

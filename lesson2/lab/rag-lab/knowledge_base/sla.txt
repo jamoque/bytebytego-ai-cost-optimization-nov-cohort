@@ -1,0 +1,14 @@
+Northstar Commerce Service Level Agreement
+Effective date: 2026-01-01. Owner: Site Reliability. Related: rate_limits.txt, billing.txt.
+
+Monthly uptime target is 99.9 percent, measured on the production API and the production storefront, excluding planned maintenance announced at least 72 hours in advance and excluding issues caused by the customer's own keys, webhooks, or integration. Uptime is calculated as successful-requests / total-valid-requests per calendar month. A 429 caused by the customer exceeding their rate limit (rate_limits.txt) is a successful enforcement, not downtime.
+
+Severity. Sev-1: complete checkout or API outage, or a confirmed data-exposure event. Customer notification begins within 30 minutes of declaration, posted to status.northstar.example and emailed to operational contacts. Sev-2: a major feature is unavailable (search, refunds portal, webhooks) but checkout still works. Notification within 2 hours. Sev-3: degraded performance or a workaround exists. No customer notification required.
+
+Credits. If monthly uptime falls below 99.9 percent, the customer receives a service credit of 5 percent of that month's subscription fees. Below 99.0 percent: 15 percent. Below 95.0 percent: 30 percent. Credits appear on the next invoice and are the sole remedy for downtime. Credits do not apply to usage-based shipping labels or payment-processing fees. Product-order delays caused by carriers are not SLA events; see shipping.txt.
+
+Maintenance. Standard maintenance window is Tuesdays 02:00–04:00 US/Eastern. Northstar may skip a window. Emergency maintenance for active security incidents may start without 72-hour notice; those minutes still count against uptime unless the alternative was leaving a Sev-1 unpatched.
+
+Status page. status.northstar.example is the source of truth. Agents must not invent outage timelines in chat. If the status page is green and the customer still sees errors, check key_environment_mismatch and rate limits before opening an incident.
+
+This document does not describe how to refund an order, reset a password, or retain logs. Point those questions at refunds.txt, password_reset.txt, and data_retention.txt.

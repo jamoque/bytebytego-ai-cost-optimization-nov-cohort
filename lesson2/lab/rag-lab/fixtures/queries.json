@@ -1,0 +1,11 @@
+[
+  {"id": "q1",  "intent": "refunds",   "text": "How do I get a refund for my order?"},
+  {"id": "q1b", "intent": "refunds",   "text": "What's the process to return an item and get my money back?"},
+  {"id": "q2",  "intent": "shipping",  "text": "When will my package arrive after it is picked up?"},
+  {"id": "q2b", "intent": "shipping",  "text": "How long does domestic delivery usually take?"},
+  {"id": "q3",  "intent": "password",  "text": "I forgot my password and can't log in."},
+  {"id": "q3b", "intent": "password",  "text": "How do I reset my account password?"},
+  {"id": "q4",  "intent": "billing",   "text": "What happens if a subscription charge fails?"},
+  {"id": "q5",  "intent": "sla",       "text": "What uptime does the SLA actually promise, and what credit do we get if you miss it?"},
+  {"id": "q6",  "intent": "unrelated", "text": "What's the capital of France?"}
+]

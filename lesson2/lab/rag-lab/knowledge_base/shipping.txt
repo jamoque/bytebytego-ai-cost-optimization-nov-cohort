@@ -1,0 +1,16 @@
+Northstar Commerce Shipping Service Guide
+Effective date: 2026-01-01. Owner: Fulfillment. Related: returns.txt, sla.txt.
+
+Domestic standard shipping is the default at checkout. After the warehouse marks an order packed, the carrier pickup happens the same business day for orders packed before 3 p.m. local cutoff, otherwise the next business day. Transit after pickup: three to five business days to the contiguous United States, five to eight business days to Alaska and Hawaii.
+
+Expedited shipping arrives in two business days after pickup. Overnight shipping is available Monday through Thursday; Friday overnight lands Monday. Overnight is not offered to PO boxes, APO/FPO, or Alaska/Hawaii. Expedited and overnight both require a signature for orders over $200.
+
+International. Northstar ships to 42 countries. Transit after pickup is typically eight to twelve business days plus customs. Duties and taxes are the customer's responsibility unless the order used Delivered Duty Paid (DDP) at checkout. Customs holds are outside Northstar's control and do not start the refund clock; the delivery date is the date the carrier records final delivery, not the date the package entered customs.
+
+Delays. Weather, peak-season congestion (mid-November through December 24), and incorrect addresses are the three most common delay classes. Fulfillment will not expedite a standard shipment for free because of weather. If Northstar misses its own pack-by promise (the order sat in the warehouse past cutoff without being packed), Customer Operations may upgrade the remaining transit at no charge.
+
+Replacements. A replacement for a damaged item ships from the forward warehouse using the same service level as the original order unless the customer pays to upgrade. Replacement orders placed before 3 p.m. typically pick up the same day. The damaged original is collected separately; do not tell the customer the replacement will "arrive with the call-tag driver."
+
+Tracking. Tracking emails go out at pickup, at out-for-delivery, and at delivered. SMS alerts are opt-in on the account page. A package marked delivered but not received should wait 24 hours (it is often in a locker or with a neighbor) and then file a carrier trace. Northstar files the trace; customers should not be sent to the carrier's public form.
+
+What this document does not cover. Uptime and incident credits live in sla.txt. How to generate a return label lives in returns.txt.

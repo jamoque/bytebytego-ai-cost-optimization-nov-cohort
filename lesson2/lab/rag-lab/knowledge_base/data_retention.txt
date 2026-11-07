@@ -1,0 +1,18 @@
+Northstar Commerce Data Retention Schedule
+Effective date: 2026-01-01. Owner: Privacy. Related: billing.txt, sla.txt.
+
+Retention is counted from the date the record is closed, not the date it was created, unless noted. This schedule is the default for US-hosted accounts. EU-hosted accounts add the overlays in the Data Processing Addendum; when the two conflict, the shorter retention wins for personal data.
+
+Customer account records. Active accounts: retained for the life of the account. Closed accounts: 7 years after closure, then deleted. Paused accounts (billing.txt) are not closed; they follow the active-account rule until the customer or Finance closes them. Marketing email consent records are kept 3 years after last consent or withdrawal.
+
+Orders and invoices. Order rows, tax calculations, and invoices: 7 years. Card primary-account numbers are not stored; the processor token is retained 7 years to support refunds and chargebacks, then deleted. Gift-card unredeemed balances escheat per state law and are not deleted on the 7-year clock.
+
+Support transcripts. Chat, email, and phone transcripts: 3 years after the ticket closes. Attachments follow the transcript. Agents must not paste payment-card numbers or government IDs into tickets; the DLP filter redacts them, but a missed redaction should be reported to Privacy the same day.
+
+Logs. Application and security logs: 365 days online, then 2 years in cold archive. Debug logs: 14 days. Access to security logs requires a ticket and is itself logged.
+
+Backups. Point-in-time backups roll for 35 days. A deletion request (GDPR/CCPA) removes the live record immediately and is honored on the next backup rotation; we do not rebuild 35 days of backups to punch out one row. Inform the customer of that residual window.
+
+Developer data. API request logs in the developer dashboard: 30 days. Webhook delivery attempts: 7 days. Sandbox orders: 90 days, then purged.
+
+Do not quote this schedule as a refund, shipping, or password-reset policy. Those clocks live in their own documents.

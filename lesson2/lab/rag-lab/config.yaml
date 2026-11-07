@@ -1,0 +1,36 @@
+# RAG + compression settings for the Python client.
+# Semantic cache hit vs miss is decided by the LiteLLM gateway
+# (mesh_config.yaml), not by this process. `semantic_cache.enabled`
+# only controls whether this client *allows* the gateway to cache
+# (false → every request sends cache.no-cache and cache.no-store).
+#
+# Re-index (`python index_kb.py`) only if you change chunk_tokens / chunk_overlap.
+
+mesh:
+  base_url: http://localhost:4000/v1
+  api_key: sk-mesh-lab-1234            # same master_key as lesson1/lab/llm-mesh-lab
+  model: mesh-gpt-mini                 # Lab 1 alias; mesh-claude-haiku also works
+  max_tokens: 150
+  temperature: 0
+  input_price_per_m: 0.15              # gpt-4o-mini list; change if you swap aliases
+  output_price_per_m: 0.60
+
+retriever:
+  enabled: true                # false = send the query with no retrieved context
+  chunk_tokens: 80
+  chunk_overlap: 20
+  k: 3
+  min_score: 0.25
+  stuff: false                 # true = send the entire knowledge base (Part 1 baseline)
+
+semantic_cache:
+  enabled: false               # false = send cache.no-cache and cache.no-store
+  # threshold and TTL live in mesh_config.yaml (the gateway owns them)
+
+compression:
+  enabled: false
+  max_tokens: 120              # extractive cap on retrieved text
+
+compaction:
+  enabled: false
+  token_budget: 400            # cap on the whole prompt (context + history + query)

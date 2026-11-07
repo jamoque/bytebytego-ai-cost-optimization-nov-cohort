@@ -1,0 +1,14 @@
+Northstar Commerce Billing and Collections
+Effective date: 2026-01-01. Owner: Finance. Related: refunds.txt, sla.txt.
+
+Invoices for Northstar Pro subscriptions are generated on the first business day of the month and emailed to the billing contact on the account. Payment is due within 15 days. The card on file is charged automatically on the invoice date. A PDF duplicate lives under Account → Billing; agents should send that link rather than attaching files in chat.
+
+Failed charges. If a card is declined, Payments retries on day 1, day 3, and day 7 after the invoice date. Each retry emails the billing contact. After the third failure the account is paused: API calls return 402, storefront checkout still works for prepaid gift cards, and Pro features (advanced analytics, SSO) are disabled. Adding a valid payment method releases the pause within 15 minutes. Northstar does not delete data during a pause; see data_retention.txt for how long paused-account data is kept.
+
+Taxes. Sales tax is calculated from the shipping address on each order, not the billing address. Tax-exempt customers upload a certificate under Account → Tax. Certificates take one business day to review. Do not manually zero tax on an order; the tax engine is the source of truth and Finance will reverse manual overrides.
+
+Disputes. Invoice-amount disputes must be raised within 30 days of the invoice date. File them as a Billing ticket, not a refund ticket. A disputed invoice does not pause collections unless Finance marks it held. Chargebacks on subscription invoices follow the same evidence process as product chargebacks (refunds.txt) and usually lose if the invoice email bounced because the customer never updated the billing contact.
+
+Credits. Service-credit percentages for downtime are defined in sla.txt and applied as a line on the next invoice; they are never paid out as cash. Promotional credits (win-backs, incident goodwill) are issued by Customer Operations in store credit and expire after 12 months.
+
+Currency. Northstar bills in USD, EUR, or GBP based on the billing entity selected at signup. Changing currency requires a new billing entity and is not available mid-invoice-cycle.

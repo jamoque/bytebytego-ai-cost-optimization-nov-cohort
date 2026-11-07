@@ -1,0 +1,48 @@
+# Lab 1 mesh + Lab 2 semantic cache.
+# Run this instead of lesson1/lab/llm-mesh-lab/config.yaml for Parts 1–4:
+#
+#   docker run -d --name lab2-qdrant -p 6333:6333 qdrant/qdrant
+#   export QDRANT_API_BASE=http://localhost:6333
+#   export QDRANT_API_KEY=unused          # local Qdrant ignores this
+#   export OPENAI_API_KEY=sk-...
+#   litellm --config lesson2/lab/rag-lab/mesh_config.yaml
+#
+# Hit vs miss is decided HERE, inside the gateway: embed the incoming
+# messages, search Qdrant, compare to similarity_threshold. A hit is
+# served from the response cache and never reaches OpenAI/Anthropic.
+# A miss falls through to the provider (the "workflow" in the lecture
+# diagram — RAG/compression are assembled by the Python client, then
+# sent through this same gateway).
+
+model_list:
+  - model_name: mesh-gpt-mini
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: mesh-claude-haiku
+    litellm_params:
+      model: anthropic/claude-haiku-4-5-20251001
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+  # Embedding model the semantic cache uses. Must be a model_list alias.
+  - model_name: mesh-embed
+    litellm_params:
+      model: openai/text-embedding-3-small
+      api_key: os.environ/OPENAI_API_KEY
+
+litellm_settings:
+  cache: true
+  cache_params:
+    type: qdrant-semantic
+    qdrant_semantic_cache_embedding_model: mesh-embed
+    qdrant_collection_name: lab2_semantic_cache
+    qdrant_semantic_cache_vector_size: 1536
+    similarity_threshold: 0.80     # cosine; raise to be stricter, lower to hit more paraphrases
+    ttl: 300
+    semantic_cache_scope: end_user # isolate experiment arms via the OpenAI `user` field
+  # If you enabled Langfuse in Lab 1, uncomment:
+  # callbacks: ["langfuse_otel"]
+
+general_settings:
+  master_key: sk-mesh-lab-1234

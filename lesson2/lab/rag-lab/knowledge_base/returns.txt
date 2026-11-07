@@ -1,0 +1,16 @@
+Northstar Commerce Returns Handbook
+Effective date: 2026-01-01. Owner: Warehouse Operations. Related: refunds.txt, shipping.txt.
+
+A return is a logistics event; a refund is a money event. This handbook covers the logistics. Do not quote refund timing from this document — that lives in refunds.txt.
+
+Starting a return. Signed-in customers start a return from Orders → Request return. The portal generates a prepaid label for domestic orders inside the 14-day return window (counted from delivery). Print the label, attach it to the original packaging when possible, and drop the package at any UPS or USPS location. International returns use a different portal flow and may require the customer to purchase a label, later reimbursed if the item is defective.
+
+Windows. The 14-day ship-back window is independent of the 30-day refund-request window. An item must be in transit back to Northstar by day 14. Inspection and refund then follow the refunds.txt timeline. Returns initiated after day 14 are rejected by the portal unless Customer Operations applies a goodwill override (damaged-in-transit, wrong item, or a documented carrier delay).
+
+Restocking fees. Unopened items in original packaging: no restocking fee. Opened but functional items: 15 percent restocking fee, waived for Northstar Pro subscribers. Damaged, defective, or mis-picked items: no restocking fee, and Northstar pays the label. Final-sale categories (personalized goods, perishable kits, downloaded software licenses) cannot be returned unless defective.
+
+Packing. Include the packing slip or write the order number on a note inside the box. Do not mail a return without a portal-generated Return Merchandise Authorization (RMA) number; unlabeled boxes sit in the exception cage and delay inspection. Hazardous items (lithium batteries, aerosols) must ship ground-only; the portal will refuse an air label for those SKUs.
+
+Replacement vs return. If the customer wants a replacement rather than a refund, place the replacement first (it ships from the forward warehouse, not the returns warehouse) and still collect the original unit with a call-tag. Do not tell the customer to "keep the broken one" except for items under $25, where the cost of the return exceeds the residual value — that exception is listed in the low-value matrix.
+
+Status. Customers can track the inbound package with the same carrier number printed on the label. Warehouse scan events: dropped off → in transit → received → inspecting → closed. "Closed" is the trigger Finance uses to release a refund.

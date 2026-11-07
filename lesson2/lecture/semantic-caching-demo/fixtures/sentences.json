@@ -1,0 +1,21 @@
+{
+  "description": "Illustrative sentences grouped into semantic clusters. Within a cluster, sentences are paraphrases that mean nearly the same thing; across clusters they are unrelated. This is exactly the structure a semantic cache exploits: a new query that paraphrases a previous one should land near it in vector space and score a cache hit.",
+  "sentences": [
+    { "id": "refund-1", "topic": "refunds",   "text": "How do I get a refund for my order?" },
+    { "id": "refund-2", "topic": "refunds",   "text": "What's the process to return an item and get my money back?" },
+    { "id": "refund-3", "topic": "refunds",   "text": "Can I be reimbursed for a purchase I already paid for?" },
+
+    { "id": "reset-1",  "topic": "password",  "text": "I forgot my password and can't log in." },
+    { "id": "reset-2",  "topic": "password",  "text": "How do I reset my account password?" },
+    { "id": "reset-3",  "topic": "password",  "text": "The login page won't accept my credentials — how do I recover access?" },
+
+    { "id": "ship-1",   "topic": "shipping",  "text": "When will my package arrive?" },
+    { "id": "ship-2",   "topic": "shipping",  "text": "How long does delivery usually take?" },
+    { "id": "ship-3",   "topic": "shipping",  "text": "What is the estimated shipping time for my order?" },
+
+    { "id": "weather-1","topic": "weather",   "text": "It looks like it's going to rain this afternoon." },
+    { "id": "food-1",   "topic": "food",      "text": "This restaurant makes the best wood-fired pizza in town." },
+    { "id": "code-1",   "topic": "code",      "text": "The function throws a null pointer exception on line 42." },
+    { "id": "space-1",  "topic": "space",     "text": "The telescope captured a stunning image of a distant galaxy." }
+  ]
+}

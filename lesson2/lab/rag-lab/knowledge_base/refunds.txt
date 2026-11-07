@@ -1,0 +1,16 @@
+Northstar Commerce Refund Policy
+Effective date: 2026-01-01. Owner: Customer Operations. Related: returns.txt, billing.txt.
+
+Northstar issues refunds to the original payment method whenever possible. The standard window is 30 calendar days from the delivery date shown on the order. Requests filed after day 30 require a supervisor override and are granted only for damaged, defective, or mis-shipped goods. Digital gift-card purchases are refunded as store credit; they cannot be reversed onto a card.
+
+Timing. Once a returned item has passed inspection at the returns warehouse, Finance releases the refund within five business days. Inspection itself usually takes one to two business days after the carrier scans the inbound package. Customers paying by debit card may see an additional two-to-five-day posting delay imposed by their bank; Northstar cannot accelerate that hop. PayPal and store-credit refunds typically appear within 24 hours of Finance release.
+
+Damaged and defective items. Photograph the damage before packing the return. Damaged and defective units are refunded in full with no restocking fee, and Northstar covers the return label. If the customer prefers a replacement instead of a refund, Customer Operations will place a replacement order at no charge and email a prepaid call-tag for the damaged unit.
+
+Partial refunds. If an order contained multiple line items and only some are returned, the refund equals the price of the returned lines plus a proportional share of shipping, minus any restocking fee that applies to opened-but-functional goods. Promotional discounts are allocated across lines in the same proportion they were applied at checkout.
+
+Chargebacks. A refund already issued cannot be charged back. If a customer opens a chargeback on a card that Northstar has already refunded, Payments Operations will submit the refund receipt as evidence and the customer remains responsible for any resulting bank fees.
+
+How to request. From the Orders page choose the order, click Request refund, and select a reason. Customers without account access can email refunds@northstar.example with the order number and the email used at checkout. Do not promise a refund on a social-media thread; route those to the ticket queue so Finance has an auditable record.
+
+What this document does not cover. How to print a return label is in returns.txt. Failed charges and invoice disputes are in billing.txt. Replacement shipping times are in shipping.txt.

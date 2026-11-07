@@ -1,0 +1,29 @@
+{
+  "description": "Tiny Northstar Commerce knowledge base used by run_demo.py. Each document is one topic. A stuffing baseline concatenates all of them; RAG retrieves only the chunks that match the query.",
+  "documents": [
+    {
+      "id": "refunds",
+      "text": "Northstar refunds are issued to the original payment method within five business days after the returned item passes inspection. Gift-card purchases are refunded as store credit. Refunds requested more than 30 days after delivery require supervisor approval. Damaged items qualify for a full refund without a restocking fee."
+    },
+    {
+      "id": "returns",
+      "text": "Start a return from the Orders page. Print the prepaid label and drop the package at any carrier location within 14 days of delivery. Unopened items in original packaging have no restocking fee. Opened items may incur a 15 percent restocking fee except for damaged or defective goods."
+    },
+    {
+      "id": "shipping",
+      "text": "Domestic standard shipping arrives in three to five business days after pickup. Expedited shipping arrives in two business days. Overnight shipping is available on weekdays for an extra fee. International orders clear customs separately and typically arrive in eight to twelve business days."
+    },
+    {
+      "id": "password",
+      "text": "Reset your Northstar password from the login page using the email address on the account. A one-time link expires after 30 minutes. If you no longer have access to that email, contact support with the order number of a recent purchase for identity verification. Two-factor authentication is required for admin users."
+    },
+    {
+      "id": "billing",
+      "text": "Failed charges are retried on days one, three, and seven. After three failures the account is paused until a new payment method is added. Invoices are emailed on the first business day of the month. Sales tax is calculated from the shipping address, not the billing address."
+    },
+    {
+      "id": "sla",
+      "text": "Northstar Commerce targets 99.9 percent monthly uptime. Sev-1 incidents begin customer notification within 30 minutes. Service credits of 5 percent of monthly fees apply when monthly uptime falls below 99.9 percent, and 15 percent when it falls below 99.0 percent. Credits are the sole remedy for downtime."
+    }
+  ]
+}

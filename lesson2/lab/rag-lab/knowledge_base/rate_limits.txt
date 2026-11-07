@@ -1,0 +1,14 @@
+Northstar Commerce API Rate Limits
+Effective date: 2026-01-01. Owner: Platform. Related: sla.txt, password_reset.txt.
+
+The public REST API is rate-limited per API key, not per IP. Default production keys: 60 requests per minute and 10 concurrent connections. Sandbox keys: 20 requests per minute. Burst headers are advertised as RateLimit-Limit, RateLimit-Remaining, and RateLimit-Reset (unix timestamp). A 429 response includes a Retry-After in seconds; clients must honor it. Repeating a 429 without waiting is what trips the abuse throttle, which blocks the key for 15 minutes.
+
+Higher limits. Pro plans include 300 requests per minute. Enterprise contracts can raise the ceiling further; those numbers live in the contract, not in this document. Self-serve customers asking for a raise should be pointed at the Pro upgrade page. Do not promise a limit increase from a support ticket.
+
+Idempotency. POST /orders and POST /refunds require an Idempotency-Key header. Replaying the same key returns the original response without creating a second order or refund. Keys are retained for 24 hours. Missing keys on those two endpoints return 400, not 429.
+
+Webhooks. Outbound webhooks are retried with exponential backoff for 24 hours (8, 32, 128, 512, 2048 seconds, then hourly). After 24 hours the delivery is marked dead and surfaces in the developer dashboard. Webhook receivers must respond with 2xx within 5 seconds. A slow receiver does not count against the inbound rate limit.
+
+Authentication. API keys are created under Developer → Keys. A password reset on the owner's login (password_reset.txt) does not rotate API keys. Compromised keys must be revoked in the dashboard; revocation is immediate. Keys displayed only once at creation; if a customer lost the secret, they must create a new key.
+
+Sandbox versus production. Sandbox orders never charge a card and never generate a carrier label. Mixing a production key into a sandbox host, or the reverse, returns 403 with error code key_environment_mismatch. This is the most common "the API is down" ticket that is not actually an outage; check sla.txt before escalating.
