@@ -1,0 +1,7 @@
+# Same client stack as Lab 2 (Chroma retrieval + MiniLM embeddings + mesh client)
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+pyyaml>=6.0
+openai>=1.40.0
+# RouteLLM: pretrained preference-based routers (Part 1.6)
+routellm>=0.2.0

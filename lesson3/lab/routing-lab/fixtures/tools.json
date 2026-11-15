@@ -1,0 +1,90 @@
+{
+  "description": "Tool definitions in the OpenAI function-calling format. The mesh translates them for Anthropic models. Every schema an agent carries is re-sent as input tokens on EVERY model call that agent makes, which is one reason Part 3's specialists carry two or three tools instead of six.",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "search_kb",
+        "description": "Search Northstar's policy knowledge base. Returns the most relevant policy passages. Use it for any question about what the policy says; do not answer policy questions from memory.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {"type": "string", "description": "A focused search query, for example 'restocking fee opened item'."}
+          },
+          "required": ["query"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_order",
+        "description": "Look up one order: items and prices, shipping paid, delivery date, item condition, and whether the buyer is a Northstar Pro subscriber.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "order_id": {"type": "string", "description": "Order number, for example NS-48213."}
+          },
+          "required": ["order_id"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_account",
+        "description": "Look up one customer account: plan, monthly subscription fee, account status, and the latest invoice with its payment status.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {"type": "string", "description": "Account ID, for example ACME-77."}
+          },
+          "required": ["account_id"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_uptime",
+        "description": "Measured monthly uptime for an account's production API and storefront, with planned maintenance already excluded.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {"type": "string", "description": "Account ID, for example ACME-77."},
+            "month": {"type": "string", "description": "Calendar month as YYYY-MM, for example 2026-10."}
+          },
+          "required": ["account_id", "month"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_api_usage",
+        "description": "API usage for an account's production key over the last 7 days: peak requests per minute and the number of 429 responses.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {"type": "string", "description": "Account ID, for example ACME-77."}
+          },
+          "required": ["account_id"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_login_status",
+        "description": "Login state for one user: recent failed password attempts, whether the account is locked, login method, role, and two-factor status.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "email": {"type": "string", "description": "The user's login email."}
+          },
+          "required": ["email"]
+        }
+      }
+    }
+  ]
+}

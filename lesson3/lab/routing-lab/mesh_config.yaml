@@ -1,0 +1,83 @@
+# Lab 1 mesh + Lab 2 embedding alias + Lab 3 routing.
+# Run this instead of the Lab 1 / Lab 2 mesh configs for Parts 1–4:
+#
+#   export OPENAI_API_KEY=sk-...
+#   export ANTHROPIC_API_KEY=sk-ant-...
+#   litellm --config lesson3/lab/routing-lab/mesh_config.yaml
+#
+# Lab 1 gave every model an alias. Lab 3 turns those aliases into a price
+# ladder and adds one alias that is not a model at all: `mesh-auto` is a
+# router. A client that asks for `mesh-auto` gets whichever rung the gateway
+# picks, and never has to know which one that was.
+#
+# The semantic cache from Lab 2 is deliberately left out. A cache hit skips
+# the provider, which would hide the thing this lab measures (which model
+# answered, and what it cost). Putting it back is the last stretch exercise.
+
+model_list:
+  # ---- Weak tier: Lab 1's OpenAI alias ----
+  - model_name: mesh-gpt-mini
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  # ---- Mid tier: Lab 1's Anthropic alias ----
+  - model_name: mesh-claude-haiku
+    litellm_params:
+      model: anthropic/claude-haiku-4-5-20251001
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+  # ---- Strong tier: new in Lab 3 ----
+  # To try a different strong model, change this one line and the strong
+  # fallback prices in config.yaml (for example openai/gpt-5.4, $2.50 / $15
+  # per million). The lab was only tested with the model below.
+  - model_name: mesh-claude-sonnet
+    litellm_params:
+      model: anthropic/claude-sonnet-4-6
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+  # ---- Lab 2's embedding alias ----
+  # RouteLLM's matrix-factorization router embeds each prompt with
+  # text-embedding-3-small. The client points RouteLLM at this alias, so
+  # the router's own spend flows through the mesh like everything else.
+  - model_name: mesh-embed
+    litellm_params:
+      model: openai/text-embedding-3-small
+      api_key: os.environ/OPENAI_API_KEY
+
+  # ---- Deterministic routing inside the gateway (Part 1.3) ----
+  # Rule-based scoring of the prompt's surface features: length, code
+  # keywords, reasoning markers, technical terms. No model call, no
+  # embedding, under a millisecond. The score maps to one of four tiers,
+  # and each tier maps to an alias above.
+  - model_name: mesh-auto
+    litellm_params:
+      model: auto_router/complexity_router
+      complexity_router_config:
+        tiers:
+          SIMPLE: mesh-gpt-mini
+          MEDIUM: mesh-claude-haiku
+          COMPLEX: mesh-claude-sonnet
+          REASONING: mesh-claude-sonnet
+        default_model: mesh-gpt-mini
+        # By default this router replaces the caller's max_tokens with the
+        # routed model's output ceiling. Keep the caller's cap so a lab
+        # question cannot turn into a 4,000-token answer.
+        max_tokens_from_tier_model: false
+        # Part 1.3: the built-in rules know nothing about Northstar. This is
+        # one rule of your own: money and percentage questions are where a
+        # cheap model does arithmetic on policy. Uncomment, then restart the
+        # mesh. Patterns must use bounded quantifiers ({0,1}, not * or +).
+        # custom_dimensions:
+        #   - name: moneyMath
+        #     weight: 0.4
+        #     keywords: [credit, restocking, prorated, "how much"]
+        #     patterns: ['\$\d', '\d{1,3}\s{0,1}(%|percent)']
+
+litellm_settings:
+  # If you enabled Langfuse in Lab 1, uncomment:
+  # callbacks: ["langfuse_otel"]
+  drop_params: true
+
+general_settings:
+  master_key: sk-mesh-lab-1234

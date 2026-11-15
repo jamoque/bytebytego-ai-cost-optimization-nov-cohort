@@ -1,0 +1,76 @@
+{
+  "description": "Canned records behind the read-only tools. Nothing here calls a real system, so every run sees the same data and tool calls cost nothing but the tokens of their results.",
+  "orders": {
+    "NS-48213": {
+      "order_id": "NS-48213",
+      "account_id": "ACME-77",
+      "placed": "2026-10-28",
+      "delivered": "2026-11-04",
+      "shipping_method": "standard",
+      "shipping_paid_usd": 0.0,
+      "destination": "Columbus, OH",
+      "buyer_is_pro_subscriber": true,
+      "items": [
+        {"sku": "ESP-200", "name": "Espresso machine", "price_usd": 200.0, "condition_reported": "opened, fully working"}
+      ],
+      "order_total_usd": 200.0
+    },
+    "NS-50902": {
+      "order_id": "NS-50902",
+      "account_id": "ACME-77",
+      "placed": "2026-11-05",
+      "delivered": "2026-11-10",
+      "shipping_method": "expedited",
+      "shipping_paid_usd": 8.0,
+      "destination": "Columbus, OH",
+      "buyer_is_pro_subscriber": true,
+      "items": [
+        {"sku": "CASE-19", "name": "Phone case", "price_usd": 19.0, "condition_reported": "arrived damaged"}
+      ],
+      "order_total_usd": 27.0
+    }
+  },
+  "accounts": {
+    "ACME-77": {
+      "account_id": "ACME-77",
+      "company": "Acme Outfitters",
+      "plan": "Northstar Pro",
+      "monthly_subscription_fee_usd": 1200.0,
+      "status": "active",
+      "billing_contact": "ap@acme.example",
+      "latest_invoice": {
+        "invoice_date": "2026-11-02",
+        "invoice_weekday": "Monday",
+        "amount_usd": 1200.0,
+        "card_charge": "declined"
+      }
+    }
+  },
+  "uptime": {
+    "ACME-77": {
+      "2026-10": {"month": "2026-10", "uptime_percent": 97.2, "planned_maintenance_excluded": true},
+      "2026-09": {"month": "2026-09", "uptime_percent": 99.95, "planned_maintenance_excluded": true}
+    }
+  },
+  "api_usage": {
+    "ACME-77": {
+      "account_id": "ACME-77",
+      "plan": "Northstar Pro",
+      "key_environment": "production",
+      "window": "last 7 days",
+      "peak_requests_per_minute": 450,
+      "responses_429": 1930
+    }
+  },
+  "logins": {
+    "dana@acme.example": {
+      "email": "dana@acme.example",
+      "account_id": "ACME-77",
+      "role": "Finance",
+      "login_method": "password",
+      "two_factor": "totp",
+      "failed_password_attempts_last_15_min": 3,
+      "locked": false
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "description": "Support tickets for Parts 2-4. Each `check` is one fact the final reply must contain; a ticket's score is the share of its checks that pass. `expect` and `reject` are regexes matched against the whole reply. Gold answers follow from fixtures/crm.json plus the Lab 2 knowledge base.",
+  "tickets": [
+    {
+      "id": "single-refund",
+      "issues": 1,
+      "text": "Order NS-48213: I opened the espresso machine and it works fine, but I've decided to return it. How much will my refund be?",
+      "checks": [
+        {"name": "refund $200 (Pro waives the restocking fee)", "expect": ["\\$\\s?200(?!\\d|,\\d)"], "reject": ["\\$\\s?170(?!\\d|,\\d)"]}
+      ]
+    },
+    {
+      "id": "single-credit",
+      "issues": 1,
+      "text": "We're account ACME-77. Your API was unreliable in October 2026. What service credit will we get, in dollars?",
+      "checks": [
+        {"name": "credit $180 (15% of $1,200)", "expect": ["\\$\\s?180(?!\\d|,\\d)"]}
+      ]
+    },
+    {
+      "id": "multi-ops",
+      "issues": 3,
+      "text": "Hi, this is Dana at Acme Outfitters (account ACME-77). Three things. First, on order NS-48213 I opened the espresso machine and it works, but we want to return it: how much will the refund be? Second, your API was unreliable in October 2026: what service credit do we get, in dollars? Third, we keep getting 429 errors on our production key: what is our requests-per-minute limit, and how far over it were we at peak?",
+      "checks": [
+        {"name": "refund $200 (Pro waives the restocking fee)", "expect": ["\\$\\s?200(?!\\d|,\\d)"], "reject": ["\\$\\s?170(?!\\d|,\\d)"]},
+        {"name": "credit $180 (15% of $1,200)", "expect": ["\\$\\s?180(?!\\d|,\\d)"]},
+        {"name": "limit 300 requests per minute", "expect": ["\\b300\\b"]},
+        {"name": "150 over the limit at peak", "expect": ["\\b150\\b"]}
+      ]
+    },
+    {
+      "id": "multi-account",
+      "issues": 3,
+      "text": "Dana from Acme again (account ACME-77, my login is dana@acme.example). Three questions. One: the card on our latest invoice was declined. If every retry also fails, on what date does the account get paused? Two: I mistyped my password a few times this morning. Am I locked out, and if not, how many more failed attempts do I have before a lockout? Three: if we close the account, how many years do you keep our invoices?",
+      "checks": [
+        {"name": "paused on November 9", "expect": ["\\bNov(ember|\\.)?\\s+9(th)?\\b|\\b11/0?9\\b|2026-11-09"]},
+        {"name": "2 more failed attempts before lockout", "expect": ["\\b(2|two)\\s+(more|additional|further|remaining)\\b|\\b(2|two)\\s+(failed\\s+)?(attempts?|tries)\\s+(left|remaining|before|until)|\\b(2|two)\\s+(left|remaining)\\b"]},
+        {"name": "invoices kept 7 years", "expect": ["\\b(7|seven)[\\s-]years?\\b"]}
+      ]
+    }
+  ]
+}

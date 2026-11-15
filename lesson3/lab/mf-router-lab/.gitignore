@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+# Prompt embeddings fetched through the mesh (train.py)
+.cache/
+# Routers you train
+checkpoints/
+# Scratch output of collect_battles.py generate
+questions.json

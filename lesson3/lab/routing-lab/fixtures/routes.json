@@ -1,0 +1,121 @@
+{
+  "description": "Northstar support departments. Part 1 uses each route's `tier` to pick a MODEL for a question (deterministic vector routing). Part 3 uses the same routes to pick an AGENT: the tier plus a tool list and a slice of the knowledge base. Utterances are example requests; a new request is matched to the route whose closest utterance is nearest in embedding space.",
+  "routes": [
+    {
+      "name": "orders",
+      "tier": "weak",
+      "description": "Physical orders: refunds, returns, restocking fees, shipping times, delivery problems, and replacements.",
+      "sources": [
+        "refunds.txt",
+        "returns.txt",
+        "shipping.txt"
+      ],
+      "tools": [
+        "search_kb",
+        "get_order"
+      ],
+      "utterances": [
+        "I want my money back for an order",
+        "How do I send an item back?",
+        "My package arrived broken",
+        "Is there a fee for returning something I already opened?",
+        "When will my delivery get here?",
+        "Can you ship a replacement for a defective product?",
+        "Do you deliver overnight or internationally?",
+        "Where is my refund? I returned the item last week",
+        "My tracking says delivered but I never got the box"
+      ]
+    },
+    {
+      "name": "identity",
+      "tier": "weak",
+      "description": "Account access: password resets, lockouts, two-factor authentication, and account recovery.",
+      "sources": [
+        "password_reset.txt"
+      ],
+      "tools": [
+        "search_kb",
+        "get_login_status"
+      ],
+      "utterances": [
+        "I can't sign in to my account",
+        "I forgot my password",
+        "The password reset email never arrived",
+        "My account is locked after too many login attempts",
+        "I lost my authenticator device for two-factor login",
+        "How do I recover my account without access to my old email?",
+        "I log in with Google, how do I change my credentials?",
+        "Someone may have my password, what should I do?"
+      ]
+    },
+    {
+      "name": "billing",
+      "tier": "strong",
+      "description": "Money owed to or by Northstar: invoices, failed charges, account pauses, taxes, invoice disputes, uptime commitments, and service credits.",
+      "sources": [
+        "billing.txt",
+        "sla.txt"
+      ],
+      "tools": [
+        "search_kb",
+        "get_account",
+        "get_uptime"
+      ],
+      "utterances": [
+        "My subscription payment was declined",
+        "Why is my account paused for non-payment?",
+        "I want to dispute the amount on my invoice",
+        "When is my invoice due?",
+        "What credit do we get for the outage last month?",
+        "What uptime do you guarantee?",
+        "How is sales tax calculated on my bill?",
+        "How fast do you tell us about a major incident?",
+        "Can I be billed in euros instead of dollars?"
+      ]
+    },
+    {
+      "name": "platform",
+      "tier": "mid",
+      "description": "The developer API: rate limits, 429 errors, API keys, idempotency, webhooks, and sandbox versus production.",
+      "sources": [
+        "rate_limits.txt"
+      ],
+      "tools": [
+        "search_kb",
+        "get_api_usage"
+      ],
+      "utterances": [
+        "Our integration keeps getting 429 Too Many Requests",
+        "How many API calls per minute are we allowed?",
+        "How do I create or revoke an API key?",
+        "Our webhook endpoint is not receiving events",
+        "What is an idempotency key and when do I need one?",
+        "We get a 403 when using our sandbox key in production",
+        "How do webhook retries work?",
+        "Can we raise our API request quota?"
+      ]
+    },
+    {
+      "name": "privacy",
+      "tier": "mid",
+      "description": "Data retention and deletion: how long records, logs, transcripts, and backups are kept, and what happens on a deletion request.",
+      "sources": [
+        "data_retention.txt"
+      ],
+      "tools": [
+        "search_kb",
+        "get_account"
+      ],
+      "utterances": [
+        "Please delete all the personal data you hold about me",
+        "How long do you keep my records after I close my account?",
+        "How long are chat transcripts stored?",
+        "Do you keep our logs, and for how long?",
+        "Is my card number stored on your servers?",
+        "How long do backups retain deleted data?",
+        "What is your data retention policy for EU customers?",
+        "When are sandbox test orders purged?"
+      ]
+    }
+  ]
+}

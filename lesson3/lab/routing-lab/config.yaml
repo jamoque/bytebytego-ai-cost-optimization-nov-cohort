@@ -1,0 +1,95 @@
+# Routing + agent settings for the Python client.
+#
+# The mesh (mesh_config.yaml) owns the models and the gateway router.
+# This file owns everything the client decides: which strategy routes a
+# question, the vector routes, the cascade gate, the RouteLLM threshold,
+# and how the agents in Parts 2–3 are wired.
+#
+# Retrieval reuses the Lab 2 index as-is. If lesson2/lab/rag-lab/.chroma is
+# missing, run `python index_kb.py` in that directory first.
+
+mesh:
+  base_url: http://localhost:4000/v1   # override with the MESH_BASE_URL env var
+  api_key: sk-mesh-lab-1234            # same master_key as Labs 1 and 2
+  max_tokens: 300
+  temperature: 0
+  session_id: lab3
+
+# The price ladder, cheapest first. Each `alias` must exist in mesh_config.yaml.
+# Cost is normally read from the mesh (the x-litellm-response-cost header, the
+# same number Langfuse shows). These prices are the fallback meter, used only
+# when that header is missing — for example a model LiteLLM has no price for.
+tiers:
+  weak:
+    alias: mesh-gpt-mini               # Lab 1
+    input_price_per_m: 0.15
+    output_price_per_m: 0.60
+  mid:
+    alias: mesh-claude-haiku           # Lab 1
+    input_price_per_m: 1.00
+    output_price_per_m: 5.00
+  strong:
+    alias: mesh-claude-sonnet          # new in Lab 3
+    input_price_per_m: 3.00
+    output_price_per_m: 15.00
+
+# Lab 2's retriever. Every routing strategy sees the same retrieved context,
+# so the only thing that changes between arms is which model reads it.
+rag:
+  k: 5
+  min_score: 0.25
+  compress_max_tokens: null            # e.g. 200 turns on Lab 2's extractive compression
+
+router:
+  # weak | mid | strong     fixed rung (the baselines)
+  # gateway                 the mesh decides: rules over the prompt's surface features
+  # deterministic           nearest route by embedding similarity (fixtures/routes.json)
+  # cascade                 weak first; a verifier gate decides whether to pay for the next rung
+  # preference              RouteLLM predicts P(strong wins); above threshold → strong
+  strategy: weak
+
+gateway:
+  alias: mesh-auto                     # the router alias in mesh_config.yaml
+
+deterministic:
+  routes: fixtures/routes.json
+  min_score: 0.30                      # below this, no route matched
+  default_tier: strong                 # no match: fail safe (strong) or fail cheap (weak)?
+
+cascade:
+  ladder: [weak, strong]               # try [weak, mid, strong] for a three-rung cascade
+  gate_tier: weak                      # the model that verifies each draft answer
+  threshold: 0.5                       # gate score (the verifier's P(YES)) at or above this accepts the answer
+
+preference:
+  router: mf                           # RouteLLM's matrix-factorization router
+  checkpoint: null                     # null = RouteLLM's published weights. Advanced exercise: the directory
+                                       # of a router you trained, e.g. ../mf-router-lab/checkpoints/northstar-mf
+  threshold: 0.11593                   # RouteLLM's published ~50%-strong threshold; recalibrate in 1.6
+  embedding_alias: mesh-embed          # Lab 2's alias; text-embedding-3-small is what mf was trained on
+
+agents:
+  # react   one strong agent, every tool, the whole KB, one growing context
+  # plan    strong planner → weak generalist workers in fresh contexts → weak synthesizer
+  # team    the same decomposition, but each step goes to a specialist from
+  #         fixtures/routes.json (its own tier, tools, and slice of the KB)
+  mode: react
+  supervisor: llm                      # team mode only. llm: the planner assigns agents | vector: nearest route, no model call
+  supervisor_min_score: 0.35           # vector supervisor: a sentence below this engages no specialist
+  planner_tier: strong                 # also the tier of the react monolith
+  worker_tier: weak                    # plan mode's generalist workers
+  synth_tier: weak
+  max_steps: 8                         # hard cap on model calls per agent
+  max_tokens: 500
+  search_k: 3                          # passages returned by the search_kb tool
+
+memory:
+  # full      send the whole conversation every turn
+  # compact   Lab 2's compaction: system + newest turns that fit the budget
+  # memory    compaction + a fact store that survives it
+  mode: full
+  tier: weak                           # model that answers the session
+  token_budget: 400                    # same budget as Lab 2 (local word-splitter tokens)
+  retrieve_k: 3                        # same as Lab 2, so the budget leaves room for history
+  recall_k: 3                          # facts recalled per turn
+  recall_max_tokens: 60                # recalled facts are spent from the same token_budget

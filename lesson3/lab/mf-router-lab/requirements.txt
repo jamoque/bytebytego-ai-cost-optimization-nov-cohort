@@ -1,0 +1,7 @@
+# Same environment as the hands-on lab. If you are already in routing-lab's
+# venv, this only adds pytest: torch, safetensors and huggingface_hub arrived
+# with routellm.
+-r ../routing-lab/requirements.txt
+torch
+safetensors
+pytest>=8.0.0

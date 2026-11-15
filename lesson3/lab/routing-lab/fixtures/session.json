@@ -1,0 +1,15 @@
+{
+  "description": "One ten-turn support chat, adapted from Lab 2's conversation fixture. Turns 7 and 10 are callbacks: they can only be answered from something said much earlier in the chat. `expect` regexes are matched against that turn's reply. No turn needs arithmetic, so a failed callback is a memory failure, not a reasoning one.",
+  "turns": [
+    {"text": "Hi, I'm Dana from Acme Outfitters. Our account ID is ACME-77 and my order number is NS-48213. The blender in that order arrived with a cracked pitcher and I want a refund."},
+    {"text": "Do I need to print a return label myself?"},
+    {"text": "How long after you receive the item until the money shows up on my card? I paid by debit card."},
+    {"text": "If I would rather have a replacement, how long does shipping take?"},
+    {"text": "Unrelated, but I also cannot log into my account. I forgot my password."},
+    {"text": "The reset email never showed up. I don't have access to that inbox anymore."},
+    {"text": "For that recovery ticket you said I need an order number. Which order number did I give you at the start of this chat?", "callback": true, "expect": ["NS-?48213"]},
+    {"text": "Next issue: your status page says we are owed a $180 service credit for last month's downtime. Where will that credit show up?"},
+    {"text": "Where can I see the API rate limit on my production key? We keep getting 429s."},
+    {"text": "Before I go, remind me: how much was that service credit, and what is the account ID it will be applied to?", "callback": true, "expect": ["\\$\\s?180(?!\\d|,\\d)", "ACME-?77"]}
+  ]
+}
