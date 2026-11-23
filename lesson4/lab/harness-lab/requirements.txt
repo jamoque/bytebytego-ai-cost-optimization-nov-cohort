@@ -1,0 +1,7 @@
+# Same client stack as Labs 2 and 3 (Chroma retrieval + MiniLM embeddings + mesh client)
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+pyyaml>=6.0
+openai>=1.40.0
+# Decision-model requests (POST /v1/systemone) go to the mesh over plain HTTP
+httpx>=0.27.0

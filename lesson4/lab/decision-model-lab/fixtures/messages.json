@@ -1,0 +1,255 @@
+{
+ "description": "Forty-eight customer messages, hand-labeled with the policy area each one belongs to (six per area). The last two in each group are harder on purpose: they borrow another area's vocabulary. `options` describes each category the way a choice question's criteria would.",
+ "options": {
+  "refunds": "Money back for an order: how much, when it is released, or where it is sent.",
+  "returns": "Sending an item back: eligibility, the return window, labels, restocking fees.",
+  "shipping": "Delivery of an outbound order: transit times, cutoffs, tracking, delays.",
+  "billing": "Subscription invoices and payment: charges, declined cards, retries, a paused account.",
+  "sla": "Service uptime and the credits owed when it is missed.",
+  "rate_limits": "API request limits, 429 errors, concurrency, and API keys.",
+  "account_access": "Signing in: passwords, lockouts, two-factor codes, recovery.",
+  "data_retention": "How long Northstar keeps data and when it is deleted."
+ },
+ "messages": [
+  {
+   "id": "msg-01",
+   "label": "refunds",
+   "text": "My return was received last week. When does the money actually hit my card?"
+  },
+  {
+   "id": "msg-02",
+   "label": "refunds",
+   "text": "You refunded me $85 but I paid $100. Where is the other $15?"
+  },
+  {
+   "id": "msg-03",
+   "label": "refunds",
+   "text": "Can the refund go to a different card than the one I paid with?"
+  },
+  {
+   "id": "msg-04",
+   "label": "refunds",
+   "text": "I was told my refund was released on Monday and my bank still shows nothing."
+  },
+  {
+   "id": "msg-05",
+   "label": "refunds",
+   "text": "The order had two items and I only sent one back. How much will I get?"
+  },
+  {
+   "id": "msg-06",
+   "label": "refunds",
+   "text": "Shipping took forever, I gave up and sent it back, and now I want every dollar returned including what I paid for delivery."
+  },
+  {
+   "id": "msg-07",
+   "label": "returns",
+   "text": "How many days do I have to send back a blender I haven't opened?"
+  },
+  {
+   "id": "msg-08",
+   "label": "returns",
+   "text": "I opened the box but never used the grinder. Can I still return it?"
+  },
+  {
+   "id": "msg-09",
+   "label": "returns",
+   "text": "Where do I get a prepaid label to send this kettle back?"
+  },
+  {
+   "id": "msg-10",
+   "label": "returns",
+   "text": "The mug arrived cracked. Do I need to ship it back to you?"
+  },
+  {
+   "id": "msg-11",
+   "label": "returns",
+   "text": "Is there a fee for returning something that's been opened?"
+  },
+  {
+   "id": "msg-12",
+   "label": "returns",
+   "text": "My invoice shows a charge for a machine I want to send back. What's the process to ship it to you?"
+  },
+  {
+   "id": "msg-13",
+   "label": "shipping",
+   "text": "I paid for expedited. What day should the package show up?"
+  },
+  {
+   "id": "msg-14",
+   "label": "shipping",
+   "text": "Tracking hasn't updated in four days. Is my order lost?"
+  },
+  {
+   "id": "msg-15",
+   "label": "shipping",
+   "text": "What's the cutoff time for an order to go out the same day?"
+  },
+  {
+   "id": "msg-16",
+   "label": "shipping",
+   "text": "Do you deliver to PO boxes in Alaska?"
+  },
+  {
+   "id": "msg-17",
+   "label": "shipping",
+   "text": "The carrier says delivered but there is nothing on my porch."
+  },
+  {
+   "id": "msg-18",
+   "label": "shipping",
+   "text": "I returned one unit already. The replacement you sent hasn't moved since the label was created."
+  },
+  {
+   "id": "msg-19",
+   "label": "billing",
+   "text": "Why was my card declined on this month's invoice?"
+  },
+  {
+   "id": "msg-20",
+   "label": "billing",
+   "text": "How many times will you retry the charge before you pause us?"
+  },
+  {
+   "id": "msg-21",
+   "label": "billing",
+   "text": "We were charged twice for November. Please fix the invoice."
+  },
+  {
+   "id": "msg-22",
+   "label": "billing",
+   "text": "Where can I download a PDF of last month's invoice?"
+  },
+  {
+   "id": "msg-23",
+   "label": "billing",
+   "text": "Our account says paused. What do we need to pay to get it back?"
+  },
+  {
+   "id": "msg-24",
+   "label": "billing",
+   "text": "Our API calls started returning 402 this morning. Did a payment fail?"
+  },
+  {
+   "id": "msg-25",
+   "label": "sla",
+   "text": "Your service was down for hours in October. What are we owed?"
+  },
+  {
+   "id": "msg-26",
+   "label": "sla",
+   "text": "What uptime do you guarantee on the Pro plan?"
+  },
+  {
+   "id": "msg-27",
+   "label": "sla",
+   "text": "Does scheduled maintenance count against the uptime number?"
+  },
+  {
+   "id": "msg-28",
+   "label": "sla",
+   "text": "How is the monthly uptime percentage calculated?"
+  },
+  {
+   "id": "msg-29",
+   "label": "sla",
+   "text": "We had three outages this quarter. Is there a credit for that?"
+  },
+  {
+   "id": "msg-30",
+   "label": "sla",
+   "text": "The credit on our invoice for last month's outage looks too small. Which tier did you apply?"
+  },
+  {
+   "id": "msg-31",
+   "label": "rate_limits",
+   "text": "We keep getting 429s from the orders endpoint. What's our limit?"
+  },
+  {
+   "id": "msg-32",
+   "label": "rate_limits",
+   "text": "How many concurrent connections can one production key open?"
+  },
+  {
+   "id": "msg-33",
+   "label": "rate_limits",
+   "text": "Can you raise our requests-per-minute ceiling?"
+  },
+  {
+   "id": "msg-34",
+   "label": "rate_limits",
+   "text": "What does the Retry-After header mean on a 429?"
+  },
+  {
+   "id": "msg-35",
+   "label": "rate_limits",
+   "text": "Do sandbox keys have the same limit as production keys?"
+  },
+  {
+   "id": "msg-36",
+   "label": "rate_limits",
+   "text": "I reset my password and now I'm wondering whether my API tokens were rotated too, because requests are being throttled."
+  },
+  {
+   "id": "msg-37",
+   "label": "account_access",
+   "text": "I'm locked out after too many password attempts. How long until I can try again?"
+  },
+  {
+   "id": "msg-38",
+   "label": "account_access",
+   "text": "The reset link you emailed says it expired."
+  },
+  {
+   "id": "msg-39",
+   "label": "account_access",
+   "text": "I lost my phone and can't get my two-factor code."
+  },
+  {
+   "id": "msg-40",
+   "label": "account_access",
+   "text": "Can support turn off 2FA for my login?"
+  },
+  {
+   "id": "msg-41",
+   "label": "account_access",
+   "text": "How many wrong passwords before the account locks?"
+  },
+  {
+   "id": "msg-42",
+   "label": "account_access",
+   "text": "I can't sign in to download my invoice. It says my account is locked."
+  },
+  {
+   "id": "msg-43",
+   "label": "data_retention",
+   "text": "How long do you keep our invoices after we close the account?"
+  },
+  {
+   "id": "msg-44",
+   "label": "data_retention",
+   "text": "When are support chat transcripts deleted?"
+  },
+  {
+   "id": "msg-45",
+   "label": "data_retention",
+   "text": "Do you store full card numbers?"
+  },
+  {
+   "id": "msg-46",
+   "label": "data_retention",
+   "text": "We're closing our account. When is our customer data erased?"
+  },
+  {
+   "id": "msg-47",
+   "label": "data_retention",
+   "text": "How long are API request logs kept?"
+  },
+  {
+   "id": "msg-48",
+   "label": "data_retention",
+   "text": "After a refund is issued, how many years do you hold on to the order record?"
+  }
+ ]
+}

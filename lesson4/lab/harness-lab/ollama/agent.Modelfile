@@ -1,0 +1,27 @@
+# The open chat model that runs the agent in Part 2.
+#
+#   ollama pull qwen3.5:4b
+#   ollama create lab4-agent -f ollama/agent.Modelfile
+#
+# The mesh serves whatever `lab4-agent` is as `mesh-local`, so changing the
+# FROM line (and re-running `ollama create`) is how you change the model:
+#
+#   qwen3.5:4b     3.3 GB download (4.0 GB on Apple Silicon)   the default
+#   qwen3.5:9b     6.6 GB download   24 GB+ unified memory, or a 12 GB+ GPU
+#   qwen3.5:2b     2.7 GB download   loads in less memory, and on our run
+#                                    solved 2 of the 12 tickets. Try it once
+#                                    to see what "too small" looks like.
+#
+# Ollama picks the build for your platform: an MLX build on Apple Silicon, a
+# GGUF build (llama.cpp) everywhere else. Loaded with the 16,384-token
+# window below, the default measured 5.6 GB (MLX) and 3.7 GB (GGUF).
+FROM qwen3.5:4b
+
+# The context window is memory you pay for whether you fill it or not.
+# Ollama's default depends on your hardware: 4,096 tokens on a machine with
+# less than 24 GB of GPU memory, which is smaller than this lab's playbook
+# plus tool schemas (about 4,300 tokens). The llama.cpp runner refuses a
+# prompt that does not fit (HTTP 400). 16,384 holds the playbook, the tool
+# schemas, and a full ticket's worth of capped tool results.
+PARAMETER num_ctx 16384
+PARAMETER temperature 0

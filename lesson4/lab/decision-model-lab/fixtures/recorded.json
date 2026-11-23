@@ -1,0 +1,9882 @@
+{
+ "description": "First-token candidates from a chat model, one forward pass per question. `top` holds the most likely first tokens and their natural-log probabilities. `noul` items are yes/no questions about the labeled drafts in ../harness-lab/fixtures/decisions.json (label true = the draft was good). `choice` items ask which category a message belongs to; the model was shown the categories as lettered options, and `letters` maps each letter back to its category.",
+ "model": "lab4-agent",
+ "top_logprobs": 20,
+ "seconds_per_question": 1.03,
+ "letters": {
+  "A": "refunds",
+  "B": "returns",
+  "C": "shipping",
+  "D": "billing",
+  "E": "sla",
+  "F": "rate_limits",
+  "G": "account_access",
+  "H": "data_retention"
+ },
+ "options": {
+  "refunds": "Money back for an order: how much, when it is released, or where it is sent.",
+  "returns": "Sending an item back: eligibility, the return window, labels, restocking fees.",
+  "shipping": "Delivery of an outbound order: transit times, cutoffs, tracking, delays.",
+  "billing": "Subscription invoices and payment: charges, declined cards, retries, a paused account.",
+  "sla": "Service uptime and the credits owed when it is missed.",
+  "rate_limits": "API request limits, 429 errors, concurrency, and API keys.",
+  "account_access": "Signing in: passwords, lockouts, two-factor codes, recovery.",
+  "data_retention": "How long Northstar keeps data and when it is deleted."
+ },
+ "noul": [
+  {
+   "id": "mid-01",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2296
+    },
+    {
+     "token": "no",
+     "logprob": -1.6046
+    },
+    {
+     "token": "Yes",
+     "logprob": -5.9796
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3546
+    },
+    {
+     "token": "No",
+     "logprob": -8.6046
+    },
+    {
+     "token": " yes",
+     "logprob": -8.6046
+    },
+    {
+     "token": "y",
+     "logprob": -9.1046
+    },
+    {
+     "token": "The",
+     "logprob": -9.2921
+    },
+    {
+     "token": "YES",
+     "logprob": -9.9796
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7921
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1671
+    },
+    {
+     "token": " no",
+     "logprob": -11.4171
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4171
+    },
+    {
+     "token": "nos",
+     "logprob": -11.6046
+    },
+    {
+     "token": "none",
+     "logprob": -11.7921
+    },
+    {
+     "token": "not",
+     "logprob": -11.9171
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1671
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.2296
+    },
+    {
+     "token": "(no",
+     "logprob": -12.2296
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3546
+    }
+   ]
+  },
+  {
+   "id": "mid-02",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.255
+    },
+    {
+     "token": "no",
+     "logprob": -1.505
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.38
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.505
+    },
+    {
+     "token": "No",
+     "logprob": -8.88
+    },
+    {
+     "token": " yes",
+     "logprob": -9.005
+    },
+    {
+     "token": "y",
+     "logprob": -9.1925
+    },
+    {
+     "token": "The",
+     "logprob": -10.0675
+    },
+    {
+     "token": "YES",
+     "logprob": -10.13
+    },
+    {
+     "token": "ye",
+     "logprob": -10.88
+    },
+    {
+     "token": "是的",
+     "logprob": -11.255
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4425
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5675
+    },
+    {
+     "token": " no",
+     "logprob": -11.8175
+    },
+    {
+     "token": "none",
+     "logprob": -11.8175
+    },
+    {
+     "token": "ans",
+     "logprob": -12.005
+    },
+    {
+     "token": "not",
+     "logprob": -12.13
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.38
+    },
+    {
+     "token": "(no",
+     "logprob": -12.4425
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4425
+    }
+   ]
+  },
+  {
+   "id": "mid-03",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.163
+    },
+    {
+     "token": "no",
+     "logprob": -1.913
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.413
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.538
+    },
+    {
+     "token": "y",
+     "logprob": -9.163
+    },
+    {
+     "token": "No",
+     "logprob": -9.288
+    },
+    {
+     "token": " yes",
+     "logprob": -9.413
+    },
+    {
+     "token": "The",
+     "logprob": -10.288
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3505
+    },
+    {
+     "token": "ye",
+     "logprob": -10.913
+    },
+    {
+     "token": "是的",
+     "logprob": -11.413
+    },
+    {
+     "token": "yet",
+     "logprob": -11.788
+    },
+    {
+     "token": "none",
+     "logprob": -12.1005
+    },
+    {
+     "token": "nos",
+     "logprob": -12.1005
+    },
+    {
+     "token": "ans",
+     "logprob": -12.4755
+    },
+    {
+     "token": "not",
+     "logprob": -12.4755
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.538
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.663
+    },
+    {
+     "token": "answer",
+     "logprob": -12.7255
+    },
+    {
+     "token": "(no",
+     "logprob": -12.7255
+    }
+   ]
+  },
+  {
+   "id": "mid-04",
+   "label": true,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.6374
+    },
+    {
+     "token": "yes",
+     "logprob": -0.7624
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.1374
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.6374
+    },
+    {
+     "token": "No",
+     "logprob": -7.8874
+    },
+    {
+     "token": "The",
+     "logprob": -8.9499
+    },
+    {
+     "token": " yes",
+     "logprob": -9.5124
+    },
+    {
+     "token": "y",
+     "logprob": -9.6374
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1374
+    },
+    {
+     "token": "nos",
+     "logprob": -10.8249
+    },
+    {
+     "token": "none",
+     "logprob": -11.1374
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3249
+    },
+    {
+     "token": " no",
+     "logprob": -11.5124
+    },
+    {
+     "token": "(no",
+     "logprob": -11.5749
+    },
+    {
+     "token": "**",
+     "logprob": -11.6374
+    },
+    {
+     "token": "ye",
+     "logprob": -11.6374
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.6374
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.6999
+    },
+    {
+     "token": "n",
+     "logprob": -11.8874
+    },
+    {
+     "token": "not",
+     "logprob": -11.8874
+    }
+   ]
+  },
+  {
+   "id": "mid-05",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2841
+    },
+    {
+     "token": "no",
+     "logprob": -1.4091
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.5341
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2841
+    },
+    {
+     "token": "y",
+     "logprob": -8.9091
+    },
+    {
+     "token": " yes",
+     "logprob": -8.9716
+    },
+    {
+     "token": "No",
+     "logprob": -9.2216
+    },
+    {
+     "token": "The",
+     "logprob": -10.0966
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2216
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9716
+    },
+    {
+     "token": "nos",
+     "logprob": -11.3466
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3466
+    },
+    {
+     "token": "none",
+     "logprob": -11.4716
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4716
+    },
+    {
+     "token": " no",
+     "logprob": -11.7841
+    },
+    {
+     "token": "not",
+     "logprob": -11.9716
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.0341
+    },
+    {
+     "token": "(no",
+     "logprob": -12.3466
+    },
+    {
+     "token": "ans",
+     "logprob": -12.4716
+    },
+    {
+     "token": "n",
+     "logprob": -12.5341
+    }
+   ]
+  },
+  {
+   "id": "mid-06",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.4322
+    },
+    {
+     "token": "no",
+     "logprob": -1.0572
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3072
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3072
+    },
+    {
+     "token": "No",
+     "logprob": -8.5572
+    },
+    {
+     "token": "y",
+     "logprob": -8.8697
+    },
+    {
+     "token": " yes",
+     "logprob": -8.8697
+    },
+    {
+     "token": "The",
+     "logprob": -9.6197
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0572
+    },
+    {
+     "token": "ye",
+     "logprob": -11.1197
+    },
+    {
+     "token": " no",
+     "logprob": -11.1822
+    },
+    {
+     "token": "nos",
+     "logprob": -11.1822
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3072
+    },
+    {
+     "token": "none",
+     "logprob": -11.6197
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6822
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9322
+    },
+    {
+     "token": "not",
+     "logprob": -12.0572
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0572
+    },
+    {
+     "token": "n",
+     "logprob": -12.1822
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.1822
+    }
+   ]
+  },
+  {
+   "id": "mid-07",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3903
+    },
+    {
+     "token": "no",
+     "logprob": -1.1403
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3903
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2653
+    },
+    {
+     "token": "No",
+     "logprob": -8.6403
+    },
+    {
+     "token": "y",
+     "logprob": -8.7653
+    },
+    {
+     "token": " yes",
+     "logprob": -8.8903
+    },
+    {
+     "token": "The",
+     "logprob": -10.2028
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3278
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8903
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3278
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3278
+    },
+    {
+     "token": " no",
+     "logprob": -11.3903
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4528
+    },
+    {
+     "token": "none",
+     "logprob": -11.5153
+    },
+    {
+     "token": "not",
+     "logprob": -11.7653
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.8903
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0778
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0778
+    },
+    {
+     "token": "n",
+     "logprob": -12.2028
+    }
+   ]
+  },
+  {
+   "id": "mid-08",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1162
+    },
+    {
+     "token": "no",
+     "logprob": -2.2412
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2412
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2412
+    },
+    {
+     "token": " yes",
+     "logprob": -8.8662
+    },
+    {
+     "token": "y",
+     "logprob": -9.2412
+    },
+    {
+     "token": "No",
+     "logprob": -9.3037
+    },
+    {
+     "token": "The",
+     "logprob": -9.8037
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3037
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9287
+    },
+    {
+     "token": "是的",
+     "logprob": -10.9912
+    },
+    {
+     "token": "yet",
+     "logprob": -11.8037
+    },
+    {
+     "token": "not",
+     "logprob": -12.0537
+    },
+    {
+     "token": "none",
+     "logprob": -12.2412
+    },
+    {
+     "token": "ans",
+     "logprob": -12.3037
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3662
+    },
+    {
+     "token": " no",
+     "logprob": -12.4287
+    },
+    {
+     "token": "B",
+     "logprob": -12.4912
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.5537
+    },
+    {
+     "token": "nos",
+     "logprob": -12.5537
+    }
+   ]
+  },
+  {
+   "id": "mid-09",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.254
+    },
+    {
+     "token": "no",
+     "logprob": -1.504
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.879
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.754
+    },
+    {
+     "token": "y",
+     "logprob": -9.129
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3165
+    },
+    {
+     "token": "No",
+     "logprob": -9.504
+    },
+    {
+     "token": "YES",
+     "logprob": -10.629
+    },
+    {
+     "token": "ye",
+     "logprob": -10.754
+    },
+    {
+     "token": "The",
+     "logprob": -10.879
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3165
+    },
+    {
+     "token": "是的",
+     "logprob": -11.4415
+    },
+    {
+     "token": "none",
+     "logprob": -11.5665
+    },
+    {
+     "token": "nos",
+     "logprob": -11.754
+    },
+    {
+     "token": "**",
+     "logprob": -11.8165
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0665
+    },
+    {
+     "token": "answer",
+     "logprob": -12.129
+    },
+    {
+     "token": " no",
+     "logprob": -12.1915
+    },
+    {
+     "token": "not",
+     "logprob": -12.254
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.254
+    }
+   ]
+  },
+  {
+   "id": "mid-10",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1462
+    },
+    {
+     "token": "no",
+     "logprob": -2.0212
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3962
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.7712
+    },
+    {
+     "token": " yes",
+     "logprob": -8.6462
+    },
+    {
+     "token": "y",
+     "logprob": -9.1462
+    },
+    {
+     "token": "No",
+     "logprob": -9.5212
+    },
+    {
+     "token": "The",
+     "logprob": -10.0212
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3337
+    },
+    {
+     "token": "ye",
+     "logprob": -10.5837
+    },
+    {
+     "token": "是的",
+     "logprob": -10.9587
+    },
+    {
+     "token": "**",
+     "logprob": -11.6462
+    },
+    {
+     "token": "none",
+     "logprob": -11.7712
+    },
+    {
+     "token": " no",
+     "logprob": -11.8337
+    },
+    {
+     "token": "yet",
+     "logprob": -12.0212
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.2087
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3337
+    },
+    {
+     "token": "(no",
+     "logprob": -12.3337
+    },
+    {
+     "token": "ans",
+     "logprob": -12.3962
+    },
+    {
+     "token": "not",
+     "logprob": -12.4587
+    }
+   ]
+  },
+  {
+   "id": "mid-11",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.5258
+    },
+    {
+     "token": "no",
+     "logprob": -0.9008
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.9008
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1508
+    },
+    {
+     "token": " yes",
+     "logprob": -9.2133
+    },
+    {
+     "token": "No",
+     "logprob": -9.2758
+    },
+    {
+     "token": "y",
+     "logprob": -9.3383
+    },
+    {
+     "token": "The",
+     "logprob": -10.2758
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2758
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0258
+    },
+    {
+     "token": "**",
+     "logprob": -11.1508
+    },
+    {
+     "token": "none",
+     "logprob": -11.1508
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2758
+    },
+    {
+     "token": "nos",
+     "logprob": -11.3383
+    },
+    {
+     "token": " no",
+     "logprob": -11.4633
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4633
+    },
+    {
+     "token": "answer",
+     "logprob": -11.8383
+    },
+    {
+     "token": "(no",
+     "logprob": -11.8383
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9008
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.9008
+    }
+   ]
+  },
+  {
+   "id": "mid-12",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2295
+    },
+    {
+     "token": "no",
+     "logprob": -1.6045
+    },
+    {
+     "token": "Yes",
+     "logprob": -5.9795
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.4795
+    },
+    {
+     "token": "No",
+     "logprob": -8.4795
+    },
+    {
+     "token": " yes",
+     "logprob": -8.6045
+    },
+    {
+     "token": "y",
+     "logprob": -9.1045
+    },
+    {
+     "token": "The",
+     "logprob": -9.292
+    },
+    {
+     "token": "YES",
+     "logprob": -9.9795
+    },
+    {
+     "token": "ye",
+     "logprob": -10.792
+    },
+    {
+     "token": "是的",
+     "logprob": -11.167
+    },
+    {
+     "token": " no",
+     "logprob": -11.3545
+    },
+    {
+     "token": "yet",
+     "logprob": -11.417
+    },
+    {
+     "token": "nos",
+     "logprob": -11.6045
+    },
+    {
+     "token": "none",
+     "logprob": -11.792
+    },
+    {
+     "token": "not",
+     "logprob": -11.917
+    },
+    {
+     "token": "ans",
+     "logprob": -12.2295
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.292
+    },
+    {
+     "token": "(no",
+     "logprob": -12.292
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.417
+    }
+   ]
+  },
+  {
+   "id": "mid-13",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3165
+    },
+    {
+     "token": "no",
+     "logprob": -1.3165
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3165
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.4415
+    },
+    {
+     "token": "No",
+     "logprob": -8.6915
+    },
+    {
+     "token": " yes",
+     "logprob": -9.004
+    },
+    {
+     "token": "y",
+     "logprob": -9.1915
+    },
+    {
+     "token": "YES",
+     "logprob": -9.9415
+    },
+    {
+     "token": "The",
+     "logprob": -10.254
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8165
+    },
+    {
+     "token": "nos",
+     "logprob": -11.254
+    },
+    {
+     "token": "是的",
+     "logprob": -11.379
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5665
+    },
+    {
+     "token": " no",
+     "logprob": -11.629
+    },
+    {
+     "token": "none",
+     "logprob": -11.6915
+    },
+    {
+     "token": "not",
+     "logprob": -12.004
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0665
+    },
+    {
+     "token": "(no",
+     "logprob": -12.1915
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3165
+    },
+    {
+     "token": "NO",
+     "logprob": -12.4415
+    }
+   ]
+  },
+  {
+   "id": "mid-14",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1458
+    },
+    {
+     "token": "no",
+     "logprob": -2.0208
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2708
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3958
+    },
+    {
+     "token": "y",
+     "logprob": -9.0208
+    },
+    {
+     "token": "No",
+     "logprob": -9.2708
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3958
+    },
+    {
+     "token": "The",
+     "logprob": -10.2083
+    },
+    {
+     "token": "YES",
+     "logprob": -10.4583
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9583
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3333
+    },
+    {
+     "token": "yet",
+     "logprob": -11.7708
+    },
+    {
+     "token": "none",
+     "logprob": -12.1458
+    },
+    {
+     "token": "nos",
+     "logprob": -12.2083
+    },
+    {
+     "token": "ans",
+     "logprob": -12.5208
+    },
+    {
+     "token": "not",
+     "logprob": -12.5208
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.7083
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.7083
+    },
+    {
+     "token": "answer",
+     "logprob": -12.8958
+    },
+    {
+     "token": "(no",
+     "logprob": -12.8958
+    }
+   ]
+  },
+  {
+   "id": "mid-15",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3165
+    },
+    {
+     "token": "no",
+     "logprob": -1.3165
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3165
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.4415
+    },
+    {
+     "token": "No",
+     "logprob": -8.6915
+    },
+    {
+     "token": "y",
+     "logprob": -9.1915
+    },
+    {
+     "token": " yes",
+     "logprob": -9.379
+    },
+    {
+     "token": "The",
+     "logprob": -9.5665
+    },
+    {
+     "token": "YES",
+     "logprob": -10.254
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0665
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3165
+    },
+    {
+     "token": "none",
+     "logprob": -11.4415
+    },
+    {
+     "token": "nos",
+     "logprob": -11.504
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5665
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0665
+    },
+    {
+     "token": "not",
+     "logprob": -12.129
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.254
+    },
+    {
+     "token": " no",
+     "logprob": -12.3165
+    },
+    {
+     "token": "**",
+     "logprob": -12.4415
+    },
+    {
+     "token": "ans",
+     "logprob": -12.4415
+    }
+   ]
+  },
+  {
+   "id": "mid-16",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3165
+    },
+    {
+     "token": "no",
+     "logprob": -1.3165
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.4415
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1915
+    },
+    {
+     "token": "y",
+     "logprob": -8.8165
+    },
+    {
+     "token": " yes",
+     "logprob": -8.9415
+    },
+    {
+     "token": "No",
+     "logprob": -9.129
+    },
+    {
+     "token": "The",
+     "logprob": -10.004
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1915
+    },
+    {
+     "token": "ye",
+     "logprob": -10.879
+    },
+    {
+     "token": "nos",
+     "logprob": -11.254
+    },
+    {
+     "token": "是的",
+     "logprob": -11.254
+    },
+    {
+     "token": "none",
+     "logprob": -11.379
+    },
+    {
+     "token": "yet",
+     "logprob": -11.379
+    },
+    {
+     "token": " no",
+     "logprob": -11.6915
+    },
+    {
+     "token": "not",
+     "logprob": -11.879
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.879
+    },
+    {
+     "token": "(no",
+     "logprob": -12.254
+    },
+    {
+     "token": "ans",
+     "logprob": -12.379
+    },
+    {
+     "token": "n",
+     "logprob": -12.4415
+    }
+   ]
+  },
+  {
+   "id": "mid-17",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.4325
+    },
+    {
+     "token": "no",
+     "logprob": -1.0575
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.1825
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3075
+    },
+    {
+     "token": "No",
+     "logprob": -8.4325
+    },
+    {
+     "token": " yes",
+     "logprob": -8.87
+    },
+    {
+     "token": "y",
+     "logprob": -8.9325
+    },
+    {
+     "token": "The",
+     "logprob": -9.5575
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0575
+    },
+    {
+     "token": "ye",
+     "logprob": -11.12
+    },
+    {
+     "token": " no",
+     "logprob": -11.1825
+    },
+    {
+     "token": "nos",
+     "logprob": -11.245
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3075
+    },
+    {
+     "token": "none",
+     "logprob": -11.5575
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6825
+    },
+    {
+     "token": "ans",
+     "logprob": -11.995
+    },
+    {
+     "token": "not",
+     "logprob": -12.0575
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0575
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.1825
+    },
+    {
+     "token": "n",
+     "logprob": -12.245
+    }
+   ]
+  },
+  {
+   "id": "mid-18",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.4774
+    },
+    {
+     "token": "no",
+     "logprob": -0.9774
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.4774
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2274
+    },
+    {
+     "token": "No",
+     "logprob": -8.6649
+    },
+    {
+     "token": "y",
+     "logprob": -8.9149
+    },
+    {
+     "token": " yes",
+     "logprob": -8.9149
+    },
+    {
+     "token": "The",
+     "logprob": -10.0399
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2274
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0399
+    },
+    {
+     "token": " no",
+     "logprob": -11.1024
+    },
+    {
+     "token": "nos",
+     "logprob": -11.1649
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2899
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4149
+    },
+    {
+     "token": "none",
+     "logprob": -11.4774
+    },
+    {
+     "token": "not",
+     "logprob": -11.8524
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.8524
+    },
+    {
+     "token": "(no",
+     "logprob": -11.9774
+    },
+    {
+     "token": "n",
+     "logprob": -12.1024
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1024
+    }
+   ]
+  },
+  {
+   "id": "mid-19",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1163
+    },
+    {
+     "token": "no",
+     "logprob": -2.2413
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2413
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1163
+    },
+    {
+     "token": " yes",
+     "logprob": -8.8663
+    },
+    {
+     "token": "y",
+     "logprob": -9.2413
+    },
+    {
+     "token": "No",
+     "logprob": -9.3038
+    },
+    {
+     "token": "The",
+     "logprob": -9.6788
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2413
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9288
+    },
+    {
+     "token": "是的",
+     "logprob": -10.9288
+    },
+    {
+     "token": "yet",
+     "logprob": -11.8038
+    },
+    {
+     "token": "not",
+     "logprob": -11.9913
+    },
+    {
+     "token": "none",
+     "logprob": -12.2413
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3038
+    },
+    {
+     "token": "ans",
+     "logprob": -12.3663
+    },
+    {
+     "token": "B",
+     "logprob": -12.5538
+    },
+    {
+     "token": " no",
+     "logprob": -12.6163
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.6163
+    },
+    {
+     "token": "nos",
+     "logprob": -12.6163
+    }
+   ]
+  },
+  {
+   "id": "mid-20",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2543
+    },
+    {
+     "token": "no",
+     "logprob": -1.5043
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.7543
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.5043
+    },
+    {
+     "token": "y",
+     "logprob": -9.1293
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3793
+    },
+    {
+     "token": "No",
+     "logprob": -9.5668
+    },
+    {
+     "token": "YES",
+     "logprob": -10.6293
+    },
+    {
+     "token": "The",
+     "logprob": -10.8168
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8168
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3793
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4418
+    },
+    {
+     "token": "none",
+     "logprob": -11.5668
+    },
+    {
+     "token": "**",
+     "logprob": -11.8793
+    },
+    {
+     "token": "nos",
+     "logprob": -12.0043
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1918
+    },
+    {
+     "token": "answer",
+     "logprob": -12.2543
+    },
+    {
+     "token": "not",
+     "logprob": -12.3168
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3793
+    },
+    {
+     "token": " no",
+     "logprob": -12.4418
+    }
+   ]
+  },
+  {
+   "id": "mid-21",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2038
+    },
+    {
+     "token": "no",
+     "logprob": -1.7038
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.7038
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.5788
+    },
+    {
+     "token": "y",
+     "logprob": -9.0788
+    },
+    {
+     "token": " yes",
+     "logprob": -9.0788
+    },
+    {
+     "token": "No",
+     "logprob": -9.6413
+    },
+    {
+     "token": "The",
+     "logprob": -10.4538
+    },
+    {
+     "token": "YES",
+     "logprob": -10.7663
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8288
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3913
+    },
+    {
+     "token": "yet",
+     "logprob": -11.7038
+    },
+    {
+     "token": "none",
+     "logprob": -11.7663
+    },
+    {
+     "token": "nos",
+     "logprob": -12.0788
+    },
+    {
+     "token": " no",
+     "logprob": -12.1413
+    },
+    {
+     "token": "ans",
+     "logprob": -12.2663
+    },
+    {
+     "token": "not",
+     "logprob": -12.3288
+    },
+    {
+     "token": "(no",
+     "logprob": -12.3913
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.4538
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4538
+    }
+   ]
+  },
+  {
+   "id": "mid-22",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.5785
+    },
+    {
+     "token": "no",
+     "logprob": -0.8285
+    },
+    {
+     "token": "Yes",
+     "logprob": -7.0785
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0785
+    },
+    {
+     "token": "No",
+     "logprob": -9.2035
+    },
+    {
+     "token": " yes",
+     "logprob": -9.2035
+    },
+    {
+     "token": "y",
+     "logprob": -9.4535
+    },
+    {
+     "token": "The",
+     "logprob": -10.266
+    },
+    {
+     "token": "YES",
+     "logprob": -10.4535
+    },
+    {
+     "token": "**",
+     "logprob": -11.141
+    },
+    {
+     "token": "none",
+     "logprob": -11.141
+    },
+    {
+     "token": "ye",
+     "logprob": -11.141
+    },
+    {
+     "token": " no",
+     "logprob": -11.2035
+    },
+    {
+     "token": "nos",
+     "logprob": -11.3285
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3285
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5785
+    },
+    {
+     "token": "answer",
+     "logprob": -11.8285
+    },
+    {
+     "token": "(no",
+     "logprob": -11.8285
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.891
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9535
+    }
+   ]
+  },
+  {
+   "id": "weak-01",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2844
+    },
+    {
+     "token": "no",
+     "logprob": -1.4094
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2844
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.6594
+    },
+    {
+     "token": "No",
+     "logprob": -8.7844
+    },
+    {
+     "token": " yes",
+     "logprob": -8.7844
+    },
+    {
+     "token": "y",
+     "logprob": -9.0344
+    },
+    {
+     "token": "The",
+     "logprob": -9.9719
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0969
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7219
+    },
+    {
+     "token": " no",
+     "logprob": -11.3469
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3469
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4094
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4719
+    },
+    {
+     "token": "none",
+     "logprob": -11.7219
+    },
+    {
+     "token": "not",
+     "logprob": -11.9719
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0969
+    },
+    {
+     "token": "(no",
+     "logprob": -12.2219
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3469
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4719
+    }
+   ]
+  },
+  {
+   "id": "weak-02",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.5799
+    },
+    {
+     "token": "no",
+     "logprob": -0.8299
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2049
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2049
+    },
+    {
+     "token": "No",
+     "logprob": -8.2049
+    },
+    {
+     "token": "y",
+     "logprob": -9.0799
+    },
+    {
+     "token": " yes",
+     "logprob": -9.2049
+    },
+    {
+     "token": "The",
+     "logprob": -9.3924
+    },
+    {
+     "token": "YES",
+     "logprob": -9.8924
+    },
+    {
+     "token": "nos",
+     "logprob": -10.7049
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9549
+    },
+    {
+     "token": "none",
+     "logprob": -11.1424
+    },
+    {
+     "token": " no",
+     "logprob": -11.3299
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3299
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3299
+    },
+    {
+     "token": "not",
+     "logprob": -11.7049
+    },
+    {
+     "token": "ans",
+     "logprob": -11.7674
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.7674
+    },
+    {
+     "token": "(no",
+     "logprob": -11.7674
+    },
+    {
+     "token": "NO",
+     "logprob": -12.0799
+    }
+   ]
+  },
+  {
+   "id": "weak-03",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1298
+    },
+    {
+     "token": "no",
+     "logprob": -2.1298
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3798
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3798
+    },
+    {
+     "token": "y",
+     "logprob": -9.1298
+    },
+    {
+     "token": "No",
+     "logprob": -9.5048
+    },
+    {
+     "token": " yes",
+     "logprob": -9.5048
+    },
+    {
+     "token": "The",
+     "logprob": -10.0048
+    },
+    {
+     "token": "YES",
+     "logprob": -10.5048
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0048
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3798
+    },
+    {
+     "token": "yet",
+     "logprob": -11.7548
+    },
+    {
+     "token": "none",
+     "logprob": -12.0048
+    },
+    {
+     "token": "nos",
+     "logprob": -12.2548
+    },
+    {
+     "token": "ans",
+     "logprob": -12.5048
+    },
+    {
+     "token": "not",
+     "logprob": -12.5048
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.5673
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.6298
+    },
+    {
+     "token": "answer",
+     "logprob": -12.8173
+    },
+    {
+     "token": "(no",
+     "logprob": -12.8173
+    }
+   ]
+  },
+  {
+   "id": "weak-04",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2853
+    },
+    {
+     "token": "no",
+     "logprob": -1.4103
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.1603
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.9103
+    },
+    {
+     "token": "y",
+     "logprob": -8.7853
+    },
+    {
+     "token": "No",
+     "logprob": -8.7853
+    },
+    {
+     "token": "The",
+     "logprob": -9.2228
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3478
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1603
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0353
+    },
+    {
+     "token": "是的",
+     "logprob": -11.0978
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4103
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4103
+    },
+    {
+     "token": "none",
+     "logprob": -11.6603
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.7853
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9103
+    },
+    {
+     "token": "not",
+     "logprob": -11.9728
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0978
+    },
+    {
+     "token": "**",
+     "logprob": -12.1603
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.1603
+    }
+   ]
+  },
+  {
+   "id": "weak-05",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3899
+    },
+    {
+     "token": "no",
+     "logprob": -1.1399
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.5149
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3899
+    },
+    {
+     "token": " yes",
+     "logprob": -8.7649
+    },
+    {
+     "token": "y",
+     "logprob": -8.8899
+    },
+    {
+     "token": "No",
+     "logprob": -9.0149
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1399
+    },
+    {
+     "token": "The",
+     "logprob": -10.4524
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7024
+    },
+    {
+     "token": "nos",
+     "logprob": -10.9524
+    },
+    {
+     "token": " no",
+     "logprob": -11.2024
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2024
+    },
+    {
+     "token": "none",
+     "logprob": -11.3274
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3274
+    },
+    {
+     "token": "not",
+     "logprob": -11.8899
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9524
+    },
+    {
+     "token": "(no",
+     "logprob": -12.1399
+    },
+    {
+     "token": "ans",
+     "logprob": -12.2649
+    },
+    {
+     "token": "n",
+     "logprob": -12.3899
+    }
+   ]
+  },
+  {
+   "id": "weak-06",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.4326
+    },
+    {
+     "token": "no",
+     "logprob": -1.0576
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.1826
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1826
+    },
+    {
+     "token": "No",
+     "logprob": -8.4326
+    },
+    {
+     "token": " yes",
+     "logprob": -8.5576
+    },
+    {
+     "token": "y",
+     "logprob": -8.9326
+    },
+    {
+     "token": "The",
+     "logprob": -9.4951
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1201
+    },
+    {
+     "token": " no",
+     "logprob": -10.6201
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0576
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3076
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4326
+    },
+    {
+     "token": "none",
+     "logprob": -11.5576
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6201
+    },
+    {
+     "token": "not",
+     "logprob": -11.8701
+    },
+    {
+     "token": "(no",
+     "logprob": -11.9326
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9951
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.9951
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.1201
+    }
+   ]
+  },
+  {
+   "id": "weak-07",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.5802
+    },
+    {
+     "token": "no",
+     "logprob": -0.8302
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2052
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.9552
+    },
+    {
+     "token": "No",
+     "logprob": -8.2052
+    },
+    {
+     "token": " yes",
+     "logprob": -8.7677
+    },
+    {
+     "token": "y",
+     "logprob": -9.1427
+    },
+    {
+     "token": "The",
+     "logprob": -9.6427
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0802
+    },
+    {
+     "token": " no",
+     "logprob": -10.5802
+    },
+    {
+     "token": "nos",
+     "logprob": -10.8927
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9552
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2052
+    },
+    {
+     "token": "none",
+     "logprob": -11.3302
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4552
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.6427
+    },
+    {
+     "token": "(no",
+     "logprob": -11.7677
+    },
+    {
+     "token": "not",
+     "logprob": -11.8302
+    },
+    {
+     "token": "n",
+     "logprob": -12.0177
+    },
+    {
+     "token": "**",
+     "logprob": -12.0177
+    }
+   ]
+  },
+  {
+   "id": "weak-08",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1308
+    },
+    {
+     "token": "no",
+     "logprob": -2.1308
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.1308
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0058
+    },
+    {
+     "token": " yes",
+     "logprob": -8.8808
+    },
+    {
+     "token": "No",
+     "logprob": -9.0058
+    },
+    {
+     "token": "y",
+     "logprob": -9.1308
+    },
+    {
+     "token": "The",
+     "logprob": -10.0058
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1308
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8808
+    },
+    {
+     "token": "是的",
+     "logprob": -10.8808
+    },
+    {
+     "token": "yet",
+     "logprob": -11.7558
+    },
+    {
+     "token": "not",
+     "logprob": -12.0058
+    },
+    {
+     "token": "none",
+     "logprob": -12.1933
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.1933
+    },
+    {
+     "token": "ans",
+     "logprob": -12.3183
+    },
+    {
+     "token": "nos",
+     "logprob": -12.3183
+    },
+    {
+     "token": " no",
+     "logprob": -12.3808
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.4433
+    },
+    {
+     "token": "(no",
+     "logprob": -12.4433
+    }
+   ]
+  },
+  {
+   "id": "weak-09",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.6354
+    },
+    {
+     "token": "no",
+     "logprob": -0.7604
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.8854
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0104
+    },
+    {
+     "token": "No",
+     "logprob": -8.8854
+    },
+    {
+     "token": " yes",
+     "logprob": -9.2604
+    },
+    {
+     "token": "y",
+     "logprob": -9.5729
+    },
+    {
+     "token": "The",
+     "logprob": -9.9479
+    },
+    {
+     "token": "YES",
+     "logprob": -10.6354
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0104
+    },
+    {
+     "token": "none",
+     "logprob": -11.1979
+    },
+    {
+     "token": " no",
+     "logprob": -11.2604
+    },
+    {
+     "token": "nos",
+     "logprob": -11.3229
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3229
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5729
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.8854
+    },
+    {
+     "token": "(no",
+     "logprob": -11.8854
+    },
+    {
+     "token": "not",
+     "logprob": -12.0729
+    },
+    {
+     "token": "to",
+     "logprob": -12.1354
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1979
+    }
+   ]
+  },
+  {
+   "id": "weak-10",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1632
+    },
+    {
+     "token": "no",
+     "logprob": -1.9132
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.5382
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0382
+    },
+    {
+     "token": "y",
+     "logprob": -9.1632
+    },
+    {
+     "token": " yes",
+     "logprob": -9.1632
+    },
+    {
+     "token": "No",
+     "logprob": -9.6007
+    },
+    {
+     "token": "The",
+     "logprob": -9.9757
+    },
+    {
+     "token": "YES",
+     "logprob": -10.5382
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9757
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2882
+    },
+    {
+     "token": "none",
+     "logprob": -11.6007
+    },
+    {
+     "token": "yet",
+     "logprob": -11.7257
+    },
+    {
+     "token": "not",
+     "logprob": -12.1007
+    },
+    {
+     "token": "nos",
+     "logprob": -12.2257
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.2257
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.2882
+    },
+    {
+     "token": "ans",
+     "logprob": -12.3507
+    },
+    {
+     "token": "answer",
+     "logprob": -12.4132
+    },
+    {
+     "token": "(no",
+     "logprob": -12.4132
+    }
+   ]
+  },
+  {
+   "id": "weak-11",
+   "label": false,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.2849
+    },
+    {
+     "token": "yes",
+     "logprob": -1.4099
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.2849
+    },
+    {
+     "token": "Yes",
+     "logprob": -7.1599
+    },
+    {
+     "token": "No",
+     "logprob": -8.4099
+    },
+    {
+     "token": "The",
+     "logprob": -8.5349
+    },
+    {
+     "token": " yes",
+     "logprob": -9.7224
+    },
+    {
+     "token": " no",
+     "logprob": -10.5349
+    },
+    {
+     "token": "none",
+     "logprob": -10.7224
+    },
+    {
+     "token": "y",
+     "logprob": -10.7849
+    },
+    {
+     "token": "nos",
+     "logprob": -10.7849
+    },
+    {
+     "token": "YES",
+     "logprob": -11.0349
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.1599
+    },
+    {
+     "token": "(no",
+     "logprob": -11.5349
+    },
+    {
+     "token": "To",
+     "logprob": -11.6599
+    },
+    {
+     "token": "是的",
+     "logprob": -11.7849
+    },
+    {
+     "token": "ye",
+     "logprob": -11.8474
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9099
+    },
+    {
+     "token": "B",
+     "logprob": -12.0349
+    },
+    {
+     "token": "**",
+     "logprob": -12.0349
+    }
+   ]
+  },
+  {
+   "id": "weak-12",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2843
+    },
+    {
+     "token": "no",
+     "logprob": -1.4093
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2843
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.7843
+    },
+    {
+     "token": "No",
+     "logprob": -8.7843
+    },
+    {
+     "token": " yes",
+     "logprob": -8.7843
+    },
+    {
+     "token": "y",
+     "logprob": -9.0343
+    },
+    {
+     "token": "The",
+     "logprob": -9.9718
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0968
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7218
+    },
+    {
+     "token": " no",
+     "logprob": -11.2843
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3468
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4093
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4718
+    },
+    {
+     "token": "none",
+     "logprob": -11.7218
+    },
+    {
+     "token": "not",
+     "logprob": -11.9718
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0968
+    },
+    {
+     "token": "(no",
+     "logprob": -12.2843
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3468
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4718
+    }
+   ]
+  },
+  {
+   "id": "weak-13",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2051
+    },
+    {
+     "token": "no",
+     "logprob": -1.7051
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.0801
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.5801
+    },
+    {
+     "token": "No",
+     "logprob": -8.7051
+    },
+    {
+     "token": " yes",
+     "logprob": -8.9551
+    },
+    {
+     "token": "y",
+     "logprob": -9.1426
+    },
+    {
+     "token": "The",
+     "logprob": -9.9551
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0176
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7676
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3926
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4551
+    },
+    {
+     "token": "nos",
+     "logprob": -11.7676
+    },
+    {
+     "token": " no",
+     "logprob": -11.9551
+    },
+    {
+     "token": "none",
+     "logprob": -11.9551
+    },
+    {
+     "token": "not",
+     "logprob": -12.0176
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1426
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3926
+    },
+    {
+     "token": "(no",
+     "logprob": -12.4551
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4551
+    }
+   ]
+  },
+  {
+   "id": "weak-14",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2285
+    },
+    {
+     "token": "no",
+     "logprob": -1.6035
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3535
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.4785
+    },
+    {
+     "token": "y",
+     "logprob": -8.9785
+    },
+    {
+     "token": "No",
+     "logprob": -9.1035
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3535
+    },
+    {
+     "token": "The",
+     "logprob": -9.916
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2285
+    },
+    {
+     "token": "ye",
+     "logprob": -11.1035
+    },
+    {
+     "token": "是的",
+     "logprob": -11.416
+    },
+    {
+     "token": "yet",
+     "logprob": -11.541
+    },
+    {
+     "token": "none",
+     "logprob": -11.666
+    },
+    {
+     "token": "nos",
+     "logprob": -12.1035
+    },
+    {
+     "token": "ans",
+     "logprob": -12.166
+    },
+    {
+     "token": "not",
+     "logprob": -12.166
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.166
+    },
+    {
+     "token": "answer",
+     "logprob": -12.2285
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.291
+    },
+    {
+     "token": "(no",
+     "logprob": -12.3535
+    }
+   ]
+  },
+  {
+   "id": "weak-15",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2292
+    },
+    {
+     "token": "no",
+     "logprob": -1.6042
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2292
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.9792
+    },
+    {
+     "token": "y",
+     "logprob": -8.8542
+    },
+    {
+     "token": "No",
+     "logprob": -8.9792
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3542
+    },
+    {
+     "token": "The",
+     "logprob": -9.4167
+    },
+    {
+     "token": "YES",
+     "logprob": -10.4167
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0417
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1042
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5417
+    },
+    {
+     "token": "nos",
+     "logprob": -11.7917
+    },
+    {
+     "token": "none",
+     "logprob": -11.8542
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9792
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1667
+    },
+    {
+     "token": "not",
+     "logprob": -12.2292
+    },
+    {
+     "token": "(no",
+     "logprob": -12.2917
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3542
+    },
+    {
+     "token": "**",
+     "logprob": -12.4792
+    }
+   ]
+  },
+  {
+   "id": "weak-16",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3514
+    },
+    {
+     "token": "no",
+     "logprob": -1.2264
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.6014
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.4764
+    },
+    {
+     "token": " yes",
+     "logprob": -8.6014
+    },
+    {
+     "token": "y",
+     "logprob": -8.8514
+    },
+    {
+     "token": "No",
+     "logprob": -9.0389
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2264
+    },
+    {
+     "token": "The",
+     "logprob": -10.4139
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7264
+    },
+    {
+     "token": " no",
+     "logprob": -10.9764
+    },
+    {
+     "token": "nos",
+     "logprob": -11.0389
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2264
+    },
+    {
+     "token": "none",
+     "logprob": -11.3514
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3514
+    },
+    {
+     "token": "not",
+     "logprob": -11.8514
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9764
+    },
+    {
+     "token": "(no",
+     "logprob": -12.2264
+    },
+    {
+     "token": "ans",
+     "logprob": -12.2889
+    },
+    {
+     "token": "yo",
+     "logprob": -12.3514
+    }
+   ]
+  },
+  {
+   "id": "weak-17",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3902
+    },
+    {
+     "token": "no",
+     "logprob": -1.1402
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3902
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2652
+    },
+    {
+     "token": "y",
+     "logprob": -8.7652
+    },
+    {
+     "token": "No",
+     "logprob": -8.7652
+    },
+    {
+     "token": " yes",
+     "logprob": -9.1402
+    },
+    {
+     "token": "The",
+     "logprob": -9.6402
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0777
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0777
+    },
+    {
+     "token": "是的",
+     "logprob": -11.4527
+    },
+    {
+     "token": "nos",
+     "logprob": -11.5777
+    },
+    {
+     "token": "none",
+     "logprob": -11.6402
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6402
+    },
+    {
+     "token": " no",
+     "logprob": -11.7027
+    },
+    {
+     "token": "not",
+     "logprob": -11.9527
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0152
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0152
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.2027
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.2652
+    }
+   ]
+  },
+  {
+   "id": "weak-18",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.4789
+    },
+    {
+     "token": "no",
+     "logprob": -0.9789
+    },
+    {
+     "token": "Yes",
+     "logprob": -5.9789
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.8539
+    },
+    {
+     "token": "No",
+     "logprob": -8.2289
+    },
+    {
+     "token": " yes",
+     "logprob": -8.8539
+    },
+    {
+     "token": "y",
+     "logprob": -8.9789
+    },
+    {
+     "token": "The",
+     "logprob": -9.4789
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0414
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8539
+    },
+    {
+     "token": " no",
+     "logprob": -11.1039
+    },
+    {
+     "token": "nos",
+     "logprob": -11.1039
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1039
+    },
+    {
+     "token": "none",
+     "logprob": -11.2914
+    },
+    {
+     "token": "yet",
+     "logprob": -11.2914
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.6039
+    },
+    {
+     "token": "not",
+     "logprob": -11.7914
+    },
+    {
+     "token": "(no",
+     "logprob": -11.7914
+    },
+    {
+     "token": "**",
+     "logprob": -11.8539
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9789
+    }
+   ]
+  },
+  {
+   "id": "weak-19",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3537
+    },
+    {
+     "token": "no",
+     "logprob": -1.2287
+    },
+    {
+     "token": "Yes",
+     "logprob": -5.9787
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.8537
+    },
+    {
+     "token": " yes",
+     "logprob": -7.9787
+    },
+    {
+     "token": "No",
+     "logprob": -8.2287
+    },
+    {
+     "token": "y",
+     "logprob": -8.7287
+    },
+    {
+     "token": "The",
+     "logprob": -9.6662
+    },
+    {
+     "token": "YES",
+     "logprob": -9.9162
+    },
+    {
+     "token": " no",
+     "logprob": -10.1662
+    },
+    {
+     "token": "ye",
+     "logprob": -10.3537
+    },
+    {
+     "token": "是的",
+     "logprob": -10.7287
+    },
+    {
+     "token": "none",
+     "logprob": -11.1037
+    },
+    {
+     "token": "nos",
+     "logprob": -11.2287
+    },
+    {
+     "token": "not",
+     "logprob": -11.3537
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3537
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.6037
+    },
+    {
+     "token": "(no",
+     "logprob": -11.6662
+    },
+    {
+     "token": "n",
+     "logprob": -11.7287
+    },
+    {
+     "token": "ans",
+     "logprob": -11.8537
+    }
+   ]
+  },
+  {
+   "id": "weak-20",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.2835
+    },
+    {
+     "token": "no",
+     "logprob": -1.4085
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.7835
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.5335
+    },
+    {
+     "token": " yes",
+     "logprob": -9.2835
+    },
+    {
+     "token": "y",
+     "logprob": -9.346
+    },
+    {
+     "token": "No",
+     "logprob": -9.4085
+    },
+    {
+     "token": "The",
+     "logprob": -10.471
+    },
+    {
+     "token": "YES",
+     "logprob": -10.6585
+    },
+    {
+     "token": "ye",
+     "logprob": -10.971
+    },
+    {
+     "token": "none",
+     "logprob": -11.346
+    },
+    {
+     "token": "是的",
+     "logprob": -11.4085
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5335
+    },
+    {
+     "token": "nos",
+     "logprob": -11.846
+    },
+    {
+     "token": " no",
+     "logprob": -12.1585
+    },
+    {
+     "token": "to",
+     "logprob": -12.2835
+    },
+    {
+     "token": "not",
+     "logprob": -12.2835
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.2835
+    },
+    {
+     "token": "ans",
+     "logprob": -12.346
+    },
+    {
+     "token": "answer",
+     "logprob": -12.4085
+    }
+   ]
+  },
+  {
+   "id": "weak-21",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1824
+    },
+    {
+     "token": "no",
+     "logprob": -1.8074
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.5574
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3074
+    },
+    {
+     "token": "y",
+     "logprob": -9.3074
+    },
+    {
+     "token": " yes",
+     "logprob": -9.4324
+    },
+    {
+     "token": "No",
+     "logprob": -9.4949
+    },
+    {
+     "token": "The",
+     "logprob": -10.2449
+    },
+    {
+     "token": "YES",
+     "logprob": -10.6199
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0574
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2449
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6824
+    },
+    {
+     "token": "none",
+     "logprob": -11.8074
+    },
+    {
+     "token": "not",
+     "logprob": -12.1824
+    },
+    {
+     "token": "nos",
+     "logprob": -12.2449
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3074
+    },
+    {
+     "token": "ans",
+     "logprob": -12.4949
+    },
+    {
+     "token": "(no",
+     "logprob": -12.4949
+    },
+    {
+     "token": "to",
+     "logprob": -12.5574
+    },
+    {
+     "token": "answer",
+     "logprob": -12.6199
+    }
+   ]
+  },
+  {
+   "id": "weak-22",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3159
+    },
+    {
+     "token": "no",
+     "logprob": -1.3159
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.6909
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3159
+    },
+    {
+     "token": " yes",
+     "logprob": -9.0659
+    },
+    {
+     "token": "y",
+     "logprob": -9.1284
+    },
+    {
+     "token": "No",
+     "logprob": -9.3159
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3784
+    },
+    {
+     "token": "The",
+     "logprob": -10.6909
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8784
+    },
+    {
+     "token": "none",
+     "logprob": -11.3159
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3159
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4409
+    },
+    {
+     "token": "nos",
+     "logprob": -11.6284
+    },
+    {
+     "token": " no",
+     "logprob": -11.7534
+    },
+    {
+     "token": "ans",
+     "logprob": -11.8159
+    },
+    {
+     "token": "answer",
+     "logprob": -11.8784
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.0659
+    },
+    {
+     "token": "not",
+     "logprob": -12.1909
+    },
+    {
+     "token": "(no",
+     "logprob": -12.1909
+    }
+   ]
+  },
+  {
+   "id": "local-off-01",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3903
+    },
+    {
+     "token": "no",
+     "logprob": -1.1403
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2653
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.5153
+    },
+    {
+     "token": "No",
+     "logprob": -8.5153
+    },
+    {
+     "token": "y",
+     "logprob": -9.0153
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3278
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0153
+    },
+    {
+     "token": "The",
+     "logprob": -10.1403
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8278
+    },
+    {
+     "token": "nos",
+     "logprob": -11.1403
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3278
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3903
+    },
+    {
+     "token": "none",
+     "logprob": -11.7028
+    },
+    {
+     "token": "not",
+     "logprob": -11.7653
+    },
+    {
+     "token": " no",
+     "logprob": -11.9528
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0153
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0778
+    },
+    {
+     "token": "NO",
+     "logprob": -12.3278
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3278
+    }
+   ]
+  },
+  {
+   "id": "local-off-02",
+   "label": true,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.6361
+    },
+    {
+     "token": "yes",
+     "logprob": -0.7611
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3861
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2611
+    },
+    {
+     "token": "No",
+     "logprob": -8.1361
+    },
+    {
+     "token": " yes",
+     "logprob": -8.9486
+    },
+    {
+     "token": "The",
+     "logprob": -9.5736
+    },
+    {
+     "token": "y",
+     "logprob": -9.6986
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2611
+    },
+    {
+     "token": "nos",
+     "logprob": -10.5111
+    },
+    {
+     "token": " no",
+     "logprob": -10.5736
+    },
+    {
+     "token": "ye",
+     "logprob": -11.2611
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2611
+    },
+    {
+     "token": "none",
+     "logprob": -11.5736
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6986
+    },
+    {
+     "token": "(no",
+     "logprob": -11.7611
+    },
+    {
+     "token": "not",
+     "logprob": -11.8236
+    },
+    {
+     "token": "n",
+     "logprob": -12.0111
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.0111
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0736
+    }
+   ]
+  },
+  {
+   "id": "local-off-03",
+   "label": false,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.4787
+    },
+    {
+     "token": "yes",
+     "logprob": -0.9787
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.2287
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.6037
+    },
+    {
+     "token": "No",
+     "logprob": -8.1662
+    },
+    {
+     "token": "The",
+     "logprob": -9.3537
+    },
+    {
+     "token": " yes",
+     "logprob": -9.4787
+    },
+    {
+     "token": "y",
+     "logprob": -9.5412
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3537
+    },
+    {
+     "token": "nos",
+     "logprob": -10.5412
+    },
+    {
+     "token": " no",
+     "logprob": -11.0412
+    },
+    {
+     "token": "是的",
+     "logprob": -11.0412
+    },
+    {
+     "token": "none",
+     "logprob": -11.2287
+    },
+    {
+     "token": "ye",
+     "logprob": -11.3537
+    },
+    {
+     "token": "(no",
+     "logprob": -11.5412
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.5412
+    },
+    {
+     "token": "NO",
+     "logprob": -11.6662
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.6662
+    },
+    {
+     "token": "not",
+     "logprob": -11.8537
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9787
+    }
+   ]
+  },
+  {
+   "id": "local-off-04",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3168
+    },
+    {
+     "token": "no",
+     "logprob": -1.3168
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3168
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0668
+    },
+    {
+     "token": "No",
+     "logprob": -8.8168
+    },
+    {
+     "token": "y",
+     "logprob": -8.9418
+    },
+    {
+     "token": " yes",
+     "logprob": -9.1918
+    },
+    {
+     "token": "The",
+     "logprob": -9.7543
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3793
+    },
+    {
+     "token": "ye",
+     "logprob": -10.8793
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2543
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4418
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4418
+    },
+    {
+     "token": "none",
+     "logprob": -11.5668
+    },
+    {
+     "token": " no",
+     "logprob": -12.0043
+    },
+    {
+     "token": "not",
+     "logprob": -12.0668
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.0668
+    },
+    {
+     "token": "(no",
+     "logprob": -12.1293
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1918
+    },
+    {
+     "token": "**",
+     "logprob": -12.3168
+    }
+   ]
+  },
+  {
+   "id": "local-off-05",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.6361
+    },
+    {
+     "token": "no",
+     "logprob": -0.7611
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.7611
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.7611
+    },
+    {
+     "token": " yes",
+     "logprob": -8.5111
+    },
+    {
+     "token": "No",
+     "logprob": -8.7611
+    },
+    {
+     "token": "y",
+     "logprob": -9.0736
+    },
+    {
+     "token": "The",
+     "logprob": -9.9486
+    },
+    {
+     "token": " no",
+     "logprob": -10.0736
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2611
+    },
+    {
+     "token": "nos",
+     "logprob": -10.5111
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0736
+    },
+    {
+     "token": "是的",
+     "logprob": -11.0736
+    },
+    {
+     "token": "none",
+     "logprob": -11.2611
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6361
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.6361
+    },
+    {
+     "token": "n",
+     "logprob": -11.9486
+    },
+    {
+     "token": "not",
+     "logprob": -11.9486
+    },
+    {
+     "token": "(no",
+     "logprob": -11.9486
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -12.0111
+    }
+   ]
+  },
+  {
+   "id": "local-off-06",
+   "label": false,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.4339
+    },
+    {
+     "token": "yes",
+     "logprob": -1.0589
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3089
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.3089
+    },
+    {
+     "token": "No",
+     "logprob": -7.6839
+    },
+    {
+     "token": "The",
+     "logprob": -8.3714
+    },
+    {
+     "token": " yes",
+     "logprob": -9.4964
+    },
+    {
+     "token": "y",
+     "logprob": -9.7464
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1214
+    },
+    {
+     "token": "nos",
+     "logprob": -10.5589
+    },
+    {
+     "token": " no",
+     "logprob": -10.9964
+    },
+    {
+     "token": "是的",
+     "logprob": -11.0589
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.2464
+    },
+    {
+     "token": "none",
+     "logprob": -11.3089
+    },
+    {
+     "token": "(no",
+     "logprob": -11.4339
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.4339
+    },
+    {
+     "token": "NO",
+     "logprob": -11.4964
+    },
+    {
+     "token": "ye",
+     "logprob": -11.6839
+    },
+    {
+     "token": "not",
+     "logprob": -11.8089
+    },
+    {
+     "token": "ans",
+     "logprob": -11.8714
+    }
+   ]
+  },
+  {
+   "id": "local-off-07",
+   "label": false,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.434
+    },
+    {
+     "token": "yes",
+     "logprob": -1.059
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.059
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.434
+    },
+    {
+     "token": "No",
+     "logprob": -7.809
+    },
+    {
+     "token": "The",
+     "logprob": -9.059
+    },
+    {
+     "token": "y",
+     "logprob": -9.559
+    },
+    {
+     "token": " yes",
+     "logprob": -9.7465
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3715
+    },
+    {
+     "token": "nos",
+     "logprob": -10.559
+    },
+    {
+     "token": "是的",
+     "logprob": -11.184
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.309
+    },
+    {
+     "token": "none",
+     "logprob": -11.3715
+    },
+    {
+     "token": " no",
+     "logprob": -11.434
+    },
+    {
+     "token": "(no",
+     "logprob": -11.4965
+    },
+    {
+     "token": "ye",
+     "logprob": -11.559
+    },
+    {
+     "token": "n",
+     "logprob": -11.7465
+    },
+    {
+     "token": "ans",
+     "logprob": -11.7465
+    },
+    {
+     "token": "NO",
+     "logprob": -11.7465
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.7465
+    }
+   ]
+  },
+  {
+   "id": "local-off-08",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1644
+    },
+    {
+     "token": "no",
+     "logprob": -1.9144
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.0394
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0394
+    },
+    {
+     "token": "y",
+     "logprob": -8.9144
+    },
+    {
+     "token": "No",
+     "logprob": -8.9144
+    },
+    {
+     "token": " yes",
+     "logprob": -9.1019
+    },
+    {
+     "token": "The",
+     "logprob": -9.6019
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0394
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7269
+    },
+    {
+     "token": "是的",
+     "logprob": -10.9144
+    },
+    {
+     "token": "yet",
+     "logprob": -11.7269
+    },
+    {
+     "token": "not",
+     "logprob": -11.7894
+    },
+    {
+     "token": "none",
+     "logprob": -11.9144
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.1019
+    },
+    {
+     "token": "nos",
+     "logprob": -12.1644
+    },
+    {
+     "token": "ans",
+     "logprob": -12.2269
+    },
+    {
+     "token": "(no",
+     "logprob": -12.2894
+    },
+    {
+     "token": "**",
+     "logprob": -12.4769
+    },
+    {
+     "token": "un",
+     "logprob": -12.4769
+    }
+   ]
+  },
+  {
+   "id": "local-off-09",
+   "label": true,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.3905
+    },
+    {
+     "token": "yes",
+     "logprob": -1.1405
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.3905
+    },
+    {
+     "token": "Yes",
+     "logprob": -7.0155
+    },
+    {
+     "token": "No",
+     "logprob": -8.703
+    },
+    {
+     "token": " yes",
+     "logprob": -9.0155
+    },
+    {
+     "token": "The",
+     "logprob": -9.328
+    },
+    {
+     "token": " no",
+     "logprob": -10.0155
+    },
+    {
+     "token": "y",
+     "logprob": -10.1405
+    },
+    {
+     "token": "YES",
+     "logprob": -10.7655
+    },
+    {
+     "token": "none",
+     "logprob": -10.828
+    },
+    {
+     "token": "nos",
+     "logprob": -10.8905
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.078
+    },
+    {
+     "token": "**",
+     "logprob": -11.328
+    },
+    {
+     "token": "是的",
+     "logprob": -11.328
+    },
+    {
+     "token": "(no",
+     "logprob": -11.453
+    },
+    {
+     "token": "ye",
+     "logprob": -11.6405
+    },
+    {
+     "token": "mixed",
+     "logprob": -11.7655
+    },
+    {
+     "token": "part",
+     "logprob": -11.828
+    },
+    {
+     "token": "1",
+     "logprob": -11.8905
+    }
+   ]
+  },
+  {
+   "id": "local-off-10",
+   "label": false,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.4786
+    },
+    {
+     "token": "yes",
+     "logprob": -0.9786
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.1036
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.8536
+    },
+    {
+     "token": "No",
+     "logprob": -8.4161
+    },
+    {
+     "token": "The",
+     "logprob": -8.9786
+    },
+    {
+     "token": " yes",
+     "logprob": -9.1036
+    },
+    {
+     "token": "y",
+     "logprob": -9.7286
+    },
+    {
+     "token": " no",
+     "logprob": -10.2911
+    },
+    {
+     "token": "nos",
+     "logprob": -10.6036
+    },
+    {
+     "token": "YES",
+     "logprob": -10.8536
+    },
+    {
+     "token": "none",
+     "logprob": -10.9786
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1036
+    },
+    {
+     "token": "ye",
+     "logprob": -11.2286
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.2286
+    },
+    {
+     "token": "(no",
+     "logprob": -11.4161
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.5411
+    },
+    {
+     "token": "To",
+     "logprob": -11.7911
+    },
+    {
+     "token": "not",
+     "logprob": -11.8536
+    },
+    {
+     "token": "yet",
+     "logprob": -11.8536
+    }
+   ]
+  },
+  {
+   "id": "local-off-11",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.5785
+    },
+    {
+     "token": "no",
+     "logprob": -0.8285
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.9535
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2035
+    },
+    {
+     "token": "No",
+     "logprob": -9.0785
+    },
+    {
+     "token": "y",
+     "logprob": -9.391
+    },
+    {
+     "token": " yes",
+     "logprob": -9.391
+    },
+    {
+     "token": "The",
+     "logprob": -10.3285
+    },
+    {
+     "token": "YES",
+     "logprob": -10.391
+    },
+    {
+     "token": "ye",
+     "logprob": -11.016
+    },
+    {
+     "token": "none",
+     "logprob": -11.0785
+    },
+    {
+     "token": "nos",
+     "logprob": -11.266
+    },
+    {
+     "token": "是的",
+     "logprob": -11.4535
+    },
+    {
+     "token": " no",
+     "logprob": -11.5785
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.5785
+    },
+    {
+     "token": "answer",
+     "logprob": -11.7035
+    },
+    {
+     "token": "yet",
+     "logprob": -11.7035
+    },
+    {
+     "token": "ans",
+     "logprob": -11.891
+    },
+    {
+     "token": "(no",
+     "logprob": -11.9535
+    },
+    {
+     "token": "**",
+     "logprob": -12.0785
+    }
+   ]
+  },
+  {
+   "id": "local-think-01",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1645
+    },
+    {
+     "token": "no",
+     "logprob": -1.9145
+    },
+    {
+     "token": "Yes",
+     "logprob": -5.9145
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2895
+    },
+    {
+     "token": " yes",
+     "logprob": -8.5395
+    },
+    {
+     "token": "No",
+     "logprob": -8.9145
+    },
+    {
+     "token": "y",
+     "logprob": -9.227
+    },
+    {
+     "token": "The",
+     "logprob": -9.2895
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0395
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7895
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1645
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5395
+    },
+    {
+     "token": " no",
+     "logprob": -11.7895
+    },
+    {
+     "token": "none",
+     "logprob": -12.102
+    },
+    {
+     "token": "nos",
+     "logprob": -12.102
+    },
+    {
+     "token": "ans",
+     "logprob": -12.1645
+    },
+    {
+     "token": "not",
+     "logprob": -12.1645
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.227
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.352
+    },
+    {
+     "token": "(no",
+     "logprob": -12.5395
+    }
+   ]
+  },
+  {
+   "id": "local-think-02",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.6362
+    },
+    {
+     "token": "no",
+     "logprob": -0.7612
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.3862
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1362
+    },
+    {
+     "token": "No",
+     "logprob": -8.2612
+    },
+    {
+     "token": " yes",
+     "logprob": -9.0737
+    },
+    {
+     "token": "y",
+     "logprob": -9.3862
+    },
+    {
+     "token": "The",
+     "logprob": -9.8237
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0737
+    },
+    {
+     "token": "nos",
+     "logprob": -10.6987
+    },
+    {
+     "token": " no",
+     "logprob": -11.0737
+    },
+    {
+     "token": "ye",
+     "logprob": -11.1362
+    },
+    {
+     "token": "是的",
+     "logprob": -11.2612
+    },
+    {
+     "token": "none",
+     "logprob": -11.5112
+    },
+    {
+     "token": "yet",
+     "logprob": -11.5112
+    },
+    {
+     "token": "not",
+     "logprob": -11.7612
+    },
+    {
+     "token": "(no",
+     "logprob": -11.8237
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9487
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9487
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.0112
+    }
+   ]
+  },
+  {
+   "id": "local-think-03",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1832
+    },
+    {
+     "token": "no",
+     "logprob": -1.8082
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.1832
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3082
+    },
+    {
+     "token": "y",
+     "logprob": -8.9332
+    },
+    {
+     "token": "No",
+     "logprob": -9.0582
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3082
+    },
+    {
+     "token": "The",
+     "logprob": -10.0582
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3082
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9332
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3082
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6207
+    },
+    {
+     "token": "none",
+     "logprob": -11.8707
+    },
+    {
+     "token": "nos",
+     "logprob": -12.1207
+    },
+    {
+     "token": "ans",
+     "logprob": -12.2457
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3707
+    },
+    {
+     "token": "not",
+     "logprob": -12.4332
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4957
+    },
+    {
+     "token": "answer",
+     "logprob": -12.5582
+    },
+    {
+     "token": "(no",
+     "logprob": -12.5582
+    }
+   ]
+  },
+  {
+   "id": "local-think-04",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.5794
+    },
+    {
+     "token": "no",
+     "logprob": -0.8294
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.5794
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.9544
+    },
+    {
+     "token": "No",
+     "logprob": -8.5794
+    },
+    {
+     "token": " yes",
+     "logprob": -9.0169
+    },
+    {
+     "token": "y",
+     "logprob": -9.3919
+    },
+    {
+     "token": "The",
+     "logprob": -9.3919
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3294
+    },
+    {
+     "token": "nos",
+     "logprob": -10.8919
+    },
+    {
+     "token": " no",
+     "logprob": -11.0169
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1419
+    },
+    {
+     "token": "none",
+     "logprob": -11.2044
+    },
+    {
+     "token": "ye",
+     "logprob": -11.2669
+    },
+    {
+     "token": "(no",
+     "logprob": -11.5794
+    },
+    {
+     "token": "yet",
+     "logprob": -11.6419
+    },
+    {
+     "token": "**",
+     "logprob": -11.8294
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.8294
+    },
+    {
+     "token": "not",
+     "logprob": -11.8919
+    },
+    {
+     "token": "to",
+     "logprob": -12.2044
+    }
+   ]
+  },
+  {
+   "id": "local-think-05",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3518
+    },
+    {
+     "token": "no",
+     "logprob": -1.2268
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.4768
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2268
+    },
+    {
+     "token": " yes",
+     "logprob": -8.2268
+    },
+    {
+     "token": "y",
+     "logprob": -8.8518
+    },
+    {
+     "token": "No",
+     "logprob": -8.9143
+    },
+    {
+     "token": "YES",
+     "logprob": -10.2268
+    },
+    {
+     "token": "The",
+     "logprob": -10.4143
+    },
+    {
+     "token": " no",
+     "logprob": -10.4143
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7893
+    },
+    {
+     "token": "nos",
+     "logprob": -11.1018
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1643
+    },
+    {
+     "token": "none",
+     "logprob": -11.3518
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3518
+    },
+    {
+     "token": "not",
+     "logprob": -11.9143
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9768
+    },
+    {
+     "token": "(no",
+     "logprob": -12.1643
+    },
+    {
+     "token": "ans",
+     "logprob": -12.4143
+    },
+    {
+     "token": "nothing",
+     "logprob": -12.4143
+    }
+   ]
+  },
+  {
+   "id": "local-think-06",
+   "label": false,
+   "top": [
+    {
+     "token": "no",
+     "logprob": -0.3237
+    },
+    {
+     "token": "yes",
+     "logprob": -1.3237
+    },
+    {
+     "token": "Yes",
+     "logprob": -5.9487
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.9487
+    },
+    {
+     "token": "The",
+     "logprob": -6.1987
+    },
+    {
+     "token": "No",
+     "logprob": -6.5737
+    },
+    {
+     "token": "To",
+     "logprob": -9.5112
+    },
+    {
+     "token": " yes",
+     "logprob": -9.5112
+    },
+    {
+     "token": "Based",
+     "logprob": -10.0112
+    },
+    {
+     "token": "YES",
+     "logprob": -10.0737
+    },
+    {
+     "token": "nos",
+     "logprob": -10.0737
+    },
+    {
+     "token": "none",
+     "logprob": -10.1362
+    },
+    {
+     "token": "T",
+     "logprob": -10.1987
+    },
+    {
+     "token": "y",
+     "logprob": -10.2612
+    },
+    {
+     "token": "NO",
+     "logprob": -10.2612
+    },
+    {
+     "token": " no",
+     "logprob": -10.5112
+    },
+    {
+     "token": "(no",
+     "logprob": -10.5112
+    },
+    {
+     "token": "Answer",
+     "logprob": -10.5737
+    },
+    {
+     "token": "This",
+     "logprob": -10.6362
+    },
+    {
+     "token": "There",
+     "logprob": -10.8237
+    }
+   ]
+  },
+  {
+   "id": "local-think-07",
+   "label": false,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.6368
+    },
+    {
+     "token": "no",
+     "logprob": -0.7618
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2618
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.8868
+    },
+    {
+     "token": "No",
+     "logprob": -8.1368
+    },
+    {
+     "token": " yes",
+     "logprob": -8.8243
+    },
+    {
+     "token": "y",
+     "logprob": -8.8868
+    },
+    {
+     "token": "The",
+     "logprob": -10.1368
+    },
+    {
+     "token": "YES",
+     "logprob": -10.1993
+    },
+    {
+     "token": " no",
+     "logprob": -10.6368
+    },
+    {
+     "token": "nos",
+     "logprob": -10.8243
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9493
+    },
+    {
+     "token": "none",
+     "logprob": -11.1993
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1993
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4493
+    },
+    {
+     "token": "not",
+     "logprob": -11.5743
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.6993
+    },
+    {
+     "token": "n",
+     "logprob": -11.7618
+    },
+    {
+     "token": "(no",
+     "logprob": -11.7618
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0118
+    }
+   ]
+  },
+  {
+   "id": "local-think-08",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1162
+    },
+    {
+     "token": "no",
+     "logprob": -2.2412
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.2412
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3662
+    },
+    {
+     "token": " yes",
+     "logprob": -8.4912
+    },
+    {
+     "token": "No",
+     "logprob": -9.2412
+    },
+    {
+     "token": "y",
+     "logprob": -9.3662
+    },
+    {
+     "token": "The",
+     "logprob": -9.8037
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3662
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9287
+    },
+    {
+     "token": "是的",
+     "logprob": -11.1787
+    },
+    {
+     "token": "yet",
+     "logprob": -11.9287
+    },
+    {
+     "token": " no",
+     "logprob": -11.9912
+    },
+    {
+     "token": "not",
+     "logprob": -11.9912
+    },
+    {
+     "token": "none",
+     "logprob": -12.2412
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4287
+    },
+    {
+     "token": "B",
+     "logprob": -12.4912
+    },
+    {
+     "token": "ans",
+     "logprob": -12.4912
+    },
+    {
+     "token": "nos",
+     "logprob": -12.7412
+    },
+    {
+     "token": "(no",
+     "logprob": -12.8037
+    }
+   ]
+  },
+  {
+   "id": "local-think-09",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3898
+    },
+    {
+     "token": "no",
+     "logprob": -1.1398
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.6398
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1398
+    },
+    {
+     "token": "No",
+     "logprob": -9.1398
+    },
+    {
+     "token": "y",
+     "logprob": -9.2023
+    },
+    {
+     "token": " yes",
+     "logprob": -9.3898
+    },
+    {
+     "token": "The",
+     "logprob": -10.3273
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3898
+    },
+    {
+     "token": "ye",
+     "logprob": -11.0148
+    },
+    {
+     "token": "none",
+     "logprob": -11.3273
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3273
+    },
+    {
+     "token": "yet",
+     "logprob": -11.3898
+    },
+    {
+     "token": "nos",
+     "logprob": -11.4523
+    },
+    {
+     "token": "not",
+     "logprob": -11.9523
+    },
+    {
+     "token": " no",
+     "logprob": -12.0148
+    },
+    {
+     "token": "ans",
+     "logprob": -12.0773
+    },
+    {
+     "token": "answer",
+     "logprob": -12.0773
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0773
+    },
+    {
+     "token": "to",
+     "logprob": -12.2023
+    }
+   ]
+  },
+  {
+   "id": "local-think-10",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.1154
+    },
+    {
+     "token": "no",
+     "logprob": -2.2404
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.7404
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1154
+    },
+    {
+     "token": " yes",
+     "logprob": -8.9904
+    },
+    {
+     "token": "y",
+     "logprob": -9.3654
+    },
+    {
+     "token": "No",
+     "logprob": -9.8654
+    },
+    {
+     "token": "The",
+     "logprob": -10.2404
+    },
+    {
+     "token": "ye",
+     "logprob": -10.9904
+    },
+    {
+     "token": "YES",
+     "logprob": -10.9904
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3029
+    },
+    {
+     "token": "yet",
+     "logprob": -11.8029
+    },
+    {
+     "token": "none",
+     "logprob": -12.1779
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3654
+    },
+    {
+     "token": " no",
+     "logprob": -12.4904
+    },
+    {
+     "token": "ans",
+     "logprob": -12.5529
+    },
+    {
+     "token": "not",
+     "logprob": -12.5529
+    },
+    {
+     "token": "nos",
+     "logprob": -12.6154
+    },
+    {
+     "token": "1",
+     "logprob": -12.7404
+    },
+    {
+     "token": "answer",
+     "logprob": -12.7404
+    }
+   ]
+  },
+  {
+   "id": "local-think-11",
+   "label": true,
+   "top": [
+    {
+     "token": "yes",
+     "logprob": -0.3896
+    },
+    {
+     "token": "no",
+     "logprob": -1.1396
+    },
+    {
+     "token": "Yes",
+     "logprob": -6.7646
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2646
+    },
+    {
+     "token": "y",
+     "logprob": -9.0146
+    },
+    {
+     "token": "No",
+     "logprob": -9.1396
+    },
+    {
+     "token": " yes",
+     "logprob": -9.2021
+    },
+    {
+     "token": "YES",
+     "logprob": -10.3271
+    },
+    {
+     "token": "The",
+     "logprob": -10.4521
+    },
+    {
+     "token": "ye",
+     "logprob": -10.7646
+    },
+    {
+     "token": "none",
+     "logprob": -11.2646
+    },
+    {
+     "token": "是的",
+     "logprob": -11.3271
+    },
+    {
+     "token": "nos",
+     "logprob": -11.3896
+    },
+    {
+     "token": "yet",
+     "logprob": -11.4521
+    },
+    {
+     "token": " no",
+     "logprob": -11.5771
+    },
+    {
+     "token": "answer",
+     "logprob": -11.8271
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.8896
+    },
+    {
+     "token": "ans",
+     "logprob": -11.9521
+    },
+    {
+     "token": "(no",
+     "logprob": -12.0146
+    },
+    {
+     "token": "not",
+     "logprob": -12.0771
+    }
+   ]
+  }
+ ],
+ "choice": [
+  {
+   "id": "msg-01",
+   "text": "My return was received last week. When does the money actually hit my card?",
+   "label": "refunds",
+   "top": [
+    {
+     "token": "A",
+     "logprob": -0.004
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.379
+    },
+    {
+     "token": "B",
+     "logprob": -6.754
+    },
+    {
+     "token": "C",
+     "logprob": -7.754
+    },
+    {
+     "token": "D",
+     "logprob": -8.504
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -8.629
+    },
+    {
+     "token": "E",
+     "logprob": -9.379
+    },
+    {
+     "token": " A",
+     "logprob": -10.254
+    },
+    {
+     "token": "F",
+     "logprob": -10.379
+    },
+    {
+     "token": "G",
+     "logprob": -11.129
+    },
+    {
+     "token": "I",
+     "logprob": -11.1915
+    },
+    {
+     "token": "H",
+     "logprob": -11.254
+    },
+    {
+     "token": "a",
+     "logprob": -12.0665
+    },
+    {
+     "token": "The",
+     "logprob": -12.1915
+    },
+    {
+     "token": "R",
+     "logprob": -12.254
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3165
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.379
+    },
+    {
+     "token": "(A",
+     "logprob": -12.4415
+    },
+    {
+     "token": "P",
+     "logprob": -12.6915
+    },
+    {
+     "token": "S",
+     "logprob": -12.754
+    }
+   ]
+  },
+  {
+   "id": "msg-02",
+   "text": "You refunded me $85 but I paid $100. Where is the other $15?",
+   "label": "refunds",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.2229
+    },
+    {
+     "token": "A",
+     "logprob": -1.7229
+    },
+    {
+     "token": "B",
+     "logprob": -4.3479
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.8479
+    },
+    {
+     "token": "E",
+     "logprob": -5.9729
+    },
+    {
+     "token": "C",
+     "logprob": -6.4729
+    },
+    {
+     "token": "F",
+     "logprob": -7.7229
+    },
+    {
+     "token": "H",
+     "logprob": -8.5979
+    },
+    {
+     "token": "I",
+     "logprob": -8.8479
+    },
+    {
+     "token": "G",
+     "logprob": -8.9729
+    },
+    {
+     "token": " D",
+     "logprob": -9.2854
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.4104
+    },
+    {
+     "token": " A",
+     "logprob": -10.9729
+    },
+    {
+     "token": "d",
+     "logprob": -11.0979
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.0979
+    },
+    {
+     "token": "The",
+     "logprob": -11.2229
+    },
+    {
+     "token": "S",
+     "logprob": -11.4104
+    },
+    {
+     "token": "R",
+     "logprob": -11.5979
+    },
+    {
+     "token": "N",
+     "logprob": -11.7229
+    },
+    {
+     "token": "P",
+     "logprob": -11.7854
+    }
+   ]
+  },
+  {
+   "id": "msg-03",
+   "text": "Can the refund go to a different card than the one I paid with?",
+   "label": "refunds",
+   "top": [
+    {
+     "token": "A",
+     "logprob": -0.006
+    },
+    {
+     "token": "D",
+     "logprob": -5.631
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.756
+    },
+    {
+     "token": "C",
+     "logprob": -7.881
+    },
+    {
+     "token": "B",
+     "logprob": -8.006
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -8.631
+    },
+    {
+     "token": "E",
+     "logprob": -9.131
+    },
+    {
+     "token": " A",
+     "logprob": -10.1935
+    },
+    {
+     "token": "F",
+     "logprob": -10.4435
+    },
+    {
+     "token": "H",
+     "logprob": -10.8185
+    },
+    {
+     "token": "G",
+     "logprob": -11.0685
+    },
+    {
+     "token": "I",
+     "logprob": -11.131
+    },
+    {
+     "token": "a",
+     "logprob": -12.0685
+    },
+    {
+     "token": "(A",
+     "logprob": -12.506
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.506
+    },
+    {
+     "token": "R",
+     "logprob": -12.5685
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.5685
+    },
+    {
+     "token": "The",
+     "logprob": -12.631
+    },
+    {
+     "token": "P",
+     "logprob": -12.6935
+    },
+    {
+     "token": "S",
+     "logprob": -12.8185
+    }
+   ]
+  },
+  {
+   "id": "msg-04",
+   "text": "I was told my refund was released on Monday and my bank still shows nothing.",
+   "label": "refunds",
+   "top": [
+    {
+     "token": "A",
+     "logprob": -0.0022
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.7522
+    },
+    {
+     "token": "B",
+     "logprob": -8.1272
+    },
+    {
+     "token": "C",
+     "logprob": -8.5022
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -8.6272
+    },
+    {
+     "token": "D",
+     "logprob": -8.7522
+    },
+    {
+     "token": "E",
+     "logprob": -9.6272
+    },
+    {
+     "token": "F",
+     "logprob": -10.7522
+    },
+    {
+     "token": " A",
+     "logprob": -10.7522
+    },
+    {
+     "token": "H",
+     "logprob": -11.3147
+    },
+    {
+     "token": "I",
+     "logprob": -11.3147
+    },
+    {
+     "token": "G",
+     "logprob": -11.5022
+    },
+    {
+     "token": "a",
+     "logprob": -12.0022
+    },
+    {
+     "token": "(A",
+     "logprob": -12.3772
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.5647
+    },
+    {
+     "token": "R",
+     "logprob": -12.6897
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.8147
+    },
+    {
+     "token": "The",
+     "logprob": -12.8772
+    },
+    {
+     "token": "P",
+     "logprob": -13.0022
+    },
+    {
+     "token": "S",
+     "logprob": -13.0647
+    }
+   ]
+  },
+  {
+   "id": "msg-05",
+   "text": "The order had two items and I only sent one back. How much will I get?",
+   "label": "refunds",
+   "top": [
+    {
+     "token": "A",
+     "logprob": -0.6998
+    },
+    {
+     "token": "B",
+     "logprob": -0.6998
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.5748
+    },
+    {
+     "token": "C",
+     "logprob": -6.4498
+    },
+    {
+     "token": "E",
+     "logprob": -7.9498
+    },
+    {
+     "token": "D",
+     "logprob": -8.5748
+    },
+    {
+     "token": "F",
+     "logprob": -8.8248
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -8.8248
+    },
+    {
+     "token": "G",
+     "logprob": -9.8248
+    },
+    {
+     "token": "H",
+     "logprob": -10.0123
+    },
+    {
+     "token": " B",
+     "logprob": -10.0123
+    },
+    {
+     "token": "I",
+     "logprob": -10.0748
+    },
+    {
+     "token": " A",
+     "logprob": -10.0748
+    },
+    {
+     "token": "R",
+     "logprob": -10.9498
+    },
+    {
+     "token": "The",
+     "logprob": -11.0123
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.1998
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.4498
+    },
+    {
+     "token": "P",
+     "logprob": -11.6998
+    },
+    {
+     "token": "S",
+     "logprob": -11.8873
+    },
+    {
+     "token": "b",
+     "logprob": -11.8873
+    }
+   ]
+  },
+  {
+   "id": "msg-06",
+   "text": "Shipping took forever, I gave up and sent it back, and now I want every dollar returned including what I paid for delivery.",
+   "label": "refunds",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.2066
+    },
+    {
+     "token": "A",
+     "logprob": -1.7066
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.9566
+    },
+    {
+     "token": "C",
+     "logprob": -6.5816
+    },
+    {
+     "token": "E",
+     "logprob": -7.8316
+    },
+    {
+     "token": "D",
+     "logprob": -8.0816
+    },
+    {
+     "token": "F",
+     "logprob": -9.3316
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.3316
+    },
+    {
+     "token": " B",
+     "logprob": -9.7691
+    },
+    {
+     "token": "H",
+     "logprob": -10.1441
+    },
+    {
+     "token": "G",
+     "logprob": -10.3316
+    },
+    {
+     "token": "I",
+     "logprob": -10.6441
+    },
+    {
+     "token": " A",
+     "logprob": -11.1441
+    },
+    {
+     "token": "The",
+     "logprob": -11.2691
+    },
+    {
+     "token": "R",
+     "logprob": -11.3941
+    },
+    {
+     "token": "b",
+     "logprob": -11.5191
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.8941
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9566
+    },
+    {
+     "token": "P",
+     "logprob": -12.0191
+    },
+    {
+     "token": "S",
+     "logprob": -12.0191
+    }
+   ]
+  },
+  {
+   "id": "msg-07",
+   "text": "How many days do I have to send back a blender I haven't opened?",
+   "label": "returns",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.001
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.626
+    },
+    {
+     "token": "A",
+     "logprob": -8.126
+    },
+    {
+     "token": "C",
+     "logprob": -9.751
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.501
+    },
+    {
+     "token": " B",
+     "logprob": -10.876
+    },
+    {
+     "token": "E",
+     "logprob": -11.501
+    },
+    {
+     "token": "I",
+     "logprob": -11.626
+    },
+    {
+     "token": "G",
+     "logprob": -12.1885
+    },
+    {
+     "token": "D",
+     "logprob": -12.3135
+    },
+    {
+     "token": "H",
+     "logprob": -12.5635
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.626
+    },
+    {
+     "token": "F",
+     "logprob": -12.8135
+    },
+    {
+     "token": "b",
+     "logprob": -12.876
+    },
+    {
+     "token": "The",
+     "logprob": -13.1885
+    },
+    {
+     "token": "(B",
+     "logprob": -13.3135
+    },
+    {
+     "token": "\"B",
+     "logprob": -13.3135
+    },
+    {
+     "token": "P",
+     "logprob": -13.4385
+    },
+    {
+     "token": "R",
+     "logprob": -13.5635
+    },
+    {
+     "token": "S",
+     "logprob": -13.751
+    }
+   ]
+  },
+  {
+   "id": "msg-08",
+   "text": "I opened the box but never used the grinder. Can I still return it?",
+   "label": "returns",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.0014
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2514
+    },
+    {
+     "token": "A",
+     "logprob": -7.7514
+    },
+    {
+     "token": "C",
+     "logprob": -9.8764
+    },
+    {
+     "token": " B",
+     "logprob": -9.8764
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.2514
+    },
+    {
+     "token": "E",
+     "logprob": -10.8764
+    },
+    {
+     "token": "I",
+     "logprob": -11.3139
+    },
+    {
+     "token": "G",
+     "logprob": -11.6889
+    },
+    {
+     "token": "H",
+     "logprob": -11.8139
+    },
+    {
+     "token": "D",
+     "logprob": -11.9389
+    },
+    {
+     "token": "F",
+     "logprob": -12.2514
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.2514
+    },
+    {
+     "token": "b",
+     "logprob": -12.3764
+    },
+    {
+     "token": "The",
+     "logprob": -12.5639
+    },
+    {
+     "token": "\"B",
+     "logprob": -12.8764
+    },
+    {
+     "token": "(B",
+     "logprob": -12.9389
+    },
+    {
+     "token": "R",
+     "logprob": -13.0639
+    },
+    {
+     "token": "P",
+     "logprob": -13.2514
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.3139
+    }
+   ]
+  },
+  {
+   "id": "msg-09",
+   "text": "Where do I get a prepaid label to send this kettle back?",
+   "label": "returns",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.0007
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.7507
+    },
+    {
+     "token": "A",
+     "logprob": -9.0007
+    },
+    {
+     "token": "C",
+     "logprob": -10.1257
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -11.0007
+    },
+    {
+     "token": " B",
+     "logprob": -11.2507
+    },
+    {
+     "token": "E",
+     "logprob": -11.8757
+    },
+    {
+     "token": "I",
+     "logprob": -12.2507
+    },
+    {
+     "token": "G",
+     "logprob": -12.7507
+    },
+    {
+     "token": "D",
+     "logprob": -12.8132
+    },
+    {
+     "token": "H",
+     "logprob": -13.1257
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.1257
+    },
+    {
+     "token": "F",
+     "logprob": -13.2507
+    },
+    {
+     "token": "b",
+     "logprob": -13.2507
+    },
+    {
+     "token": "The",
+     "logprob": -13.4382
+    },
+    {
+     "token": "(B",
+     "logprob": -13.4382
+    },
+    {
+     "token": "P",
+     "logprob": -13.5632
+    },
+    {
+     "token": "\"B",
+     "logprob": -13.6257
+    },
+    {
+     "token": "R",
+     "logprob": -13.7507
+    },
+    {
+     "token": "Answer",
+     "logprob": -14.0007
+    }
+   ]
+  },
+  {
+   "id": "msg-10",
+   "text": "The mug arrived cracked. Do I need to ship it back to you?",
+   "label": "returns",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.0186
+    },
+    {
+     "token": "A",
+     "logprob": -4.1436
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.3936
+    },
+    {
+     "token": "C",
+     "logprob": -7.8936
+    },
+    {
+     "token": "E",
+     "logprob": -8.7686
+    },
+    {
+     "token": "D",
+     "logprob": -9.8936
+    },
+    {
+     "token": "F",
+     "logprob": -10.0186
+    },
+    {
+     "token": " B",
+     "logprob": -10.0186
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.2061
+    },
+    {
+     "token": "H",
+     "logprob": -10.2686
+    },
+    {
+     "token": "G",
+     "logprob": -10.3311
+    },
+    {
+     "token": "I",
+     "logprob": -10.3936
+    },
+    {
+     "token": "The",
+     "logprob": -11.5811
+    },
+    {
+     "token": "R",
+     "logprob": -11.7061
+    },
+    {
+     "token": "b",
+     "logprob": -12.0186
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.0811
+    },
+    {
+     "token": "P",
+     "logprob": -12.2061
+    },
+    {
+     "token": "S",
+     "logprob": -12.2061
+    },
+    {
+     "token": "L",
+     "logprob": -12.4561
+    },
+    {
+     "token": "T",
+     "logprob": -12.4561
+    }
+   ]
+  },
+  {
+   "id": "msg-11",
+   "text": "Is there a fee for returning something that's been opened?",
+   "label": "returns",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.0013
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0013
+    },
+    {
+     "token": "A",
+     "logprob": -8.6263
+    },
+    {
+     "token": "C",
+     "logprob": -9.6263
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.6263
+    },
+    {
+     "token": "E",
+     "logprob": -10.8763
+    },
+    {
+     "token": " B",
+     "logprob": -11.1263
+    },
+    {
+     "token": "I",
+     "logprob": -11.5013
+    },
+    {
+     "token": "D",
+     "logprob": -11.8138
+    },
+    {
+     "token": "G",
+     "logprob": -11.8138
+    },
+    {
+     "token": "F",
+     "logprob": -12.0013
+    },
+    {
+     "token": "H",
+     "logprob": -12.0638
+    },
+    {
+     "token": "b",
+     "logprob": -12.5638
+    },
+    {
+     "token": "The",
+     "logprob": -12.6888
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.7513
+    },
+    {
+     "token": "(B",
+     "logprob": -12.9388
+    },
+    {
+     "token": "\"B",
+     "logprob": -13.0638
+    },
+    {
+     "token": "P",
+     "logprob": -13.2513
+    },
+    {
+     "token": "R",
+     "logprob": -13.2513
+    },
+    {
+     "token": "S",
+     "logprob": -13.4388
+    }
+   ]
+  },
+  {
+   "id": "msg-12",
+   "text": "My invoice shows a charge for a machine I want to send back. What's the process to ship it to you?",
+   "label": "returns",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.0029
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.8779
+    },
+    {
+     "token": "A",
+     "logprob": -7.0029
+    },
+    {
+     "token": "D",
+     "logprob": -7.5029
+    },
+    {
+     "token": "C",
+     "logprob": -8.6279
+    },
+    {
+     "token": " B",
+     "logprob": -9.8779
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.3779
+    },
+    {
+     "token": "E",
+     "logprob": -10.5029
+    },
+    {
+     "token": "I",
+     "logprob": -11.1904
+    },
+    {
+     "token": "G",
+     "logprob": -11.6904
+    },
+    {
+     "token": "The",
+     "logprob": -12.0654
+    },
+    {
+     "token": "H",
+     "logprob": -12.1279
+    },
+    {
+     "token": "F",
+     "logprob": -12.1904
+    },
+    {
+     "token": "b",
+     "logprob": -12.3154
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.6904
+    },
+    {
+     "token": "R",
+     "logprob": -12.7529
+    },
+    {
+     "token": "(B",
+     "logprob": -12.8154
+    },
+    {
+     "token": "P",
+     "logprob": -13.0029
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.0029
+    },
+    {
+     "token": "S",
+     "logprob": -13.1904
+    }
+   ]
+  },
+  {
+   "id": "msg-13",
+   "text": "I paid for expedited. What day should the package show up?",
+   "label": "shipping",
+   "top": [
+    {
+     "token": "C",
+     "logprob": -0.0049
+    },
+    {
+     "token": "A",
+     "logprob": -5.8799
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.7549
+    },
+    {
+     "token": "B",
+     "logprob": -7.7549
+    },
+    {
+     "token": "D",
+     "logprob": -8.3799
+    },
+    {
+     "token": "E",
+     "logprob": -9.1299
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.5049
+    },
+    {
+     "token": "I",
+     "logprob": -11.0674
+    },
+    {
+     "token": "G",
+     "logprob": -11.1299
+    },
+    {
+     "token": "F",
+     "logprob": -11.1924
+    },
+    {
+     "token": "H",
+     "logprob": -11.2549
+    },
+    {
+     "token": "c",
+     "logprob": -12.1299
+    },
+    {
+     "token": " C",
+     "logprob": -12.1299
+    },
+    {
+     "token": "P",
+     "logprob": -12.3799
+    },
+    {
+     "token": "(C",
+     "logprob": -12.6299
+    },
+    {
+     "token": "S",
+     "logprob": -12.7549
+    },
+    {
+     "token": "R",
+     "logprob": -12.8799
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.0674
+    },
+    {
+     "token": "M",
+     "logprob": -13.1299
+    },
+    {
+     "token": "L",
+     "logprob": -13.1924
+    }
+   ]
+  },
+  {
+   "id": "msg-14",
+   "text": "Tracking hasn't updated in four days. Is my order lost?",
+   "label": "shipping",
+   "top": [
+    {
+     "token": "C",
+     "logprob": -0.0017
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0017
+    },
+    {
+     "token": "A",
+     "logprob": -7.5017
+    },
+    {
+     "token": "B",
+     "logprob": -9.3767
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.2517
+    },
+    {
+     "token": "E",
+     "logprob": -10.3767
+    },
+    {
+     "token": "D",
+     "logprob": -11.2517
+    },
+    {
+     "token": "G",
+     "logprob": -11.5642
+    },
+    {
+     "token": "I",
+     "logprob": -11.8767
+    },
+    {
+     "token": "F",
+     "logprob": -11.9392
+    },
+    {
+     "token": "H",
+     "logprob": -11.9392
+    },
+    {
+     "token": " C",
+     "logprob": -12.3142
+    },
+    {
+     "token": "c",
+     "logprob": -12.3767
+    },
+    {
+     "token": "(C",
+     "logprob": -12.8142
+    },
+    {
+     "token": "P",
+     "logprob": -13.1267
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.1267
+    },
+    {
+     "token": "S",
+     "logprob": -13.3767
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.6892
+    },
+    {
+     "token": "R",
+     "logprob": -13.7517
+    },
+    {
+     "token": "K",
+     "logprob": -13.8142
+    }
+   ]
+  },
+  {
+   "id": "msg-15",
+   "text": "What's the cutoff time for an order to go out the same day?",
+   "label": "shipping",
+   "top": [
+    {
+     "token": "C",
+     "logprob": -0.0015
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2515
+    },
+    {
+     "token": "A",
+     "logprob": -7.3765
+    },
+    {
+     "token": "B",
+     "logprob": -9.2515
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.5015
+    },
+    {
+     "token": "E",
+     "logprob": -10.6265
+    },
+    {
+     "token": "D",
+     "logprob": -11.2515
+    },
+    {
+     "token": "G",
+     "logprob": -11.814
+    },
+    {
+     "token": "F",
+     "logprob": -12.189
+    },
+    {
+     "token": "H",
+     "logprob": -12.189
+    },
+    {
+     "token": "I",
+     "logprob": -12.2515
+    },
+    {
+     "token": " C",
+     "logprob": -12.2515
+    },
+    {
+     "token": "c",
+     "logprob": -12.5015
+    },
+    {
+     "token": "(C",
+     "logprob": -13.064
+    },
+    {
+     "token": "P",
+     "logprob": -13.189
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.3765
+    },
+    {
+     "token": "S",
+     "logprob": -13.564
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.7515
+    },
+    {
+     "token": "The",
+     "logprob": -13.814
+    },
+    {
+     "token": "M",
+     "logprob": -13.939
+    }
+   ]
+  },
+  {
+   "id": "msg-16",
+   "text": "Do you deliver to PO boxes in Alaska?",
+   "label": "shipping",
+   "top": [
+    {
+     "token": "C",
+     "logprob": -0.0316
+    },
+    {
+     "token": "A",
+     "logprob": -3.7816
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.6566
+    },
+    {
+     "token": "B",
+     "logprob": -6.0316
+    },
+    {
+     "token": "E",
+     "logprob": -7.1566
+    },
+    {
+     "token": "D",
+     "logprob": -7.7816
+    },
+    {
+     "token": "F",
+     "logprob": -7.7816
+    },
+    {
+     "token": "H",
+     "logprob": -8.2816
+    },
+    {
+     "token": "G",
+     "logprob": -8.6566
+    },
+    {
+     "token": "I",
+     "logprob": -9.4066
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.6566
+    },
+    {
+     "token": " C",
+     "logprob": -10.2816
+    },
+    {
+     "token": "P",
+     "logprob": -10.7816
+    },
+    {
+     "token": "S",
+     "logprob": -11.2191
+    },
+    {
+     "token": "c",
+     "logprob": -11.4066
+    },
+    {
+     "token": "The",
+     "logprob": -11.4691
+    },
+    {
+     "token": "K",
+     "logprob": -11.5941
+    },
+    {
+     "token": "R",
+     "logprob": -11.5941
+    },
+    {
+     "token": "M",
+     "logprob": -11.6566
+    },
+    {
+     "token": "L",
+     "logprob": -11.7816
+    }
+   ]
+  },
+  {
+   "id": "msg-17",
+   "text": "The carrier says delivered but there is nothing on my porch.",
+   "label": "shipping",
+   "top": [
+    {
+     "token": "C",
+     "logprob": -0.0226
+    },
+    {
+     "token": "A",
+     "logprob": -4.0226
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.0226
+    },
+    {
+     "token": "B",
+     "logprob": -7.0226
+    },
+    {
+     "token": "E",
+     "logprob": -7.5226
+    },
+    {
+     "token": "F",
+     "logprob": -8.8976
+    },
+    {
+     "token": "D",
+     "logprob": -9.1476
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.6476
+    },
+    {
+     "token": "G",
+     "logprob": -9.8976
+    },
+    {
+     "token": "H",
+     "logprob": -9.8976
+    },
+    {
+     "token": "I",
+     "logprob": -10.1476
+    },
+    {
+     "token": " C",
+     "logprob": -11.0851
+    },
+    {
+     "token": "c",
+     "logprob": -11.5226
+    },
+    {
+     "token": "P",
+     "logprob": -11.8351
+    },
+    {
+     "token": "The",
+     "logprob": -11.8351
+    },
+    {
+     "token": "S",
+     "logprob": -12.0226
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.2101
+    },
+    {
+     "token": "R",
+     "logprob": -12.2726
+    },
+    {
+     "token": "(C",
+     "logprob": -12.3351
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3976
+    }
+   ]
+  },
+  {
+   "id": "msg-18",
+   "text": "I returned one unit already. The replacement you sent hasn't moved since the label was created.",
+   "label": "shipping",
+   "top": [
+    {
+     "token": "B",
+     "logprob": -0.0291
+    },
+    {
+     "token": "C",
+     "logprob": -4.0291
+    },
+    {
+     "token": "A",
+     "logprob": -4.9041
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.1541
+    },
+    {
+     "token": "E",
+     "logprob": -7.2791
+    },
+    {
+     "token": "D",
+     "logprob": -8.9041
+    },
+    {
+     "token": "F",
+     "logprob": -8.9041
+    },
+    {
+     "token": "G",
+     "logprob": -9.5291
+    },
+    {
+     "token": "H",
+     "logprob": -9.5291
+    },
+    {
+     "token": "I",
+     "logprob": -9.7791
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.1541
+    },
+    {
+     "token": " B",
+     "logprob": -10.2166
+    },
+    {
+     "token": "R",
+     "logprob": -11.2166
+    },
+    {
+     "token": "The",
+     "logprob": -11.4666
+    },
+    {
+     "token": "P",
+     "logprob": -11.5916
+    },
+    {
+     "token": "L",
+     "logprob": -11.7791
+    },
+    {
+     "token": "S",
+     "logprob": -11.7791
+    },
+    {
+     "token": "b",
+     "logprob": -11.8416
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9041
+    },
+    {
+     "token": "M",
+     "logprob": -11.9666
+    }
+   ]
+  },
+  {
+   "id": "msg-19",
+   "text": "Why was my card declined on this month's invoice?",
+   "label": "billing",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.0009
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.5009
+    },
+    {
+     "token": "A",
+     "logprob": -8.8759
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.6259
+    },
+    {
+     "token": "B",
+     "logprob": -9.7509
+    },
+    {
+     "token": " D",
+     "logprob": -10.2509
+    },
+    {
+     "token": "C",
+     "logprob": -11.1259
+    },
+    {
+     "token": "I",
+     "logprob": -11.8134
+    },
+    {
+     "token": "E",
+     "logprob": -12.5634
+    },
+    {
+     "token": "d",
+     "logprob": -12.6259
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.6884
+    },
+    {
+     "token": "G",
+     "logprob": -13.0009
+    },
+    {
+     "token": "(D",
+     "logprob": -13.1259
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.5009
+    },
+    {
+     "token": "F",
+     "logprob": -13.6259
+    },
+    {
+     "token": "H",
+     "logprob": -13.6259
+    },
+    {
+     "token": "DP",
+     "logprob": -13.6884
+    },
+    {
+     "token": "\"D",
+     "logprob": -13.7509
+    },
+    {
+     "token": "The",
+     "logprob": -14.1259
+    },
+    {
+     "token": "S",
+     "logprob": -14.2509
+    }
+   ]
+  },
+  {
+   "id": "msg-20",
+   "text": "How many times will you retry the charge before you pause us?",
+   "label": "billing",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.0014
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.2514
+    },
+    {
+     "token": "A",
+     "logprob": -8.1264
+    },
+    {
+     "token": "B",
+     "logprob": -9.0014
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.3764
+    },
+    {
+     "token": "C",
+     "logprob": -10.1264
+    },
+    {
+     "token": " D",
+     "logprob": -10.1264
+    },
+    {
+     "token": "I",
+     "logprob": -11.1264
+    },
+    {
+     "token": "E",
+     "logprob": -11.2514
+    },
+    {
+     "token": "G",
+     "logprob": -12.0014
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.0639
+    },
+    {
+     "token": "d",
+     "logprob": -12.3139
+    },
+    {
+     "token": "F",
+     "logprob": -12.4389
+    },
+    {
+     "token": "(D",
+     "logprob": -12.6264
+    },
+    {
+     "token": "H",
+     "logprob": -12.8139
+    },
+    {
+     "token": "The",
+     "logprob": -13.3139
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.3139
+    },
+    {
+     "token": "DP",
+     "logprob": -13.4389
+    },
+    {
+     "token": "S",
+     "logprob": -13.5014
+    },
+    {
+     "token": "P",
+     "logprob": -13.8764
+    }
+   ]
+  },
+  {
+   "id": "msg-21",
+   "text": "We were charged twice for November. Please fix the invoice.",
+   "label": "billing",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.0021
+    },
+    {
+     "token": "A",
+     "logprob": -6.8771
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3771
+    },
+    {
+     "token": "B",
+     "logprob": -8.6271
+    },
+    {
+     "token": " D",
+     "logprob": -9.1271
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.2521
+    },
+    {
+     "token": "C",
+     "logprob": -10.5021
+    },
+    {
+     "token": "I",
+     "logprob": -11.1271
+    },
+    {
+     "token": "E",
+     "logprob": -11.5021
+    },
+    {
+     "token": "d",
+     "logprob": -12.0646
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3146
+    },
+    {
+     "token": "G",
+     "logprob": -12.5646
+    },
+    {
+     "token": "(D",
+     "logprob": -12.7521
+    },
+    {
+     "token": "H",
+     "logprob": -12.9396
+    },
+    {
+     "token": "F",
+     "logprob": -13.0646
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.1271
+    },
+    {
+     "token": "\"D",
+     "logprob": -13.3146
+    },
+    {
+     "token": "The",
+     "logprob": -13.4396
+    },
+    {
+     "token": "S",
+     "logprob": -13.5021
+    },
+    {
+     "token": "DP",
+     "logprob": -13.5021
+    }
+   ]
+  },
+  {
+   "id": "msg-22",
+   "text": "Where can I download a PDF of last month's invoice?",
+   "label": "billing",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.0103
+    },
+    {
+     "token": "A",
+     "logprob": -5.1353
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.0103
+    },
+    {
+     "token": "B",
+     "logprob": -6.8853
+    },
+    {
+     "token": "C",
+     "logprob": -8.1353
+    },
+    {
+     "token": "E",
+     "logprob": -8.6353
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.2603
+    },
+    {
+     "token": " D",
+     "logprob": -9.3853
+    },
+    {
+     "token": "I",
+     "logprob": -9.7603
+    },
+    {
+     "token": "G",
+     "logprob": -10.1353
+    },
+    {
+     "token": "H",
+     "logprob": -10.1978
+    },
+    {
+     "token": "F",
+     "logprob": -10.4478
+    },
+    {
+     "token": "d",
+     "logprob": -11.4478
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.6353
+    },
+    {
+     "token": "The",
+     "logprob": -12.1353
+    },
+    {
+     "token": "(D",
+     "logprob": -12.3228
+    },
+    {
+     "token": "S",
+     "logprob": -12.3853
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.4478
+    },
+    {
+     "token": "M",
+     "logprob": -12.6353
+    },
+    {
+     "token": "P",
+     "logprob": -12.6353
+    }
+   ]
+  },
+  {
+   "id": "msg-23",
+   "text": "Our account says paused. What do we need to pay to get it back?",
+   "label": "billing",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.0009
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3759
+    },
+    {
+     "token": "A",
+     "logprob": -9.3759
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.5009
+    },
+    {
+     "token": " D",
+     "logprob": -9.8759
+    },
+    {
+     "token": "B",
+     "logprob": -10.2509
+    },
+    {
+     "token": "C",
+     "logprob": -11.0009
+    },
+    {
+     "token": "I",
+     "logprob": -11.8134
+    },
+    {
+     "token": "G",
+     "logprob": -11.8759
+    },
+    {
+     "token": "E",
+     "logprob": -12.0009
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.4384
+    },
+    {
+     "token": "d",
+     "logprob": -12.5634
+    },
+    {
+     "token": "H",
+     "logprob": -13.0634
+    },
+    {
+     "token": "(D",
+     "logprob": -13.1884
+    },
+    {
+     "token": "F",
+     "logprob": -13.5009
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.5009
+    },
+    {
+     "token": "The",
+     "logprob": -13.6884
+    },
+    {
+     "token": "DP",
+     "logprob": -13.8134
+    },
+    {
+     "token": "\"D",
+     "logprob": -13.9384
+    },
+    {
+     "token": "S",
+     "logprob": -14.0009
+    }
+   ]
+  },
+  {
+   "id": "msg-24",
+   "text": "Our API calls started returning 402 this morning. Did a payment fail?",
+   "label": "billing",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.025
+    },
+    {
+     "token": "F",
+     "logprob": -4.525
+    },
+    {
+     "token": "A",
+     "logprob": -5.025
+    },
+    {
+     "token": "B",
+     "logprob": -5.9
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.9
+    },
+    {
+     "token": "E",
+     "logprob": -7.275
+    },
+    {
+     "token": "C",
+     "logprob": -7.9
+    },
+    {
+     "token": "G",
+     "logprob": -8.775
+    },
+    {
+     "token": "I",
+     "logprob": -8.9
+    },
+    {
+     "token": " D",
+     "logprob": -9.275
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.4
+    },
+    {
+     "token": "H",
+     "logprob": -9.4625
+    },
+    {
+     "token": "Answer",
+     "logprob": -10.775
+    },
+    {
+     "token": "d",
+     "logprob": -11.525
+    },
+    {
+     "token": "The",
+     "logprob": -11.7125
+    },
+    {
+     "token": "P",
+     "logprob": -11.775
+    },
+    {
+     "token": "S",
+     "logprob": -11.775
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.15
+    },
+    {
+     "token": "L",
+     "logprob": -12.275
+    },
+    {
+     "token": "N",
+     "logprob": -12.275
+    }
+   ]
+  },
+  {
+   "id": "msg-25",
+   "text": "Your service was down for hours in October. What are we owed?",
+   "label": "sla",
+   "top": [
+    {
+     "token": "E",
+     "logprob": -0.0045
+    },
+    {
+     "token": "A",
+     "logprob": -5.7545
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0045
+    },
+    {
+     "token": "C",
+     "logprob": -9.1295
+    },
+    {
+     "token": "B",
+     "logprob": -9.2545
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.0045
+    },
+    {
+     "token": "F",
+     "logprob": -10.692
+    },
+    {
+     "token": "D",
+     "logprob": -10.942
+    },
+    {
+     "token": "G",
+     "logprob": -10.942
+    },
+    {
+     "token": "I",
+     "logprob": -10.942
+    },
+    {
+     "token": "H",
+     "logprob": -11.067
+    },
+    {
+     "token": "e",
+     "logprob": -11.5045
+    },
+    {
+     "token": " E",
+     "logprob": -11.692
+    },
+    {
+     "token": "(E",
+     "logprob": -12.1295
+    },
+    {
+     "token": "S",
+     "logprob": -12.3795
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.3795
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.7545
+    },
+    {
+     "token": "R",
+     "logprob": -12.817
+    },
+    {
+     "token": "P",
+     "logprob": -12.8795
+    },
+    {
+     "token": "\"E",
+     "logprob": -12.8795
+    }
+   ]
+  },
+  {
+   "id": "msg-26",
+   "text": "What uptime do you guarantee on the Pro plan?",
+   "label": "sla",
+   "top": [
+    {
+     "token": "E",
+     "logprob": -0.0018
+    },
+    {
+     "token": "A",
+     "logprob": -7.0018
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3768
+    },
+    {
+     "token": "C",
+     "logprob": -9.7518
+    },
+    {
+     "token": "B",
+     "logprob": -10.2518
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.3768
+    },
+    {
+     "token": "D",
+     "logprob": -11.3143
+    },
+    {
+     "token": "I",
+     "logprob": -11.5018
+    },
+    {
+     "token": "F",
+     "logprob": -11.5643
+    },
+    {
+     "token": "G",
+     "logprob": -11.6893
+    },
+    {
+     "token": " E",
+     "logprob": -11.8143
+    },
+    {
+     "token": "H",
+     "logprob": -12.1268
+    },
+    {
+     "token": "e",
+     "logprob": -12.1893
+    },
+    {
+     "token": "(E",
+     "logprob": -12.5018
+    },
+    {
+     "token": "S",
+     "logprob": -12.8768
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.0643
+    },
+    {
+     "token": "\"E",
+     "logprob": -13.1893
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.1893
+    },
+    {
+     "token": "P",
+     "logprob": -13.5018
+    },
+    {
+     "token": "R",
+     "logprob": -13.6268
+    }
+   ]
+  },
+  {
+   "id": "msg-27",
+   "text": "Does scheduled maintenance count against the uptime number?",
+   "label": "sla",
+   "top": [
+    {
+     "token": "E",
+     "logprob": -0.0026
+    },
+    {
+     "token": "A",
+     "logprob": -6.5026
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.1276
+    },
+    {
+     "token": "C",
+     "logprob": -9.5026
+    },
+    {
+     "token": "B",
+     "logprob": -9.7526
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.1276
+    },
+    {
+     "token": "F",
+     "logprob": -10.6901
+    },
+    {
+     "token": "D",
+     "logprob": -11.0651
+    },
+    {
+     "token": "G",
+     "logprob": -11.1276
+    },
+    {
+     "token": "I",
+     "logprob": -11.3151
+    },
+    {
+     "token": "H",
+     "logprob": -11.5651
+    },
+    {
+     "token": "e",
+     "logprob": -11.8151
+    },
+    {
+     "token": " E",
+     "logprob": -11.8776
+    },
+    {
+     "token": "(E",
+     "logprob": -12.1276
+    },
+    {
+     "token": "S",
+     "logprob": -12.5651
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.5651
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.8776
+    },
+    {
+     "token": "\"E",
+     "logprob": -13.0651
+    },
+    {
+     "token": "P",
+     "logprob": -13.1276
+    },
+    {
+     "token": "R",
+     "logprob": -13.3151
+    }
+   ]
+  },
+  {
+   "id": "msg-28",
+   "text": "How is the monthly uptime percentage calculated?",
+   "label": "sla",
+   "top": [
+    {
+     "token": "E",
+     "logprob": -0.0018
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0018
+    },
+    {
+     "token": "A",
+     "logprob": -7.2518
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.8769
+    },
+    {
+     "token": "C",
+     "logprob": -10.0019
+    },
+    {
+     "token": "B",
+     "logprob": -10.5019
+    },
+    {
+     "token": "F",
+     "logprob": -11.5019
+    },
+    {
+     "token": "I",
+     "logprob": -11.5644
+    },
+    {
+     "token": "G",
+     "logprob": -11.6269
+    },
+    {
+     "token": "D",
+     "logprob": -11.6894
+    },
+    {
+     "token": "e",
+     "logprob": -11.7519
+    },
+    {
+     "token": "H",
+     "logprob": -11.8144
+    },
+    {
+     "token": " E",
+     "logprob": -12.0019
+    },
+    {
+     "token": "(E",
+     "logprob": -12.1894
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.5644
+    },
+    {
+     "token": "S",
+     "logprob": -12.6894
+    },
+    {
+     "token": "\"E",
+     "logprob": -12.8144
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.8769
+    },
+    {
+     "token": "P",
+     "logprob": -13.2519
+    },
+    {
+     "token": "R",
+     "logprob": -13.4394
+    }
+   ]
+  },
+  {
+   "id": "msg-29",
+   "text": "We had three outages this quarter. Is there a credit for that?",
+   "label": "sla",
+   "top": [
+    {
+     "token": "E",
+     "logprob": -0.0017
+    },
+    {
+     "token": "A",
+     "logprob": -7.1267
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3767
+    },
+    {
+     "token": "C",
+     "logprob": -9.8767
+    },
+    {
+     "token": "B",
+     "logprob": -10.1267
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.3767
+    },
+    {
+     "token": "D",
+     "logprob": -11.1267
+    },
+    {
+     "token": "F",
+     "logprob": -11.1892
+    },
+    {
+     "token": "I",
+     "logprob": -11.3767
+    },
+    {
+     "token": "G",
+     "logprob": -11.5642
+    },
+    {
+     "token": "H",
+     "logprob": -11.7517
+    },
+    {
+     "token": "e",
+     "logprob": -11.8142
+    },
+    {
+     "token": " E",
+     "logprob": -11.8142
+    },
+    {
+     "token": "(E",
+     "logprob": -12.0642
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.5642
+    },
+    {
+     "token": "S",
+     "logprob": -12.8142
+    },
+    {
+     "token": "\"E",
+     "logprob": -13.0017
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.1892
+    },
+    {
+     "token": "P",
+     "logprob": -13.3767
+    },
+    {
+     "token": "R",
+     "logprob": -13.5017
+    }
+   ]
+  },
+  {
+   "id": "msg-30",
+   "text": "The credit on our invoice for last month's outage looks too small. Which tier did you apply?",
+   "label": "sla",
+   "top": [
+    {
+     "token": "E",
+     "logprob": -0.0085
+    },
+    {
+     "token": "A",
+     "logprob": -5.1335
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.6335
+    },
+    {
+     "token": "D",
+     "logprob": -7.8835
+    },
+    {
+     "token": "C",
+     "logprob": -8.1335
+    },
+    {
+     "token": "B",
+     "logprob": -8.2585
+    },
+    {
+     "token": "F",
+     "logprob": -9.3835
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.196
+    },
+    {
+     "token": "G",
+     "logprob": -10.2585
+    },
+    {
+     "token": "I",
+     "logprob": -10.2585
+    },
+    {
+     "token": "H",
+     "logprob": -10.321
+    },
+    {
+     "token": " E",
+     "logprob": -11.196
+    },
+    {
+     "token": "e",
+     "logprob": -11.321
+    },
+    {
+     "token": "(E",
+     "logprob": -11.696
+    },
+    {
+     "token": "S",
+     "logprob": -11.7585
+    },
+    {
+     "token": "Answer",
+     "logprob": -11.8835
+    },
+    {
+     "token": "P",
+     "logprob": -12.5085
+    },
+    {
+     "token": "R",
+     "logprob": -12.696
+    },
+    {
+     "token": "The",
+     "logprob": -12.696
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.7585
+    }
+   ]
+  },
+  {
+   "id": "msg-31",
+   "text": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "label": "rate_limits",
+   "top": [
+    {
+     "token": "F",
+     "logprob": -0.0013
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.8763
+    },
+    {
+     "token": "B",
+     "logprob": -9.5013
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.7513
+    },
+    {
+     "token": "A",
+     "logprob": -10.3763
+    },
+    {
+     "token": "E",
+     "logprob": -10.5013
+    },
+    {
+     "token": " F",
+     "logprob": -10.6263
+    },
+    {
+     "token": "C",
+     "logprob": -11.0013
+    },
+    {
+     "token": "G",
+     "logprob": -11.1263
+    },
+    {
+     "token": "I",
+     "logprob": -11.5013
+    },
+    {
+     "token": "f",
+     "logprob": -11.6263
+    },
+    {
+     "token": "D",
+     "logprob": -12.5013
+    },
+    {
+     "token": "H",
+     "logprob": -12.6888
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.0013
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.1263
+    },
+    {
+     "token": "\"F",
+     "logprob": -13.1888
+    },
+    {
+     "token": "P",
+     "logprob": -13.3138
+    },
+    {
+     "token": "(F",
+     "logprob": -13.4388
+    },
+    {
+     "token": "S",
+     "logprob": -13.6888
+    },
+    {
+     "token": "The",
+     "logprob": -13.9388
+    }
+   ]
+  },
+  {
+   "id": "msg-32",
+   "text": "How many concurrent connections can one production key open?",
+   "label": "rate_limits",
+   "top": [
+    {
+     "token": "F",
+     "logprob": -0.002
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.627
+    },
+    {
+     "token": "A",
+     "logprob": -8.502
+    },
+    {
+     "token": "B",
+     "logprob": -9.127
+    },
+    {
+     "token": "E",
+     "logprob": -9.377
+    },
+    {
+     "token": "C",
+     "logprob": -9.752
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.877
+    },
+    {
+     "token": "G",
+     "logprob": -10.377
+    },
+    {
+     "token": " F",
+     "logprob": -10.502
+    },
+    {
+     "token": "I",
+     "logprob": -11.002
+    },
+    {
+     "token": "f",
+     "logprob": -11.5645
+    },
+    {
+     "token": "D",
+     "logprob": -11.6895
+    },
+    {
+     "token": "H",
+     "logprob": -11.8145
+    },
+    {
+     "token": "P",
+     "logprob": -12.6895
+    },
+    {
+     "token": "S",
+     "logprob": -13.3145
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.4395
+    },
+    {
+     "token": "\"F",
+     "logprob": -13.4395
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.4395
+    },
+    {
+     "token": "R",
+     "logprob": -13.5645
+    },
+    {
+     "token": "(F",
+     "logprob": -13.5645
+    }
+   ]
+  },
+  {
+   "id": "msg-33",
+   "text": "Can you raise our requests-per-minute ceiling?",
+   "label": "rate_limits",
+   "top": [
+    {
+     "token": "F",
+     "logprob": -0.0015
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.8765
+    },
+    {
+     "token": "A",
+     "logprob": -9.0015
+    },
+    {
+     "token": "B",
+     "logprob": -9.3765
+    },
+    {
+     "token": "E",
+     "logprob": -9.7515
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.8765
+    },
+    {
+     "token": "C",
+     "logprob": -10.2515
+    },
+    {
+     "token": " F",
+     "logprob": -10.8765
+    },
+    {
+     "token": "G",
+     "logprob": -11.0015
+    },
+    {
+     "token": "D",
+     "logprob": -11.5015
+    },
+    {
+     "token": "I",
+     "logprob": -11.7515
+    },
+    {
+     "token": "f",
+     "logprob": -11.8765
+    },
+    {
+     "token": "H",
+     "logprob": -12.564
+    },
+    {
+     "token": "P",
+     "logprob": -13.1265
+    },
+    {
+     "token": "\"F",
+     "logprob": -13.2515
+    },
+    {
+     "token": "(F",
+     "logprob": -13.3765
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.3765
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.7515
+    },
+    {
+     "token": "S",
+     "logprob": -13.8765
+    },
+    {
+     "token": "R",
+     "logprob": -14.064
+    }
+   ]
+  },
+  {
+   "id": "msg-34",
+   "text": "What does the Retry-After header mean on a 429?",
+   "label": "rate_limits",
+   "top": [
+    {
+     "token": "F",
+     "logprob": -0.0018
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.6268
+    },
+    {
+     "token": "B",
+     "logprob": -8.6268
+    },
+    {
+     "token": "A",
+     "logprob": -9.1268
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.1268
+    },
+    {
+     "token": "E",
+     "logprob": -10.2518
+    },
+    {
+     "token": "C",
+     "logprob": -10.3768
+    },
+    {
+     "token": "G",
+     "logprob": -10.5018
+    },
+    {
+     "token": " F",
+     "logprob": -10.7518
+    },
+    {
+     "token": "I",
+     "logprob": -11.2518
+    },
+    {
+     "token": "D",
+     "logprob": -11.3768
+    },
+    {
+     "token": "f",
+     "logprob": -11.6268
+    },
+    {
+     "token": "H",
+     "logprob": -12.0643
+    },
+    {
+     "token": "P",
+     "logprob": -13.0018
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.1268
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.3143
+    },
+    {
+     "token": "\"F",
+     "logprob": -13.3768
+    },
+    {
+     "token": "(F",
+     "logprob": -13.5018
+    },
+    {
+     "token": "S",
+     "logprob": -13.6893
+    },
+    {
+     "token": "R",
+     "logprob": -13.8768
+    }
+   ]
+  },
+  {
+   "id": "msg-35",
+   "text": "Do sandbox keys have the same limit as production keys?",
+   "label": "rate_limits",
+   "top": [
+    {
+     "token": "F",
+     "logprob": -0.0025
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.5025
+    },
+    {
+     "token": "A",
+     "logprob": -7.8775
+    },
+    {
+     "token": "B",
+     "logprob": -8.5025
+    },
+    {
+     "token": "E",
+     "logprob": -9.0025
+    },
+    {
+     "token": "C",
+     "logprob": -9.2525
+    },
+    {
+     "token": "G",
+     "logprob": -9.8775
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.8775
+    },
+    {
+     "token": "D",
+     "logprob": -10.5025
+    },
+    {
+     "token": " F",
+     "logprob": -10.5025
+    },
+    {
+     "token": "I",
+     "logprob": -10.8775
+    },
+    {
+     "token": "f",
+     "logprob": -11.44
+    },
+    {
+     "token": "H",
+     "logprob": -11.5025
+    },
+    {
+     "token": "P",
+     "logprob": -12.565
+    },
+    {
+     "token": "S",
+     "logprob": -13.0025
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.0025
+    },
+    {
+     "token": "</think>",
+     "logprob": -13.0025
+    },
+    {
+     "token": "The",
+     "logprob": -13.065
+    },
+    {
+     "token": "(F",
+     "logprob": -13.19
+    },
+    {
+     "token": "R",
+     "logprob": -13.2525
+    }
+   ]
+  },
+  {
+   "id": "msg-36",
+   "text": "I reset my password and now I'm wondering whether my API tokens were rotated too, because requests are being throttled.",
+   "label": "rate_limits",
+   "top": [
+    {
+     "token": "F",
+     "logprob": -0.0059
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.0059
+    },
+    {
+     "token": "G",
+     "logprob": -6.6309
+    },
+    {
+     "token": "A",
+     "logprob": -7.3809
+    },
+    {
+     "token": "E",
+     "logprob": -7.6309
+    },
+    {
+     "token": "B",
+     "logprob": -7.7559
+    },
+    {
+     "token": "C",
+     "logprob": -8.7559
+    },
+    {
+     "token": "H",
+     "logprob": -9.5059
+    },
+    {
+     "token": "D",
+     "logprob": -9.6309
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.8809
+    },
+    {
+     "token": "I",
+     "logprob": -10.0059
+    },
+    {
+     "token": " F",
+     "logprob": -10.5059
+    },
+    {
+     "token": "f",
+     "logprob": -10.8809
+    },
+    {
+     "token": "P",
+     "logprob": -11.8809
+    },
+    {
+     "token": "S",
+     "logprob": -12.3184
+    },
+    {
+     "token": "L",
+     "logprob": -12.5684
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.5684
+    },
+    {
+     "token": "R",
+     "logprob": -12.6309
+    },
+    {
+     "token": "N",
+     "logprob": -12.7559
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.7559
+    }
+   ]
+  },
+  {
+   "id": "msg-37",
+   "text": "I'm locked out after too many password attempts. How long until I can try again?",
+   "label": "account_access",
+   "top": [
+    {
+     "token": "G",
+     "logprob": -0.0018
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.0018
+    },
+    {
+     "token": "A",
+     "logprob": -8.0018
+    },
+    {
+     "token": "E",
+     "logprob": -8.7518
+    },
+    {
+     "token": "F",
+     "logprob": -8.8768
+    },
+    {
+     "token": "C",
+     "logprob": -9.8768
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.0018
+    },
+    {
+     "token": "B",
+     "logprob": -10.2518
+    },
+    {
+     "token": "H",
+     "logprob": -10.2518
+    },
+    {
+     "token": "I",
+     "logprob": -10.5018
+    },
+    {
+     "token": "D",
+     "logprob": -11.0018
+    },
+    {
+     "token": " G",
+     "logprob": -11.2518
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.9393
+    },
+    {
+     "token": "(G",
+     "logprob": -12.8143
+    },
+    {
+     "token": "g",
+     "logprob": -13.0018
+    },
+    {
+     "token": "S",
+     "logprob": -13.1268
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.1268
+    },
+    {
+     "token": "P",
+     "logprob": -13.1893
+    },
+    {
+     "token": "\"G",
+     "logprob": -13.3143
+    },
+    {
+     "token": "K",
+     "logprob": -13.4393
+    }
+   ]
+  },
+  {
+   "id": "msg-38",
+   "text": "The reset link you emailed says it expired.",
+   "label": "account_access",
+   "top": [
+    {
+     "token": "A",
+     "logprob": -1.0599
+    },
+    {
+     "token": "D",
+     "logprob": -1.3099
+    },
+    {
+     "token": "G",
+     "logprob": -2.1849
+    },
+    {
+     "token": "B",
+     "logprob": -2.4349
+    },
+    {
+     "token": "E",
+     "logprob": -2.6849
+    },
+    {
+     "token": "F",
+     "logprob": -3.0599
+    },
+    {
+     "token": "C",
+     "logprob": -3.1849
+    },
+    {
+     "token": "H",
+     "logprob": -4.0599
+    },
+    {
+     "token": "<think>",
+     "logprob": -4.9349
+    },
+    {
+     "token": "I",
+     "logprob": -6.6849
+    },
+    {
+     "token": "None",
+     "logprob": -7.9349
+    },
+    {
+     "token": "N",
+     "logprob": -9.4349
+    },
+    {
+     "token": "L",
+     "logprob": -9.7474
+    },
+    {
+     "token": "J",
+     "logprob": -9.8099
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.8099
+    },
+    {
+     "token": "S",
+     "logprob": -9.8724
+    },
+    {
+     "token": "P",
+     "logprob": -9.9349
+    },
+    {
+     "token": "The",
+     "logprob": -9.9974
+    },
+    {
+     "token": "K",
+     "logprob": -10.1849
+    },
+    {
+     "token": "R",
+     "logprob": -10.1849
+    }
+   ]
+  },
+  {
+   "id": "msg-39",
+   "text": "I lost my phone and can't get my two-factor code.",
+   "label": "account_access",
+   "top": [
+    {
+     "token": "G",
+     "logprob": -0.0022
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.8772
+    },
+    {
+     "token": "A",
+     "logprob": -7.2522
+    },
+    {
+     "token": "E",
+     "logprob": -9.0022
+    },
+    {
+     "token": "C",
+     "logprob": -9.3772
+    },
+    {
+     "token": "B",
+     "logprob": -9.5022
+    },
+    {
+     "token": "H",
+     "logprob": -9.8772
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.0022
+    },
+    {
+     "token": "I",
+     "logprob": -10.5022
+    },
+    {
+     "token": "F",
+     "logprob": -10.6272
+    },
+    {
+     "token": "D",
+     "logprob": -11.0022
+    },
+    {
+     "token": " G",
+     "logprob": -11.0022
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.1272
+    },
+    {
+     "token": "(G",
+     "logprob": -12.6897
+    },
+    {
+     "token": "g",
+     "logprob": -12.8772
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.0022
+    },
+    {
+     "token": "P",
+     "logprob": -13.1272
+    },
+    {
+     "token": "S",
+     "logprob": -13.1272
+    },
+    {
+     "token": "\"G",
+     "logprob": -13.2522
+    },
+    {
+     "token": "K",
+     "logprob": -13.3147
+    }
+   ]
+  },
+  {
+   "id": "msg-40",
+   "text": "Can support turn off 2FA for my login?",
+   "label": "account_access",
+   "top": [
+    {
+     "token": "G",
+     "logprob": -0.0013
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3763
+    },
+    {
+     "token": "A",
+     "logprob": -7.8763
+    },
+    {
+     "token": "C",
+     "logprob": -9.6263
+    },
+    {
+     "token": "E",
+     "logprob": -10.0013
+    },
+    {
+     "token": "B",
+     "logprob": -10.2513
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.3763
+    },
+    {
+     "token": "H",
+     "logprob": -10.7513
+    },
+    {
+     "token": "F",
+     "logprob": -11.0013
+    },
+    {
+     "token": "I",
+     "logprob": -11.0013
+    },
+    {
+     "token": " G",
+     "logprob": -11.2513
+    },
+    {
+     "token": "D",
+     "logprob": -11.6263
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.6263
+    },
+    {
+     "token": "(G",
+     "logprob": -13.0638
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.2513
+    },
+    {
+     "token": "S",
+     "logprob": -13.4388
+    },
+    {
+     "token": "g",
+     "logprob": -13.4388
+    },
+    {
+     "token": "P",
+     "logprob": -13.5013
+    },
+    {
+     "token": "\"G",
+     "logprob": -13.5638
+    },
+    {
+     "token": "K",
+     "logprob": -13.6888
+    }
+   ]
+  },
+  {
+   "id": "msg-41",
+   "text": "How many wrong passwords before the account locks?",
+   "label": "account_access",
+   "top": [
+    {
+     "token": "G",
+     "logprob": -0.0017
+    },
+    {
+     "token": "A",
+     "logprob": -7.3767
+    },
+    {
+     "token": "<think>",
+     "logprob": -7.3767
+    },
+    {
+     "token": "E",
+     "logprob": -9.0017
+    },
+    {
+     "token": "C",
+     "logprob": -9.7517
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -10.0017
+    },
+    {
+     "token": "B",
+     "logprob": -10.2517
+    },
+    {
+     "token": "F",
+     "logprob": -10.2517
+    },
+    {
+     "token": " G",
+     "logprob": -10.5017
+    },
+    {
+     "token": "D",
+     "logprob": -10.7517
+    },
+    {
+     "token": "I",
+     "logprob": -10.8767
+    },
+    {
+     "token": "H",
+     "logprob": -11.0017
+    },
+    {
+     "token": "</think>",
+     "logprob": -12.3767
+    },
+    {
+     "token": "(G",
+     "logprob": -12.6892
+    },
+    {
+     "token": "g",
+     "logprob": -13.0017
+    },
+    {
+     "token": "Answer",
+     "logprob": -13.1267
+    },
+    {
+     "token": "P",
+     "logprob": -13.3142
+    },
+    {
+     "token": "S",
+     "logprob": -13.3767
+    },
+    {
+     "token": "\"G",
+     "logprob": -13.5642
+    },
+    {
+     "token": "K",
+     "logprob": -13.6892
+    }
+   ]
+  },
+  {
+   "id": "msg-42",
+   "text": "I can't sign in to download my invoice. It says my account is locked.",
+   "label": "account_access",
+   "top": [
+    {
+     "token": "G",
+     "logprob": -0.0083
+    },
+    {
+     "token": "A",
+     "logprob": -5.8833
+    },
+    {
+     "token": "D",
+     "logprob": -6.0083
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.2583
+    },
+    {
+     "token": "C",
+     "logprob": -8.1333
+    },
+    {
+     "token": "B",
+     "logprob": -8.2583
+    },
+    {
+     "token": "H",
+     "logprob": -8.6333
+    },
+    {
+     "token": "E",
+     "logprob": -9.1333
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.5083
+    },
+    {
+     "token": "I",
+     "logprob": -9.6333
+    },
+    {
+     "token": "F",
+     "logprob": -10.1333
+    },
+    {
+     "token": " G",
+     "logprob": -10.3833
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.8208
+    },
+    {
+     "token": "Answer",
+     "logprob": -12.1333
+    },
+    {
+     "token": "g",
+     "logprob": -12.2583
+    },
+    {
+     "token": "(G",
+     "logprob": -12.2583
+    },
+    {
+     "token": "S",
+     "logprob": -12.3833
+    },
+    {
+     "token": "K",
+     "logprob": -12.4458
+    },
+    {
+     "token": "P",
+     "logprob": -12.5708
+    },
+    {
+     "token": "L",
+     "logprob": -12.6333
+    }
+   ]
+  },
+  {
+   "id": "msg-43",
+   "text": "How long do you keep our invoices after we close the account?",
+   "label": "data_retention",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.1408
+    },
+    {
+     "token": "H",
+     "logprob": -2.2658
+    },
+    {
+     "token": "A",
+     "logprob": -4.1408
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.3908
+    },
+    {
+     "token": "B",
+     "logprob": -5.7658
+    },
+    {
+     "token": "E",
+     "logprob": -6.6408
+    },
+    {
+     "token": "C",
+     "logprob": -7.0158
+    },
+    {
+     "token": "G",
+     "logprob": -7.5158
+    },
+    {
+     "token": "I",
+     "logprob": -7.5158
+    },
+    {
+     "token": "F",
+     "logprob": -8.5158
+    },
+    {
+     "token": " D",
+     "logprob": -9.1408
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.3908
+    },
+    {
+     "token": "J",
+     "logprob": -10.8283
+    },
+    {
+     "token": "S",
+     "logprob": -10.8908
+    },
+    {
+     "token": "K",
+     "logprob": -10.9533
+    },
+    {
+     "token": "N",
+     "logprob": -10.9533
+    },
+    {
+     "token": " H",
+     "logprob": -10.9533
+    },
+    {
+     "token": "L",
+     "logprob": -11.0158
+    },
+    {
+     "token": "M",
+     "logprob": -11.1408
+    },
+    {
+     "token": "T",
+     "logprob": -11.3283
+    }
+   ]
+  },
+  {
+   "id": "msg-44",
+   "text": "When are support chat transcripts deleted?",
+   "label": "data_retention",
+   "top": [
+    {
+     "token": "H",
+     "logprob": -0.008
+    },
+    {
+     "token": "A",
+     "logprob": -5.883
+    },
+    {
+     "token": "<think>",
+     "logprob": -6.133
+    },
+    {
+     "token": "E",
+     "logprob": -6.758
+    },
+    {
+     "token": "B",
+     "logprob": -7.633
+    },
+    {
+     "token": "G",
+     "logprob": -8.008
+    },
+    {
+     "token": "C",
+     "logprob": -8.133
+    },
+    {
+     "token": "I",
+     "logprob": -8.508
+    },
+    {
+     "token": " H",
+     "logprob": -9.008
+    },
+    {
+     "token": "D",
+     "logprob": -9.258
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.258
+    },
+    {
+     "token": "F",
+     "logprob": -9.508
+    },
+    {
+     "token": "L",
+     "logprob": -11.633
+    },
+    {
+     "token": "J",
+     "logprob": -11.6955
+    },
+    {
+     "token": "h",
+     "logprob": -11.758
+    },
+    {
+     "token": "S",
+     "logprob": -11.8205
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.8205
+    },
+    {
+     "token": "K",
+     "logprob": -11.883
+    },
+    {
+     "token": "P",
+     "logprob": -12.008
+    },
+    {
+     "token": "M",
+     "logprob": -12.258
+    }
+   ]
+  },
+  {
+   "id": "msg-45",
+   "text": "Do you store full card numbers?",
+   "label": "data_retention",
+   "top": [
+    {
+     "token": "D",
+     "logprob": -0.1702
+    },
+    {
+     "token": "A",
+     "logprob": -3.0452
+    },
+    {
+     "token": "H",
+     "logprob": -3.1702
+    },
+    {
+     "token": "F",
+     "logprob": -3.6702
+    },
+    {
+     "token": "G",
+     "logprob": -4.1702
+    },
+    {
+     "token": "B",
+     "logprob": -4.5452
+    },
+    {
+     "token": "E",
+     "logprob": -5.1702
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.1702
+    },
+    {
+     "token": "C",
+     "logprob": -6.0452
+    },
+    {
+     "token": "I",
+     "logprob": -6.9202
+    },
+    {
+     "token": " D",
+     "logprob": -9.3577
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.9827
+    },
+    {
+     "token": "J",
+     "logprob": -10.2327
+    },
+    {
+     "token": "K",
+     "logprob": -10.2327
+    },
+    {
+     "token": "N",
+     "logprob": -10.2952
+    },
+    {
+     "token": "L",
+     "logprob": -10.3577
+    },
+    {
+     "token": "P",
+     "logprob": -10.5452
+    },
+    {
+     "token": "S",
+     "logprob": -10.5452
+    },
+    {
+     "token": "M",
+     "logprob": -10.7327
+    },
+    {
+     "token": "R",
+     "logprob": -10.7952
+    }
+   ]
+  },
+  {
+   "id": "msg-46",
+   "text": "We're closing our account. When is our customer data erased?",
+   "label": "data_retention",
+   "top": [
+    {
+     "token": "H",
+     "logprob": -0.0051
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.7551
+    },
+    {
+     "token": "A",
+     "logprob": -7.8801
+    },
+    {
+     "token": "E",
+     "logprob": -7.8801
+    },
+    {
+     "token": "D",
+     "logprob": -8.2551
+    },
+    {
+     "token": "B",
+     "logprob": -8.6301
+    },
+    {
+     "token": "G",
+     "logprob": -8.7551
+    },
+    {
+     "token": "I",
+     "logprob": -8.8801
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -8.8801
+    },
+    {
+     "token": "C",
+     "logprob": -9.3801
+    },
+    {
+     "token": " H",
+     "logprob": -9.3801
+    },
+    {
+     "token": "F",
+     "logprob": -9.6926
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.4426
+    },
+    {
+     "token": "L",
+     "logprob": -11.9426
+    },
+    {
+     "token": "J",
+     "logprob": -12.0676
+    },
+    {
+     "token": "S",
+     "logprob": -12.0676
+    },
+    {
+     "token": "(H",
+     "logprob": -12.1926
+    },
+    {
+     "token": "K",
+     "logprob": -12.2551
+    },
+    {
+     "token": "h",
+     "logprob": -12.3801
+    },
+    {
+     "token": "P",
+     "logprob": -12.4426
+    }
+   ]
+  },
+  {
+   "id": "msg-47",
+   "text": "How long are API request logs kept?",
+   "label": "data_retention",
+   "top": [
+    {
+     "token": "H",
+     "logprob": -0.1015
+    },
+    {
+     "token": "E",
+     "logprob": -3.2265
+    },
+    {
+     "token": "A",
+     "logprob": -3.8515
+    },
+    {
+     "token": "F",
+     "logprob": -4.1015
+    },
+    {
+     "token": "D",
+     "logprob": -5.3515
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.3515
+    },
+    {
+     "token": "B",
+     "logprob": -5.7265
+    },
+    {
+     "token": "G",
+     "logprob": -5.9765
+    },
+    {
+     "token": "C",
+     "logprob": -6.1015
+    },
+    {
+     "token": "I",
+     "logprob": -7.1015
+    },
+    {
+     "token": " H",
+     "logprob": -8.9765
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -9.164
+    },
+    {
+     "token": "J",
+     "logprob": -10.1015
+    },
+    {
+     "token": "L",
+     "logprob": -10.1015
+    },
+    {
+     "token": "S",
+     "logprob": -10.414
+    },
+    {
+     "token": "K",
+     "logprob": -10.4765
+    },
+    {
+     "token": "P",
+     "logprob": -10.4765
+    },
+    {
+     "token": "N",
+     "logprob": -10.539
+    },
+    {
+     "token": "R",
+     "logprob": -10.664
+    },
+    {
+     "token": "M",
+     "logprob": -10.8515
+    }
+   ]
+  },
+  {
+   "id": "msg-48",
+   "text": "After a refund is issued, how many years do you hold on to the order record?",
+   "label": "data_retention",
+   "top": [
+    {
+     "token": "H",
+     "logprob": -0.1353
+    },
+    {
+     "token": "A",
+     "logprob": -2.2603
+    },
+    {
+     "token": "B",
+     "logprob": -4.8853
+    },
+    {
+     "token": "E",
+     "logprob": -5.3853
+    },
+    {
+     "token": "<think>",
+     "logprob": -5.3853
+    },
+    {
+     "token": "D",
+     "logprob": -6.2603
+    },
+    {
+     "token": "C",
+     "logprob": -6.5103
+    },
+    {
+     "token": "G",
+     "logprob": -7.0103
+    },
+    {
+     "token": "I",
+     "logprob": -7.8853
+    },
+    {
+     "token": "F",
+     "logprob": -8.1353
+    },
+    {
+     "token": " H",
+     "logprob": -8.9478
+    },
+    {
+     "token": "<|im_end|>",
+     "logprob": -8.9478
+    },
+    {
+     "token": "L",
+     "logprob": -10.8853
+    },
+    {
+     "token": "J",
+     "logprob": -10.9478
+    },
+    {
+     "token": "h",
+     "logprob": -11.0728
+    },
+    {
+     "token": "K",
+     "logprob": -11.1353
+    },
+    {
+     "token": "S",
+     "logprob": -11.1353
+    },
+    {
+     "token": "</think>",
+     "logprob": -11.1978
+    },
+    {
+     "token": "N",
+     "logprob": -11.2603
+    },
+    {
+     "token": "P",
+     "logprob": -11.2603
+    }
+   ]
+  }
+ ]
+}

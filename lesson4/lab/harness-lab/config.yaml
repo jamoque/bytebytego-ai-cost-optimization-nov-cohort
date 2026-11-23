@@ -1,0 +1,108 @@
+# Harness settings for the Python client.
+#
+# The mesh (mesh_config.yaml) owns the models. This file owns everything the
+# harness decides: what goes in the prompt and in what order, what a tool
+# result may add to the context, when a run is stopped, and how a draft is
+# checked before it leaves.
+#
+# search_kb reads the Lab 2 index as-is. If lesson2/lab/rag-lab/.chroma is
+# missing, run `python index_kb.py` in that directory first.
+
+mesh:
+  base_url: http://localhost:4000/v1   # override with the MESH_BASE_URL env var
+  api_key: sk-mesh-lab-1234            # same master_key as Labs 1-3
+  temperature: 0
+  session_id: lab4
+  timeout_s: 600                       # a local model on a CPU can take minutes per call
+
+# Who can run the agent. Each `alias` must exist in mesh_config.yaml.
+# Cost is read from the mesh (the x-litellm-response-cost header, the same
+# number Langfuse shows). The prices below split that cost into the ledger's
+# line items, and are the fallback meter when the header is missing.
+#
+# `cache` is how the provider's prompt cache behaves:
+#   auto          a repeated prefix of 1,024+ tokens is cached without being asked
+#   breakpoints   nothing is cached unless the request marks where the prefix ends,
+#                 and the prefix must reach the model's minimum (4,096 tokens on Haiku 4.5)
+#   local         the runtime keeps the processed prefix in memory; a hit saves time, not dollars
+tiers:
+  weak:
+    alias: mesh-gpt-mini               # Lab 1
+    cache: auto
+    input_price_per_m: 0.15
+    cache_read_per_m: 0.075            # 0.5x input
+    cache_write_per_m: 0.15            # writes are not billed separately
+    output_price_per_m: 0.60
+  mid:
+    alias: mesh-claude-haiku           # Lab 1
+    cache: breakpoints
+    input_price_per_m: 1.00
+    cache_read_per_m: 0.10             # 0.1x input
+    cache_write_per_m: 1.25            # 1.25x input
+    output_price_per_m: 5.00
+  local:
+    alias: mesh-local                  # new in Lab 4: an open model on your machine
+    cache: local
+    local: true                        # charged by the second, at local.usd_per_hour
+    thinks_by_default: true            # reasoning must be switched off explicitly
+    input_price_per_m: 0.0
+    output_price_per_m: 0.0
+
+# What an hour of your own machine costs while it is running a model.
+# The mesh meters a local model at $0; this is the meter that is missing.
+#   electricity   60 W under load x $0.17 per kWh                   = $0.01 per hour
+#   hardware      a $2,000 laptop over 3 years at 8 hours a day     = $0.23 per hour
+# Use 0.01 if the machine is already paid for and would otherwise sit idle.
+# Use the sum if you are deciding whether to buy hardware to run models on.
+local:
+  usd_per_hour: 0.24
+
+harness:
+  tier: mid                            # weak | mid | local
+
+  # ---- the switches from lecture. All off = nothing engineered. ----
+  stable_prefix: false                 # true: the volatile line leaves the top of the prompt; cache breakpoints are set
+  cap_tools: false                     # true: project, compress, and cap every tool result
+  loop_guard: false                    # true: turn budget + dollar budget + "nothing new came back"
+  verify: "off"                        # which drafts get a closing pass before they are sent:
+                                       #   off        none
+                                       #   always     every draft
+                                       #   llm        the ones a chat model judges faulty      (Part 3)
+                                       #   decision   the ones a decision model is unsure of   (Part 3)
+  reasoning: "off"                     # which turns may think:  off | on (all) | sandwich (the opening turn and the closing pass)
+                                       # (keep the quotes on "off": a bare off is YAML for false)
+  break_cache: false                   # experiment: breakpoints set, volatile line still on top
+
+  # ---- the dials behind the switches ----
+  tool_cap_tokens: 400                 # ceiling for one tool result (Lab 2's word-splitter tokens)
+  search_k: 8                          # passages search_kb retrieves from the Lab 2 index
+  max_turns: 12                        # loop guard: model calls per ticket
+  max_usd: 0.10                        # loop guard: dollars per ticket
+  repeat_limit: 2                      # loop guard: lookups in a row that return nothing new
+  converge_score: 0.97                 # loop guard: similarity at which a result counts as "nothing new"
+  hard_turn_limit: 30                  # without a loop guard, a run is cut off here with no reply
+  max_checks: 1                        # closing passes per ticket
+  max_tokens: 700                      # output cap per agent turn
+  check_max_tokens: 1200               # output cap for a closing pass (working, then the reply)
+
+reasoning:
+  effort: low                          # sent as reasoning_effort when a turn is allowed to think
+  off_value: none                      # sent to models that think by default (the local tier)
+  extra_tokens: 1500                   # added to the output cap on turns that think
+
+# verify: llm. A chat model judges each draft and writes a verdict.
+judge:
+  tier: mid
+  max_tokens: 300
+
+# verify: decision. A decision model answers two yes/no questions about each draft.
+decision:
+  alias: mesh-decide                   # mesh-decide (open model on your machine) | mesh-jev (hosted, needs TYPESAFE_API_KEY)
+  local: true                          # false for mesh-jev: metered by the mesh, not by the second
+  input_price_per_m: 0.042             # Jev's list price; the fallback meter for a hosted decision model
+  accept_at: 0.5                       # the lowest P(yes) a draft may score and still be sent without a closing pass
+                                       # 0.5 is a guess. Part 3 replaces it with a number chosen from data.
+
+# Cost of one failed ticket: a person reopens it and does the work by hand.
+economics:
+  fail_cost_usd: 0.00                  # try 0.25 and 3.00 in Part 4

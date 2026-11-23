@@ -1,0 +1,124 @@
+{
+  "description": "Tool definitions in the OpenAI function-calling format. The mesh translates them for Anthropic and for the local model. Every schema is re-sent as input tokens on EVERY model call, which is why they sit in the stable prefix. `returns` is not sent to the model: it is the harness's projection, the list of fields a tool result is cut down to when harness.cap_tools is on. With cap_tools off the model receives the whole record from fixtures/crm.json.",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "search_kb",
+        "description": "Search Northstar's policy knowledge base. Returns the most relevant policy passages. Use it for any question about what the policy says; do not answer policy questions from memory.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {"type": "string", "description": "A focused search query, for example 'restocking fee opened item'."}
+          },
+          "required": ["query"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_order",
+        "description": "Look up one order: items and prices, shipping method and shipping paid, when it was packed, delivery date, item condition, and whether the buyer is a Northstar Pro subscriber.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "order_id": {"type": "string", "description": "Order number, for example NS-48213."}
+          },
+          "required": ["order_id"]
+        }
+      },
+      "returns": ["order_id", "account_id", "placed", "packed_at", "delivered", "shipping_method", "shipping_paid_usd", "destination", "buyer_is_pro_subscriber", "items", "order_total_usd"]
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_account",
+        "description": "Look up one customer account: plan, monthly subscription fee, account status, billing contact, and the latest invoice with its payment status.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {"type": "string", "description": "Account ID, for example ACME-77."}
+          },
+          "required": ["account_id"]
+        }
+      },
+      "returns": ["account_id", "company", "plan", "monthly_subscription_fee_usd", "status", "billing_contact", "latest_invoice"]
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_uptime",
+        "description": "Measured monthly uptime for an account's production API and storefront, with planned maintenance already excluded.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {"type": "string", "description": "Account ID, for example ACME-77."},
+            "month": {"type": "string", "description": "Calendar month as YYYY-MM, for example 2026-10."}
+          },
+          "required": ["account_id", "month"]
+        }
+      },
+      "returns": ["month", "uptime_percent", "planned_maintenance_excluded"]
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_api_usage",
+        "description": "API usage for an account's production key over the last 7 days: the plan the key is on, peak requests per minute, and the number of 429 responses.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {"type": "string", "description": "Account ID, for example ACME-77."}
+          },
+          "required": ["account_id"]
+        }
+      },
+      "returns": ["account_id", "plan", "key_environment", "window", "peak_requests_per_minute", "responses_429"]
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_login_status",
+        "description": "Login state for one user: recent failed password attempts, whether the account is locked and since when, login method, role, and two-factor status.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "email": {"type": "string", "description": "The user's login email."}
+          },
+          "required": ["email"]
+        }
+      },
+      "returns": ["email", "account_id", "role", "login_method", "two_factor", "failed_password_attempts_last_15_min", "locked", "locked_at"]
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_return",
+        "description": "Status of the return (RMA) for an order: where the returned package is, whether inspection passed, and the date the return was closed.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "order_id": {"type": "string", "description": "Order number the return belongs to, for example NS-39120."}
+          },
+          "required": ["order_id"]
+        }
+      },
+      "returns": ["order_id", "rma", "status", "inspection_passed", "closed_date", "closed_weekday", "refund_method"]
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_shipment",
+        "description": "Live carrier tracking for an order: current status and the last scan. Reads from the carrier feed, which can lag.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "order_id": {"type": "string", "description": "Order number, for example NS-48213."}
+          },
+          "required": ["order_id"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+# Lab 4 mesh = your Lab 1 mesh + models that run on your own machine + decision models.
+#
+# Start it from the Lab 1 venv (LiteLLM 1.110.2 or newer; see the overview):
+#
+#   cd lesson1/lab/llm-mesh-lab && source .venv/bin/activate
+#   litellm --config ../../../lesson4/lab/harness-lab/mesh_config.yaml
+#
+# Three kinds of model now sit behind one gateway and one master key:
+#
+#   closed chat models   mesh-gpt-mini, mesh-claude-haiku      /v1/chat/completions
+#   an open chat model   mesh-local       (Ollama, your CPU/GPU)  /v1/chat/completions
+#   decision models      mesh-decide      (Ollama, your CPU/GPU)  /v1/systemone
+#                        mesh-jev         (TypeSafe's hosted Jev) /v1/systemone
+#
+# The client never learns which is which. That is the point of a mesh.
+
+model_list:
+  # ---- Lab 1, unchanged ----------------------------------------------------
+  - model_name: mesh-gpt-mini
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: mesh-claude-haiku
+    litellm_params:
+      model: anthropic/claude-haiku-4-5-20251001
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+  # ---- New in Lab 4: an open model on your machine (Part 2) -----------------
+  # `lab4-agent` is the Ollama model you create from ollama/agent.Modelfile.
+  # No API key, no per-token price: LiteLLM meters it at $0. What it really
+  # costs is in config.yaml under `local:`.
+  - model_name: mesh-local
+    litellm_params:
+      model: ollama_chat/lab4-agent
+      api_base: http://localhost:11434
+
+  # ---- New in Lab 4: decision models (Part 3) --------------------------------
+  # An open-weight decision model on your machine. Same request and response
+  # as Jev; `lab4-decide` is created from ollama/decide.Modelfile.
+  - model_name: mesh-decide
+    litellm_params:
+      model: ollama_chat/lab4-decide
+      api_base: http://localhost:11434
+
+  # TypeSafe's hosted Jev. Optional: uncomment if you have a TYPESAFE_API_KEY,
+  # export it in the terminal that starts the mesh, and set decision.alias to
+  # mesh-jev in config.yaml. $0.042 per million input tokens, no output charge.
+  # jev-1.13.0 is pinned on purpose: `jev-latest` is an alias TypeSafe moves.
+  # (LiteLLM 1.110 also prices jev-1.14.0. A new version needs a new threshold.)
+  # - model_name: mesh-jev
+  #   litellm_params:
+  #     model: typesafe/jev-1.13.0
+  #     api_key: os.environ/TYPESAFE_API_KEY
+
+litellm_settings:
+  # If you configured Langfuse in Lab 1, uncomment the next line. Every chat
+  # call in this lab is tagged `lab4` (plus the arm and the ticket id in
+  # Part 4) and named for its purpose: lab4-agent, lab4-check, lab4-judge,
+  # lab4-handoff.
+  # callbacks: ["langfuse_otel"]
+  drop_params: true
+
+general_settings:
+  master_key: sk-mesh-lab-1234

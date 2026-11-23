@@ -1,0 +1,750 @@
+{
+ "description": "The same 114 questions answered by a purpose-built open decision model through POST /v1/systemone on the mesh (alias mesh-decide), recorded on our machine. `noul` is P(supported) for each labeled draft; `choice` is the model's answer for each labeled message. run_demo.py prints these next to your numbers.",
+ "model": "kev:4b-q4_K_M (lab4-decide)",
+ "noul": {
+  "mid-01": 0.8106,
+  "mid-02": 0.8182,
+  "mid-03": 0.7219,
+  "mid-04": 0.6639,
+  "mid-05": 0.7318,
+  "mid-06": 0.6686,
+  "mid-07": 0.6725,
+  "mid-08": 0.9239,
+  "mid-09": 0.655,
+  "mid-10": 0.7047,
+  "mid-11": 0.6815,
+  "mid-12": 0.8106,
+  "mid-13": 0.7846,
+  "mid-14": 0.7456,
+  "mid-15": 0.6206,
+  "mid-16": 0.7318,
+  "mid-17": 0.6686,
+  "mid-18": 0.6775,
+  "mid-19": 0.9333,
+  "mid-20": 0.6522,
+  "mid-21": 0.7758,
+  "mid-22": 0.6679,
+  "weak-01": 0.7506,
+  "weak-02": 0.6962,
+  "weak-03": 0.7474,
+  "weak-04": 0.803,
+  "weak-05": 0.64,
+  "weak-06": 0.6508,
+  "weak-07": 0.723,
+  "weak-08": 0.9057,
+  "weak-09": 0.5094,
+  "weak-10": 0.7093,
+  "weak-11": 0.6027,
+  "weak-12": 0.7505,
+  "weak-13": 0.8157,
+  "weak-14": 0.742,
+  "weak-15": 0.7969,
+  "weak-16": 0.64,
+  "weak-17": 0.6003,
+  "weak-18": 0.6288,
+  "weak-19": 0.8301,
+  "weak-20": 0.7231,
+  "weak-21": 0.7515,
+  "weak-22": 0.6574,
+  "local-off-01": 0.6897,
+  "local-off-02": 0.8218,
+  "local-off-03": 0.5795,
+  "local-off-04": 0.654,
+  "local-off-05": 0.3654,
+  "local-off-06": 0.6361,
+  "local-off-07": 0.444,
+  "local-off-08": 0.9109,
+  "local-off-09": 0.4925,
+  "local-off-10": 0.5666,
+  "local-off-11": 0.6621,
+  "local-think-01": 0.8124,
+  "local-think-02": 0.7777,
+  "local-think-03": 0.6857,
+  "local-think-04": 0.6665,
+  "local-think-05": 0.5955,
+  "local-think-06": 0.5464,
+  "local-think-07": 0.7074,
+  "local-think-08": 0.9054,
+  "local-think-09": 0.6417,
+  "local-think-10": 0.7635,
+  "local-think-11": 0.7094
+ },
+ "choice": {
+  "msg-01": {
+   "choice": "refunds",
+   "confidence": 0.9187,
+   "probabilities": {
+    "refunds": 0.9289,
+    "returns": 0.054,
+    "shipping": 0.0049,
+    "billing": 0.0063,
+    "sla": 0.003,
+    "rate_limits": 0.0008,
+    "account_access": 0.0009,
+    "data_retention": 0.0013
+   }
+  },
+  "msg-02": {
+   "choice": "refunds",
+   "confidence": 0.5284,
+   "probabilities": {
+    "refunds": 0.5874,
+    "returns": 0.2217,
+    "shipping": 0.017,
+    "billing": 0.1197,
+    "sla": 0.0289,
+    "rate_limits": 0.0089,
+    "account_access": 0.0068,
+    "data_retention": 0.0098
+   }
+  },
+  "msg-03": {
+   "choice": "refunds",
+   "confidence": 0.9413,
+   "probabilities": {
+    "refunds": 0.9487,
+    "returns": 0.0239,
+    "shipping": 0.0026,
+    "billing": 0.0181,
+    "sla": 0.0027,
+    "rate_limits": 0.0012,
+    "account_access": 0.0014,
+    "data_retention": 0.0014
+   }
+  },
+  "msg-04": {
+   "choice": "refunds",
+   "confidence": 0.8777,
+   "probabilities": {
+    "refunds": 0.893,
+    "returns": 0.054,
+    "shipping": 0.0126,
+    "billing": 0.019,
+    "sla": 0.0123,
+    "rate_limits": 0.0019,
+    "account_access": 0.0038,
+    "data_retention": 0.0033
+   }
+  },
+  "msg-05": {
+   "choice": "refunds",
+   "confidence": 0.7182,
+   "probabilities": {
+    "refunds": 0.7534,
+    "returns": 0.2117,
+    "shipping": 0.0107,
+    "billing": 0.0091,
+    "sla": 0.0064,
+    "rate_limits": 0.0032,
+    "account_access": 0.002,
+    "data_retention": 0.0037
+   }
+  },
+  "msg-06": {
+   "choice": "returns",
+   "confidence": 0.3032,
+   "probabilities": {
+    "refunds": 0.2584,
+    "returns": 0.3903,
+    "shipping": 0.2381,
+    "billing": 0.0212,
+    "sla": 0.0815,
+    "rate_limits": 0.0032,
+    "account_access": 0.0023,
+    "data_retention": 0.005
+   }
+  },
+  "msg-07": {
+   "choice": "returns",
+   "confidence": 0.8079,
+   "probabilities": {
+    "refunds": 0.153,
+    "returns": 0.8319,
+    "shipping": 0.0054,
+    "billing": 0.0026,
+    "sla": 0.0027,
+    "rate_limits": 0.0014,
+    "account_access": 0.0007,
+    "data_retention": 0.0025
+   }
+  },
+  "msg-08": {
+   "choice": "returns",
+   "confidence": 0.8073,
+   "probabilities": {
+    "refunds": 0.1546,
+    "returns": 0.8314,
+    "shipping": 0.0044,
+    "billing": 0.0024,
+    "sla": 0.0023,
+    "rate_limits": 0.0011,
+    "account_access": 0.0013,
+    "data_retention": 0.0026
+   }
+  },
+  "msg-09": {
+   "choice": "returns",
+   "confidence": 0.8448,
+   "probabilities": {
+    "refunds": 0.1221,
+    "returns": 0.8642,
+    "shipping": 0.0092,
+    "billing": 0.0016,
+    "sla": 0.0012,
+    "rate_limits": 0.0008,
+    "account_access": 0.0004,
+    "data_retention": 0.0006
+   }
+  },
+  "msg-10": {
+   "choice": "returns",
+   "confidence": 0.6669,
+   "probabilities": {
+    "refunds": 0.2058,
+    "returns": 0.7086,
+    "shipping": 0.045,
+    "billing": 0.0073,
+    "sla": 0.0257,
+    "rate_limits": 0.0031,
+    "account_access": 0.0016,
+    "data_retention": 0.003
+   }
+  },
+  "msg-11": {
+   "choice": "returns",
+   "confidence": 0.8057,
+   "probabilities": {
+    "refunds": 0.1537,
+    "returns": 0.83,
+    "shipping": 0.0075,
+    "billing": 0.0041,
+    "sla": 0.0017,
+    "rate_limits": 0.0011,
+    "account_access": 0.0007,
+    "data_retention": 0.0012
+   }
+  },
+  "msg-12": {
+   "choice": "returns",
+   "confidence": 0.7655,
+   "probabilities": {
+    "refunds": 0.1203,
+    "returns": 0.7948,
+    "shipping": 0.0323,
+    "billing": 0.0419,
+    "sla": 0.0047,
+    "rate_limits": 0.0021,
+    "account_access": 0.0016,
+    "data_retention": 0.0024
+   }
+  },
+  "msg-13": {
+   "choice": "shipping",
+   "confidence": 0.8626,
+   "probabilities": {
+    "refunds": 0.0053,
+    "returns": 0.0046,
+    "shipping": 0.8798,
+    "billing": 0.0082,
+    "sla": 0.0972,
+    "rate_limits": 0.0021,
+    "account_access": 0.0009,
+    "data_retention": 0.0018
+   }
+  },
+  "msg-14": {
+   "choice": "shipping",
+   "confidence": 0.9407,
+   "probabilities": {
+    "refunds": 0.0164,
+    "returns": 0.0043,
+    "shipping": 0.9481,
+    "billing": 0.0043,
+    "sla": 0.0212,
+    "rate_limits": 0.0016,
+    "account_access": 0.0011,
+    "data_retention": 0.0029
+   }
+  },
+  "msg-15": {
+   "choice": "shipping",
+   "confidence": 0.9141,
+   "probabilities": {
+    "refunds": 0.0066,
+    "returns": 0.007,
+    "shipping": 0.9248,
+    "billing": 0.0052,
+    "sla": 0.0461,
+    "rate_limits": 0.0051,
+    "account_access": 0.0017,
+    "data_retention": 0.0035
+   }
+  },
+  "msg-16": {
+   "choice": "shipping",
+   "confidence": 0.9234,
+   "probabilities": {
+    "refunds": 0.0191,
+    "returns": 0.0148,
+    "shipping": 0.933,
+    "billing": 0.0123,
+    "sla": 0.0108,
+    "rate_limits": 0.0054,
+    "account_access": 0.0024,
+    "data_retention": 0.0024
+   }
+  },
+  "msg-17": {
+   "choice": "shipping",
+   "confidence": 0.7239,
+   "probabilities": {
+    "refunds": 0.1181,
+    "returns": 0.0269,
+    "shipping": 0.7584,
+    "billing": 0.0079,
+    "sla": 0.0801,
+    "rate_limits": 0.0026,
+    "account_access": 0.0023,
+    "data_retention": 0.0036
+   }
+  },
+  "msg-18": {
+   "choice": "shipping",
+   "confidence": 0.7968,
+   "probabilities": {
+    "refunds": 0.043,
+    "returns": 0.085,
+    "shipping": 0.8222,
+    "billing": 0.0106,
+    "sla": 0.0261,
+    "rate_limits": 0.0032,
+    "account_access": 0.0024,
+    "data_retention": 0.0074
+   }
+  },
+  "msg-19": {
+   "choice": "billing",
+   "confidence": 0.9709,
+   "probabilities": {
+    "refunds": 0.0054,
+    "returns": 0.0025,
+    "shipping": 0.003,
+    "billing": 0.9745,
+    "sla": 0.0069,
+    "rate_limits": 0.0036,
+    "account_access": 0.0024,
+    "data_retention": 0.0018
+   }
+  },
+  "msg-20": {
+   "choice": "billing",
+   "confidence": 0.9498,
+   "probabilities": {
+    "refunds": 0.0076,
+    "returns": 0.0036,
+    "shipping": 0.004,
+    "billing": 0.9561,
+    "sla": 0.0101,
+    "rate_limits": 0.0115,
+    "account_access": 0.0034,
+    "data_retention": 0.0037
+   }
+  },
+  "msg-21": {
+   "choice": "billing",
+   "confidence": 0.8913,
+   "probabilities": {
+    "refunds": 0.0397,
+    "returns": 0.0092,
+    "shipping": 0.0093,
+    "billing": 0.9049,
+    "sla": 0.0211,
+    "rate_limits": 0.0058,
+    "account_access": 0.0044,
+    "data_retention": 0.0058
+   }
+  },
+  "msg-22": {
+   "choice": "billing",
+   "confidence": 0.8131,
+   "probabilities": {
+    "refunds": 0.0438,
+    "returns": 0.0098,
+    "shipping": 0.0125,
+    "billing": 0.8365,
+    "sla": 0.0144,
+    "rate_limits": 0.0068,
+    "account_access": 0.0191,
+    "data_retention": 0.057
+   }
+  },
+  "msg-23": {
+   "choice": "billing",
+   "confidence": 0.802,
+   "probabilities": {
+    "refunds": 0.014,
+    "returns": 0.0092,
+    "shipping": 0.012,
+    "billing": 0.8268,
+    "sla": 0.0468,
+    "rate_limits": 0.0352,
+    "account_access": 0.0455,
+    "data_retention": 0.0105
+   }
+  },
+  "msg-24": {
+   "choice": "billing",
+   "confidence": 0.7604,
+   "probabilities": {
+    "refunds": 0.0095,
+    "returns": 0.0071,
+    "shipping": 0.0218,
+    "billing": 0.7904,
+    "sla": 0.0852,
+    "rate_limits": 0.0672,
+    "account_access": 0.0115,
+    "data_retention": 0.0073
+   }
+  },
+  "msg-25": {
+   "choice": "sla",
+   "confidence": 0.9465,
+   "probabilities": {
+    "refunds": 0.0078,
+    "returns": 0.0028,
+    "shipping": 0.0093,
+    "billing": 0.0157,
+    "sla": 0.9532,
+    "rate_limits": 0.0055,
+    "account_access": 0.0034,
+    "data_retention": 0.0023
+   }
+  },
+  "msg-26": {
+   "choice": "sla",
+   "confidence": 0.944,
+   "probabilities": {
+    "refunds": 0.0037,
+    "returns": 0.0021,
+    "shipping": 0.0037,
+    "billing": 0.0178,
+    "sla": 0.951,
+    "rate_limits": 0.0123,
+    "account_access": 0.0053,
+    "data_retention": 0.0042
+   }
+  },
+  "msg-27": {
+   "choice": "sla",
+   "confidence": 0.904,
+   "probabilities": {
+    "refunds": 0.0051,
+    "returns": 0.0036,
+    "shipping": 0.0152,
+    "billing": 0.031,
+    "sla": 0.916,
+    "rate_limits": 0.0136,
+    "account_access": 0.008,
+    "data_retention": 0.0074
+   }
+  },
+  "msg-28": {
+   "choice": "sla",
+   "confidence": 0.9282,
+   "probabilities": {
+    "refunds": 0.0031,
+    "returns": 0.0022,
+    "shipping": 0.0075,
+    "billing": 0.0264,
+    "sla": 0.9371,
+    "rate_limits": 0.0133,
+    "account_access": 0.0059,
+    "data_retention": 0.0044
+   }
+  },
+  "msg-29": {
+   "choice": "sla",
+   "confidence": 0.9184,
+   "probabilities": {
+    "refunds": 0.009,
+    "returns": 0.003,
+    "shipping": 0.0166,
+    "billing": 0.0319,
+    "sla": 0.9286,
+    "rate_limits": 0.0063,
+    "account_access": 0.0024,
+    "data_retention": 0.0022
+   }
+  },
+  "msg-30": {
+   "choice": "sla",
+   "confidence": 0.8841,
+   "probabilities": {
+    "refunds": 0.0177,
+    "returns": 0.0032,
+    "shipping": 0.0021,
+    "billing": 0.0713,
+    "sla": 0.8986,
+    "rate_limits": 0.0042,
+    "account_access": 0.0012,
+    "data_retention": 0.0019
+   }
+  },
+  "msg-31": {
+   "choice": "rate_limits",
+   "confidence": 0.9598,
+   "probabilities": {
+    "refunds": 0.0017,
+    "returns": 0.0019,
+    "shipping": 0.0034,
+    "billing": 0.0094,
+    "sla": 0.0111,
+    "rate_limits": 0.9648,
+    "account_access": 0.0042,
+    "data_retention": 0.0034
+   }
+  },
+  "msg-32": {
+   "choice": "rate_limits",
+   "confidence": 0.9133,
+   "probabilities": {
+    "refunds": 0.0021,
+    "returns": 0.0018,
+    "shipping": 0.0042,
+    "billing": 0.0092,
+    "sla": 0.0371,
+    "rate_limits": 0.9241,
+    "account_access": 0.0142,
+    "data_retention": 0.0073
+   }
+  },
+  "msg-33": {
+   "choice": "rate_limits",
+   "confidence": 0.9309,
+   "probabilities": {
+    "refunds": 0.0017,
+    "returns": 0.0017,
+    "shipping": 0.0083,
+    "billing": 0.0102,
+    "sla": 0.0314,
+    "rate_limits": 0.9396,
+    "account_access": 0.0045,
+    "data_retention": 0.0027
+   }
+  },
+  "msg-34": {
+   "choice": "rate_limits",
+   "confidence": 0.941,
+   "probabilities": {
+    "refunds": 0.0016,
+    "returns": 0.0017,
+    "shipping": 0.0038,
+    "billing": 0.0105,
+    "sla": 0.0147,
+    "rate_limits": 0.9484,
+    "account_access": 0.016,
+    "data_retention": 0.0033
+   }
+  },
+  "msg-35": {
+   "choice": "rate_limits",
+   "confidence": 0.8852,
+   "probabilities": {
+    "refunds": 0.0032,
+    "returns": 0.0026,
+    "shipping": 0.0033,
+    "billing": 0.0217,
+    "sla": 0.0298,
+    "rate_limits": 0.8995,
+    "account_access": 0.0267,
+    "data_retention": 0.0133
+   }
+  },
+  "msg-36": {
+   "choice": "rate_limits",
+   "confidence": 0.7953,
+   "probabilities": {
+    "refunds": 0.0018,
+    "returns": 0.0012,
+    "shipping": 0.0029,
+    "billing": 0.0293,
+    "sla": 0.0306,
+    "rate_limits": 0.8209,
+    "account_access": 0.1014,
+    "data_retention": 0.0119
+   }
+  },
+  "msg-37": {
+   "choice": "account_access",
+   "confidence": 0.9477,
+   "probabilities": {
+    "refunds": 0.0014,
+    "returns": 0.001,
+    "shipping": 0.0016,
+    "billing": 0.0126,
+    "sla": 0.0052,
+    "rate_limits": 0.0202,
+    "account_access": 0.9543,
+    "data_retention": 0.0037
+   }
+  },
+  "msg-38": {
+   "choice": "account_access",
+   "confidence": 0.6389,
+   "probabilities": {
+    "refunds": 0.022,
+    "returns": 0.035,
+    "shipping": 0.0458,
+    "billing": 0.0593,
+    "sla": 0.0337,
+    "rate_limits": 0.0138,
+    "account_access": 0.684,
+    "data_retention": 0.1064
+   }
+  },
+  "msg-39": {
+   "choice": "account_access",
+   "confidence": 0.8812,
+   "probabilities": {
+    "refunds": 0.0083,
+    "returns": 0.0065,
+    "shipping": 0.0079,
+    "billing": 0.0419,
+    "sla": 0.0242,
+    "rate_limits": 0.0089,
+    "account_access": 0.896,
+    "data_retention": 0.0063
+   }
+  },
+  "msg-40": {
+   "choice": "account_access",
+   "confidence": 0.9756,
+   "probabilities": {
+    "refunds": 0.001,
+    "returns": 0.0006,
+    "shipping": 0.0007,
+    "billing": 0.0075,
+    "sla": 0.0031,
+    "rate_limits": 0.0052,
+    "account_access": 0.9786,
+    "data_retention": 0.0034
+   }
+  },
+  "msg-41": {
+   "choice": "account_access",
+   "confidence": 0.9437,
+   "probabilities": {
+    "refunds": 0.0016,
+    "returns": 0.0011,
+    "shipping": 0.0013,
+    "billing": 0.009,
+    "sla": 0.0063,
+    "rate_limits": 0.0266,
+    "account_access": 0.9507,
+    "data_retention": 0.0035
+   }
+  },
+  "msg-42": {
+   "choice": "account_access",
+   "confidence": 0.7947,
+   "probabilities": {
+    "refunds": 0.0049,
+    "returns": 0.003,
+    "shipping": 0.0032,
+    "billing": 0.1373,
+    "sla": 0.0106,
+    "rate_limits": 0.0116,
+    "account_access": 0.8203,
+    "data_retention": 0.009
+   }
+  },
+  "msg-43": {
+   "choice": "data_retention",
+   "confidence": 0.7232,
+   "probabilities": {
+    "refunds": 0.0083,
+    "returns": 0.0055,
+    "shipping": 0.0036,
+    "billing": 0.2019,
+    "sla": 0.0126,
+    "rate_limits": 0.003,
+    "account_access": 0.0074,
+    "data_retention": 0.7578
+   }
+  },
+  "msg-44": {
+   "choice": "data_retention",
+   "confidence": 0.9141,
+   "probabilities": {
+    "refunds": 0.006,
+    "returns": 0.0046,
+    "shipping": 0.0053,
+    "billing": 0.0154,
+    "sla": 0.0218,
+    "rate_limits": 0.0089,
+    "account_access": 0.0132,
+    "data_retention": 0.9249
+   }
+  },
+  "msg-45": {
+   "choice": "data_retention",
+   "confidence": 0.3615,
+   "probabilities": {
+    "refunds": 0.0207,
+    "returns": 0.02,
+    "shipping": 0.0177,
+    "billing": 0.3102,
+    "sla": 0.0289,
+    "rate_limits": 0.0874,
+    "account_access": 0.0738,
+    "data_retention": 0.4413
+   }
+  },
+  "msg-46": {
+   "choice": "data_retention",
+   "confidence": 0.9211,
+   "probabilities": {
+    "refunds": 0.0061,
+    "returns": 0.0037,
+    "shipping": 0.0023,
+    "billing": 0.0254,
+    "sla": 0.0105,
+    "rate_limits": 0.0066,
+    "account_access": 0.0145,
+    "data_retention": 0.931
+   }
+  },
+  "msg-47": {
+   "choice": "data_retention",
+   "confidence": 0.8363,
+   "probabilities": {
+    "refunds": 0.0029,
+    "returns": 0.0023,
+    "shipping": 0.0087,
+    "billing": 0.0196,
+    "sla": 0.0319,
+    "rate_limits": 0.0646,
+    "account_access": 0.0132,
+    "data_retention": 0.8568
+   }
+  },
+  "msg-48": {
+   "choice": "data_retention",
+   "confidence": 0.8731,
+   "probabilities": {
+    "refunds": 0.0507,
+    "returns": 0.0289,
+    "shipping": 0.0049,
+    "billing": 0.0119,
+    "sla": 0.0067,
+    "rate_limits": 0.0031,
+    "account_access": 0.0048,
+    "data_retention": 0.889
+   }
+  }
+ },
+ "seconds_per_question": {
+  "noul": 2.37,
+  "choice": 0.4
+ }
+}

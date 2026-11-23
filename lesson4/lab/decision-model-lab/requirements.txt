@@ -1,0 +1,4 @@
+# Same environment as the hands-on lab. If you are already in harness-lab's
+# venv, this only adds pytest.
+-r ../harness-lab/requirements.txt
+pytest>=8.0.0

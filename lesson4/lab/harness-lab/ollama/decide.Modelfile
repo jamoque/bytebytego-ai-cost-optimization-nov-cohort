@@ -1,0 +1,31 @@
+# The open decision model for Part 3.
+#
+#   ollama pull kev:4b-q4_K_M
+#   ollama create lab4-decide -f ollama/decide.Modelfile
+#
+# The mesh serves whatever `lab4-decide` is as `mesh-decide`. To change size,
+# change the FROM line and re-run `ollama create`:
+#
+#   kev:4b-q4_K_M    2.7 GB download   the default. 4.7 GB loaded, about 2.3 s
+#                                      per draft on our machine.
+#   kev:9b-q4_K_M    5.6 GB download   24 GB+ unified memory, or a 12 GB+ GPU
+#   kev:0.8b-q8_0    0.8 GB download   1.8 GB loaded and 0.5 s per draft, but
+#                                      as this lab's gate it could safely pass
+#                                      only 11% of drafts. Fine for sorting
+#                                      messages into queues.
+#
+# These are GGUF builds, so they run on macOS, Windows, and Linux.
+#
+# Part 3 chooses a threshold for the model you run. Change the model and the
+# threshold has to be chosen again (python calibrate.py --rescore).
+FROM kev:4b-q4_K_M
+
+# Kev ships with a 73,728-token context, which reserves several GB of memory
+# before it has read anything. The harness sends a ticket, its capped
+# evidence, and a draft reply: a few thousand tokens. Kev 4B's own model card
+# gives 8,192 tokens as its validated context length.
+#
+# A decision request that does not fit is refused, never truncated. The
+# harness treats a refused draft as "not vouched for" and runs the closing
+# pass (see decisions.py).
+PARAMETER num_ctx 8192

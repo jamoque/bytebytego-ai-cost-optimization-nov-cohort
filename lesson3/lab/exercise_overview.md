@@ -53,7 +53,7 @@ Before starting the timed portion, make sure you have:
 - **Completed Lab 1 & 2:** LiteLLM proxy from lesson1/lab/llm-mesh-lab. Vector DB scaffold in lesson2/lab/rag-lab/.chroma/ exists with the default chunking. This lab reads from that index.  
 - **API Provider Keys:** OPENAI\_API\_KEY serves the weak tier. ANTHROPIC\_API\_KEY serves the medium and strong tiers.  
 - **Installed Python 3.10+** and the ability to create a virtual environment. (This lab was verified on Python 3.14 with routellm 0.2.0.)  
-- **LiteLLM recent enough for `mesh-auto`.** Lab 3's gateway router uses `auto_router/complexity_router`, which needs LiteLLM **≥ 1.94**. If you installed LiteLLM during Lab 1 weeks ago, upgrade the Lab 1 venv before starting the mesh: `pip install -U 'litellm[proxy]'`.  
+- **LiteLLM ≥ 1.94**: If you installed LiteLLM during Lab 1 weeks ago, upgrade the Lab 1 venv before starting the mesh: `pip install -U 'litellm[proxy]'`
 - **Langfuse is optional but useful.** If you wired langfuse\_otel in Lab 1, uncomment that callback in mesh\_config.yaml. Every call in this lab is tagged lab3 along with additional metadata for routing-strategy, tier, and agent info.
 
 ⚠️ **Spend:** this lab uses a frontier-class model, so it costs slightly more than Labs 1 and 2\. One full run of run\_experiment.py should cost about **\$0.50** as of when this lab was written (November 2026). Budget **\$1-2** for the whole lab.
@@ -81,7 +81,7 @@ Stop the Lab 2 proxy if it is still running (and you can stop the lab2-qdrant co
 ```sh
 cd lesson1/lab/llm-mesh-lab
 source .venv/bin/activate
-pip install -U 'litellm[proxy]'         # mesh-auto needs LiteLLM ≥ 1.94
+pip install -U 'litellm[proxy]'
 export OPENAI_API_KEY="sk-..."          
 export ANTHROPIC_API_KEY="sk-ant-..."
 litellm --config ../../../lesson3/lab/routing-lab/mesh_config.yaml
@@ -348,8 +348,6 @@ print(f"total: {r.llm_calls} calls, ${r.cost_usd:.4f}", r.cost_by_tier())
 ```
 
 The vector supervisor routes each sentence of the ticket with Part 1's embedding router. Every department that wins a sentence gets the whole ticket and is told to handle only its own part. No planner call is made.
-
-**Checkpoint 9:** the same three specialists run (orders / billing / platform), but there is no planner call in the cost breakdown. On our runs the weak orders specialist was more likely to miss the Pro restocking-fee waiver when handed the whole multi-issue ticket instead of a rewritten single-step task.
 
 **Question:** The vector-based router saved the planner call. What did it trade off? Compare the task each specialist received in 3.1 (the planner's rewritten, self-contained instruction) with 3.2 (the entire ticket plus "handle only your part"). Look at the specialists' prompt tokens, and at whether the weak orders specialist still gets the refund right. Run the single-issue ticket (\["tickets"\]\[0\]) both ways: for which kind of ticket is the vector supervisor the clear winner?
 

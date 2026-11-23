@@ -1,0 +1,938 @@
+{
+ "description": "Real answers from POST /v1/systemone (the Part 3 decision model, kev:4b-q4_K_M, through the mesh), kept with the probabilities and the confidence the API itself reported. The tests rebuild first-token candidates from these probabilities and check that YOUR choice() and score() report the same confidence the API did. `score.probabilities` is listed lowest level first; the API numbers levels from 0 and reports the expected level as `score`.",
+ "model": "kev:4b-q4_K_M (lab4-decide)",
+ "choice": [
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "options": [
+    "refunds",
+    "returns"
+   ],
+   "probabilities": {
+    "refunds": 0.9515607980788569,
+    "returns": 0.04843920192114312
+   },
+   "choice": "refunds",
+   "confidence": 0.9031215961577137
+  },
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping"
+   ],
+   "probabilities": {
+    "refunds": 0.9428387806079976,
+    "returns": 0.04953841079645753,
+    "shipping": 0.007622808595545005
+   },
+   "choice": "refunds",
+   "confidence": 0.9142581709119965
+  },
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "options": [
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits"
+   ],
+   "probabilities": {
+    "shipping": 0.4005732318911402,
+    "billing": 0.41356844209272586,
+    "sla": 0.16314404504860874,
+    "rate_limits": 0.022714280967525313
+   },
+   "choice": "billing",
+   "confidence": 0.21809125612363447
+  },
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits",
+    "account_access",
+    "data_retention"
+   ],
+   "probabilities": {
+    "refunds": 0.9333530883344878,
+    "returns": 0.0455523702281833,
+    "shipping": 0.006634180152889269,
+    "billing": 0.007701128550358918,
+    "sla": 0.0033721677397542506,
+    "rate_limits": 0.0008797645082618465,
+    "account_access": 0.0012432197392349595,
+    "data_retention": 0.0012640807468295775
+   },
+   "choice": "refunds",
+   "confidence": 0.9238321009537004
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "options": [
+    "refunds",
+    "returns"
+   ],
+   "probabilities": {
+    "refunds": 0.0772025766494106,
+    "returns": 0.9227974233505893
+   },
+   "choice": "returns",
+   "confidence": 0.8455948467011787
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping"
+   ],
+   "probabilities": {
+    "refunds": 0.07777262057023028,
+    "returns": 0.9167888831199822,
+    "shipping": 0.005438496309787648
+   },
+   "choice": "returns",
+   "confidence": 0.8751833246799733
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "options": [
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits"
+   ],
+   "probabilities": {
+    "shipping": 0.3324301537589158,
+    "billing": 0.3242666547144048,
+    "sla": 0.2510987940283844,
+    "rate_limits": 0.09220439749829498
+   },
+   "choice": "shipping",
+   "confidence": 0.10990687167855444
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits",
+    "account_access",
+    "data_retention"
+   ],
+   "probabilities": {
+    "refunds": 0.07458102128150602,
+    "returns": 0.9093237067133451,
+    "shipping": 0.004940792335276802,
+    "billing": 0.00283028282717002,
+    "sla": 0.0025604714314220118,
+    "rate_limits": 0.0014649326050063585,
+    "account_access": 0.0015223009374881096,
+    "data_retention": 0.002776491868785805
+   },
+   "choice": "returns",
+   "confidence": 0.8963699505295372
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "options": [
+    "refunds",
+    "returns"
+   ],
+   "probabilities": {
+    "refunds": 0.7090990053427455,
+    "returns": 0.2909009946572545
+   },
+   "choice": "refunds",
+   "confidence": 0.418198010685491
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping"
+   ],
+   "probabilities": {
+    "refunds": 0.008402007364969035,
+    "returns": 0.003678627967477597,
+    "shipping": 0.9879193646675534
+   },
+   "choice": "shipping",
+   "confidence": 0.9818790470013299
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "options": [
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits"
+   ],
+   "probabilities": {
+    "shipping": 0.9726832055146541,
+    "billing": 0.010309265444208958,
+    "sla": 0.013953808084494718,
+    "rate_limits": 0.003053720956642166
+   },
+   "choice": "shipping",
+   "confidence": 0.9635776073528722
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits",
+    "account_access",
+    "data_retention"
+   ],
+   "probabilities": {
+    "refunds": 0.007502759378003698,
+    "returns": 0.0031637508826271097,
+    "shipping": 0.9723907146812226,
+    "billing": 0.004083334796137034,
+    "sla": 0.008779746034958203,
+    "rate_limits": 0.0013409736091591488,
+    "account_access": 0.0010923932221661244,
+    "data_retention": 0.0016463273957258917
+   },
+   "choice": "shipping",
+   "confidence": 0.9684465310642544
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "options": [
+    "refunds",
+    "returns"
+   ],
+   "probabilities": {
+    "refunds": 0.8222900608760507,
+    "returns": 0.17770993912394936
+   },
+   "choice": "refunds",
+   "confidence": 0.6445801217521014
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping"
+   ],
+   "probabilities": {
+    "refunds": 0.674723177608043,
+    "returns": 0.14646463614797206,
+    "shipping": 0.1788121862439849
+   },
+   "choice": "refunds",
+   "confidence": 0.5120847664120645
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "options": [
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits"
+   ],
+   "probabilities": {
+    "shipping": 0.01356147786951523,
+    "billing": 0.9589667573715969,
+    "sla": 0.016095362330592135,
+    "rate_limits": 0.01137640242829563
+   },
+   "choice": "billing",
+   "confidence": 0.9452890098287958
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits",
+    "account_access",
+    "data_retention"
+   ],
+   "probabilities": {
+    "refunds": 0.04993585243880632,
+    "returns": 0.011168263610120386,
+    "shipping": 0.013613707388103502,
+    "billing": 0.8203127070914549,
+    "sla": 0.0178160283486285,
+    "rate_limits": 0.008195658468699258,
+    "account_access": 0.027496074009217823,
+    "data_retention": 0.05146170864496943
+   },
+   "choice": "billing",
+   "confidence": 0.7946430938188056
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "options": [
+    "refunds",
+    "returns"
+   ],
+   "probabilities": {
+    "refunds": 0.42712742638569334,
+    "returns": 0.5728725736143068
+   },
+   "choice": "returns",
+   "confidence": 0.14574514722861354
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping"
+   ],
+   "probabilities": {
+    "refunds": 0.20647018670402656,
+    "returns": 0.2763706310175338,
+    "shipping": 0.5171591822784396
+   },
+   "choice": "shipping",
+   "confidence": 0.2757387734176594
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "options": [
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits"
+   ],
+   "probabilities": {
+    "shipping": 0.005969088037728689,
+    "billing": 0.013638222620523612,
+    "sla": 0.014303532642534393,
+    "rate_limits": 0.9660891566992132
+   },
+   "choice": "rate_limits",
+   "confidence": 0.9547855422656176
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits",
+    "account_access",
+    "data_retention"
+   ],
+   "probabilities": {
+    "refunds": 0.0013828059162951857,
+    "returns": 0.0018080408024341472,
+    "shipping": 0.003240806195671647,
+    "billing": 0.008856204231399724,
+    "sla": 0.009701295625409964,
+    "rate_limits": 0.9667984788908686,
+    "account_access": 0.004441788286912888,
+    "data_retention": 0.0037705800510080844
+   },
+   "choice": "rate_limits",
+   "confidence": 0.9620554044467069
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "options": [
+    "refunds",
+    "returns"
+   ],
+   "probabilities": {
+    "refunds": 0.5591737811788816,
+    "returns": 0.4408262188211184
+   },
+   "choice": "refunds",
+   "confidence": 0.11834756235776323
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping"
+   ],
+   "probabilities": {
+    "refunds": 0.3793430186874161,
+    "returns": 0.2991717271760017,
+    "shipping": 0.32148525413658213
+   },
+   "choice": "refunds",
+   "confidence": 0.06901452803112416
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "options": [
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits"
+   ],
+   "probabilities": {
+    "shipping": 0.021371703875867284,
+    "billing": 0.7979299559644987,
+    "sla": 0.07570429167460477,
+    "rate_limits": 0.10499404848502926
+   },
+   "choice": "billing",
+   "confidence": 0.7305732746193315
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "options": [
+    "refunds",
+    "returns",
+    "shipping",
+    "billing",
+    "sla",
+    "rate_limits",
+    "account_access",
+    "data_retention"
+   ],
+   "probabilities": {
+    "refunds": 0.0036436865732850264,
+    "returns": 0.002929018390419501,
+    "shipping": 0.003160261896105918,
+    "billing": 0.110837072449592,
+    "sla": 0.008281485343170782,
+    "rate_limits": 0.011571229643504988,
+    "account_access": 0.8513455417639592,
+    "data_retention": 0.00823170393996249
+   },
+   "choice": "account_access",
+   "confidence": 0.8301091905873819
+  }
+ ],
+ "score": [
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "levels": [
+    "calm",
+    "upset"
+   ],
+   "probabilities": [
+    0.7714158202158261,
+    0.2285841797841739
+   ],
+   "score": 0.2285841797841739,
+   "confidence": 0.5428316404316522
+  },
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "levels": [
+    "calm",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.6658043727848454,
+    0.23593922905148076,
+    0.09825639816367372
+   ],
+   "score": 0.4324520253788282,
+   "confidence": 0.3513219619317577
+  },
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "levels": [
+    "a general question with no deadline",
+    "wants an answer this week",
+    "money or access is affected today",
+    "threatens to cancel or to escalate"
+   ],
+   "probabilities": [
+    0.5621858258007838,
+    0.33138558686239616,
+    0.08553944515083,
+    0.02088914218599004
+   ],
+   "score": 0.5651319037220263,
+   "confidence": 0.43486809627797374
+  },
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.006695773772120092,
+    0.10480691718516509,
+    0.5668987888465813,
+    0.24498053974656778,
+    0.07661798044956579
+   ],
+   "score": 2.280018035916294,
+   "confidence": 0.5696541955207461
+  },
+  {
+   "message": "My return was received last week. When does the money actually hit my card?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "angry",
+    "furious"
+   ],
+   "probabilities": [
+    0.006128658075764295,
+    0.09840589995926463,
+    0.5377903510094812,
+    0.23140370029805685,
+    0.08026097138043627,
+    0.046010419276996666
+   ],
+   "score": 2.419293684779126,
+   "confidence": 0.5729199219995249
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "levels": [
+    "calm",
+    "upset"
+   ],
+   "probabilities": [
+    0.853252307727304,
+    0.14674769227269607
+   ],
+   "score": 0.14674769227269607,
+   "confidence": 0.7065046154546079
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "levels": [
+    "calm",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.8246905573182735,
+    0.12550023142264152,
+    0.049809211259084905
+   ],
+   "score": 0.22511865394081132,
+   "confidence": 0.6623220190887831
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "levels": [
+    "a general question with no deadline",
+    "wants an answer this week",
+    "money or access is affected today",
+    "threatens to cancel or to escalate"
+   ],
+   "probabilities": [
+    0.6623724095705249,
+    0.24482062349971542,
+    0.07346350948810099,
+    0.01934345744165875
+   ],
+   "score": 0.4497780148008937,
+   "confidence": 0.5502219851991064
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.008495281455859385,
+    0.04858195218163778,
+    0.7182148179282078,
+    0.1626305145726466,
+    0.062077433861648414
+   ],
+   "score": 2.221212867202587,
+   "confidence": 0.7063684188422501
+  },
+  {
+   "message": "I opened the box but never used the grinder. Can I still return it?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "angry",
+    "furious"
+   ],
+   "probabilities": [
+    0.0077061608589169515,
+    0.04458971657334939,
+    0.6685443728257058,
+    0.15037901778588642,
+    0.08588429815574652,
+    0.04289643380039487
+   ],
+   "score": 2.390834877207381,
+   "confidence": 0.6594406974735019
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "levels": [
+    "calm",
+    "upset"
+   ],
+   "probabilities": [
+    0.14520348980630365,
+    0.8547965101936964
+   ],
+   "score": 0.8547965101936964,
+   "confidence": 0.7095930203873927
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "levels": [
+    "calm",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.11708238294728389,
+    0.7544243928090726,
+    0.12849322424364368
+   ],
+   "score": 1.0114108412963598,
+   "confidence": 0.6316365892136087
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "levels": [
+    "a general question with no deadline",
+    "wants an answer this week",
+    "money or access is affected today",
+    "threatens to cancel or to escalate"
+   ],
+   "probabilities": [
+    0.32552182918179584,
+    0.5745541037029664,
+    0.05218604243093503,
+    0.04773802468430272
+   ],
+   "score": 0.8221402626177448,
+   "confidence": 0.5268160790186637
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.0006356709781933072,
+    0.00393846894562284,
+    0.11772262506870568,
+    0.7658779357407841,
+    0.11182529926669409
+   ],
+   "score": 2.9843187233721626,
+   "confidence": 0.8005567706989789
+  },
+  {
+   "message": "Tracking hasn't updated in four days. Is my order lost?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "angry",
+    "furious"
+   ],
+   "probabilities": [
+    0.0005355850819593356,
+    0.003362637252295058,
+    0.10294627648925994,
+    0.6756496803590775,
+    0.1601008933564534,
+    0.057404927460954915
+   ],
+   "score": 3.1636324420386353,
+   "confidence": 0.7425406303212725
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "levels": [
+    "calm",
+    "upset"
+   ],
+   "probabilities": [
+    0.9329223262704368,
+    0.06707767372956315
+   ],
+   "score": 0.06707767372956315,
+   "confidence": 0.8658446525408737
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "levels": [
+    "calm",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.9140349469950357,
+    0.062683262363408,
+    0.023281790641556138
+   ],
+   "score": 0.10924684364652028,
+   "confidence": 0.8361297345302195
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "levels": [
+    "a general question with no deadline",
+    "wants an answer this week",
+    "money or access is affected today",
+    "threatens to cancel or to escalate"
+   ],
+   "probabilities": [
+    0.5708940708027919,
+    0.3232511843865604,
+    0.08915533977641792,
+    0.016699405034229658
+   ],
+   "score": 0.5516600790420852,
+   "confidence": 0.44833992095791475
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.0090558620705534,
+    0.05992860962059471,
+    0.832950760280384,
+    0.07184573036625841,
+    0.026219037662209746
+   ],
+   "score": 2.046243471928977,
+   "confidence": 0.8313965504563505
+  },
+  {
+   "message": "Where can I download a PDF of last month's invoice?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "angry",
+    "furious"
+   ],
+   "probabilities": [
+    0.008496905272348435,
+    0.0574683125695805,
+    0.81907396054241,
+    0.06904801252193139,
+    0.02818195743537275,
+    0.017730851658356753
+   ],
+   "score": 2.1041423592534696,
+   "confidence": 0.8312889296786503
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "levels": [
+    "calm",
+    "upset"
+   ],
+   "probabilities": [
+    0.3359956819612666,
+    0.6640043180387334
+   ],
+   "score": 0.6640043180387334,
+   "confidence": 0.3280086360774668
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "levels": [
+    "calm",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.18343754625474012,
+    0.672428549421691,
+    0.1441339043235689
+   ],
+   "score": 0.9606963580688288,
+   "confidence": 0.5086428241325365
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "levels": [
+    "a general question with no deadline",
+    "wants an answer this week",
+    "money or access is affected today",
+    "threatens to cancel or to escalate"
+   ],
+   "probabilities": [
+    0.45902533395464534,
+    0.274999030283039,
+    0.2162169371063573,
+    0.0497586986559586
+   ],
+   "score": 0.8567090004636295,
+   "confidence": 0.14329099953637048
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.0015338326592712215,
+    0.008791190100843007,
+    0.17113799972348187,
+    0.697129659780067,
+    0.12140731773633692
+   ],
+   "score": 2.928085439833356,
+   "confidence": 0.737725670300568
+  },
+  {
+   "message": "We keep getting 429s from the orders endpoint. What's our limit?",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "angry",
+    "furious"
+   ],
+   "probabilities": [
+    0.0013176656718355225,
+    0.007652054698731326,
+    0.15222970334980512,
+    0.6252304557252093,
+    0.13637631534381836,
+    0.07719380521060039
+   ],
+   "score": 3.1192771160022446,
+   "confidence": 0.6918328429814711
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "levels": [
+    "calm",
+    "upset"
+   ],
+   "probabilities": [
+    0.09394609619312387,
+    0.9060539038068761
+   ],
+   "score": 0.9060539038068761,
+   "confidence": 0.8121078076137522
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "levels": [
+    "calm",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.08513928653198817,
+    0.7062725204950224,
+    0.20858819297298958
+   ],
+   "score": 1.1234489064410016,
+   "confidence": 0.5594087807425334
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "levels": [
+    "a general question with no deadline",
+    "wants an answer this week",
+    "money or access is affected today",
+    "threatens to cancel or to escalate"
+   ],
+   "probabilities": [
+    0.19414331068476948,
+    0.3114949206528568,
+    0.47219585009947085,
+    0.022165918562903054
+   ],
+   "score": 1.3223843765405077,
+   "confidence": 0.2780525394147012
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "furious"
+   ],
+   "probabilities": [
+    0.0004660548663653046,
+    0.0026254268334365777,
+    0.09287462073811725,
+    0.7512348606631328,
+    0.1527990368989482
+   ],
+   "score": 3.053275397894862,
+   "confidence": 0.7897311034141379
+  },
+  {
+   "message": "I can't sign in to download my invoice. It says my account is locked.",
+   "levels": [
+    "delighted",
+    "content",
+    "neutral",
+    "irritated",
+    "angry",
+    "furious"
+   ],
+   "probabilities": [
+    0.00038517118671300635,
+    0.0022027786774255842,
+    0.08027228256501893,
+    0.6583208149823544,
+    0.17540793186346348,
+    0.08341102072502454
+   ],
+   "score": 3.2563966198335033,
+   "confidence": 0.714624448804319
+  }
+ ]
+}

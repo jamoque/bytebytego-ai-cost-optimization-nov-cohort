@@ -1,0 +1,4866 @@
+{
+ "description": "Canned records behind the read-only tools, shaped like what an internal API really returns: the handful of fields an agent needs, buried in audit trails, hourly rows, and integration metadata. Nothing here calls a real system, so every run sees the same data. `today` is the scenario date the playbook gives the agent. One shipment (NS-51777) is a lookup that never finishes: it reports a little more sync progress on every retry and never returns tracking data.",
+ "today": "2026-11-06",
+ "orders": {
+  "NS-48213": {
+   "order_id": "NS-48213",
+   "account_id": "ACME-77",
+   "placed": "2026-10-28",
+   "packed_at": "2026-10-29 10:40",
+   "delivered": "2026-11-04",
+   "shipping_method": "standard",
+   "shipping_paid_usd": 0.0,
+   "destination": "Columbus, OH",
+   "buyer_is_pro_subscriber": true,
+   "items": [
+    {
+     "sku": "ESP-200",
+     "name": "Espresso machine",
+     "price_usd": 200.0,
+     "condition_reported": "opened, fully working"
+    }
+   ],
+   "order_total_usd": 200.0,
+   "currency": "USD",
+   "channel": "web",
+   "gift": false,
+   "promo_codes": [],
+   "risk": {
+    "score": 0.03,
+    "band": "low"
+   },
+   "fulfillment": {
+    "warehouse": "CMH-2",
+    "carrier": "UPS",
+    "service_code": "GND",
+    "packages": 1
+   },
+   "integration": {
+    "erp_doc": "SO-988764",
+    "wms_ref": "WMS-972528",
+    "sync_state": "ok",
+    "last_sync": "2026-11-06T06:00:00Z"
+   },
+   "audit_log": [
+    {
+     "at": "2026-10-28T09:14:00Z",
+     "event": "order.created",
+     "actor": "system",
+     "channel": "web",
+     "cart_id": "cart_3960229",
+     "ip_country": "US"
+    },
+    {
+     "at": "2026-10-28T09:15:00Z",
+     "event": "payment.authorized",
+     "actor": "system",
+     "processor": "stripe",
+     "auth_code": "A39753",
+     "amount_usd": 200.0,
+     "avs": "Y",
+     "cvv": "M"
+    },
+    {
+     "at": "2026-10-28T09:16:00Z",
+     "event": "fraud.screened",
+     "actor": "system",
+     "score": 0.018,
+     "decision": "approve",
+     "rules_fired": []
+    },
+    {
+     "at": "2026-10-28T09:18:00Z",
+     "event": "tax.calculated",
+     "actor": "system",
+     "engine": "taxjar",
+     "jurisdiction": "Columbus, OH",
+     "amount_usd": 0.0,
+     "note": "tax included in listed prices for this fixture"
+    },
+    {
+     "at": "2026-10-28T09:21:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_confirmation",
+     "to": "billing contact",
+     "message_id": "msg_53158037"
+    },
+    {
+     "at": "2026-10-28T09:43:00Z",
+     "event": "inventory.reserved",
+     "actor": "system",
+     "warehouse": "RNO-1",
+     "bins": [
+      "B258"
+     ]
+    },
+    {
+     "at": "2026-10-28T10:24:00Z",
+     "event": "pick.assigned",
+     "actor": "wms-21",
+     "wave": "W2089"
+    },
+    {
+     "at": "2026-10-28T11:01:00Z",
+     "event": "pick.completed",
+     "actor": "belt-07",
+     "duration_s": 345
+    },
+    {
+     "at": "2026-10-29T10:34:00Z",
+     "event": "qa.checked",
+     "actor": "sorter-A",
+     "result": "pass"
+    },
+    {
+     "at": "2026-10-29T10:40:00Z",
+     "event": "order.packed",
+     "actor": "hh-3391",
+     "box": "M2",
+     "weight_lb": 11.4,
+     "local_time": "2026-10-29 10:40",
+     "cutoff_local": "15:00"
+    },
+    {
+     "at": "2026-10-29T10:42:00Z",
+     "event": "label.printed",
+     "actor": "system",
+     "carrier": "UPS",
+     "service": "standard",
+     "tracking": "1Z066257451856472"
+    },
+    {
+     "at": "2026-10-29T10:43:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_packed",
+     "to": "billing contact",
+     "message_id": "msg_29786695"
+    },
+    {
+     "at": "2026-10-30T06:40:00Z",
+     "event": "carrier.picked_up",
+     "actor": "system",
+     "carrier": "UPS",
+     "facility": "origin"
+    },
+    {
+     "at": "2026-10-31T00:52:08Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "origin scan",
+     "facility": "Hodgkins IL"
+    },
+    {
+     "at": "2026-10-31T19:04:17Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "departed facility",
+     "facility": "Hodgkins IL"
+    },
+    {
+     "at": "2026-11-01T13:16:25Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "arrived at hub",
+     "facility": "Reno NV"
+    },
+    {
+     "at": "2026-11-02T07:28:34Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "departed hub",
+     "facility": "Reno NV"
+    },
+    {
+     "at": "2026-11-03T01:40:42Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "arrived at destination facility",
+     "facility": "Louisville KY"
+    },
+    {
+     "at": "2026-11-03T19:52:51Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "out for delivery",
+     "facility": "Columbus OH"
+    },
+    {
+     "at": "2026-11-04T14:05:00Z",
+     "event": "carrier.delivered",
+     "actor": "system",
+     "carrier": "UPS",
+     "signed_by": "front desk",
+     "proof": "photo"
+    },
+    {
+     "at": "2026-11-04T14:08:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_delivered",
+     "to": "billing contact",
+     "message_id": "msg_35127407"
+    },
+    {
+     "at": "2026-11-05T14:08:00Z",
+     "event": "survey.sent",
+     "actor": "system",
+     "template": "csat_v3",
+     "to": "billing contact"
+    }
+   ]
+  },
+  "NS-61002": {
+   "order_id": "NS-61002",
+   "account_id": "BRIO-12",
+   "placed": "2026-10-26",
+   "packed_at": "2026-10-27 11:05",
+   "delivered": "2026-11-02",
+   "shipping_method": "standard",
+   "shipping_paid_usd": 0.0,
+   "destination": "Austin, TX",
+   "buyer_is_pro_subscriber": false,
+   "items": [
+    {
+     "sku": "BLN-120",
+     "name": "Countertop blender",
+     "price_usd": 120.0,
+     "condition_reported": "opened, fully working"
+    }
+   ],
+   "order_total_usd": 120.0,
+   "currency": "USD",
+   "channel": "web",
+   "gift": false,
+   "promo_codes": [],
+   "risk": {
+    "score": 0.03,
+    "band": "low"
+   },
+   "fulfillment": {
+    "warehouse": "CMH-2",
+    "carrier": "USPS",
+    "service_code": "GND",
+    "packages": 1
+   },
+   "integration": {
+    "erp_doc": "SO-990461",
+    "wms_ref": "WMS-979986",
+    "sync_state": "ok",
+    "last_sync": "2026-11-06T06:00:00Z"
+   },
+   "audit_log": [
+    {
+     "at": "2026-10-26T09:14:00Z",
+     "event": "order.created",
+     "actor": "system",
+     "channel": "web",
+     "cart_id": "cart_0430162",
+     "ip_country": "US"
+    },
+    {
+     "at": "2026-10-26T09:15:00Z",
+     "event": "payment.authorized",
+     "actor": "system",
+     "processor": "stripe",
+     "auth_code": "A83976",
+     "amount_usd": 120.0,
+     "avs": "Y",
+     "cvv": "M"
+    },
+    {
+     "at": "2026-10-26T09:16:00Z",
+     "event": "fraud.screened",
+     "actor": "system",
+     "score": 0.075,
+     "decision": "approve",
+     "rules_fired": []
+    },
+    {
+     "at": "2026-10-26T09:18:00Z",
+     "event": "tax.calculated",
+     "actor": "system",
+     "engine": "taxjar",
+     "jurisdiction": "Austin, TX",
+     "amount_usd": 0.0,
+     "note": "tax included in listed prices for this fixture"
+    },
+    {
+     "at": "2026-10-26T09:21:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_confirmation",
+     "to": "billing contact",
+     "message_id": "msg_36473366"
+    },
+    {
+     "at": "2026-10-26T09:43:00Z",
+     "event": "inventory.reserved",
+     "actor": "system",
+     "warehouse": "CMH-2",
+     "bins": [
+      "B268"
+     ]
+    },
+    {
+     "at": "2026-10-26T10:24:00Z",
+     "event": "pick.assigned",
+     "actor": "wms-49",
+     "wave": "W5745"
+    },
+    {
+     "at": "2026-10-26T11:01:00Z",
+     "event": "pick.completed",
+     "actor": "sorter-C",
+     "duration_s": 584
+    },
+    {
+     "at": "2026-10-27T10:59:00Z",
+     "event": "qa.checked",
+     "actor": "sorter-C",
+     "result": "pass"
+    },
+    {
+     "at": "2026-10-27T11:05:00Z",
+     "event": "order.packed",
+     "actor": "hh-3391",
+     "box": "M2",
+     "weight_lb": 2.1,
+     "local_time": "2026-10-27 11:05",
+     "cutoff_local": "15:00"
+    },
+    {
+     "at": "2026-10-27T11:07:00Z",
+     "event": "label.printed",
+     "actor": "system",
+     "carrier": "USPS",
+     "service": "standard",
+     "tracking": "1Z379883869510644"
+    },
+    {
+     "at": "2026-10-27T11:08:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_packed",
+     "to": "billing contact",
+     "message_id": "msg_90154243"
+    },
+    {
+     "at": "2026-10-28T07:05:00Z",
+     "event": "carrier.picked_up",
+     "actor": "system",
+     "carrier": "USPS",
+     "facility": "origin"
+    },
+    {
+     "at": "2026-10-29T01:13:34Z",
+     "event": "carrier.scan",
+     "actor": "usps",
+     "status": "origin scan",
+     "facility": "Denver CO"
+    },
+    {
+     "at": "2026-10-29T19:22:08Z",
+     "event": "carrier.scan",
+     "actor": "usps",
+     "status": "departed facility",
+     "facility": "Hodgkins IL"
+    },
+    {
+     "at": "2026-10-30T13:30:42Z",
+     "event": "carrier.scan",
+     "actor": "usps",
+     "status": "arrived at hub",
+     "facility": "Louisville KY"
+    },
+    {
+     "at": "2026-10-31T07:39:17Z",
+     "event": "carrier.scan",
+     "actor": "usps",
+     "status": "departed hub",
+     "facility": "Louisville KY"
+    },
+    {
+     "at": "2026-11-01T01:47:51Z",
+     "event": "carrier.scan",
+     "actor": "usps",
+     "status": "arrived at destination facility",
+     "facility": "Louisville KY"
+    },
+    {
+     "at": "2026-11-01T19:56:25Z",
+     "event": "carrier.scan",
+     "actor": "usps",
+     "status": "out for delivery",
+     "facility": "Denver CO"
+    },
+    {
+     "at": "2026-11-02T14:05:00Z",
+     "event": "carrier.delivered",
+     "actor": "system",
+     "carrier": "USPS",
+     "signed_by": "front desk",
+     "proof": "photo"
+    },
+    {
+     "at": "2026-11-02T14:08:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_delivered",
+     "to": "billing contact",
+     "message_id": "msg_37580641"
+    },
+    {
+     "at": "2026-11-03T14:08:00Z",
+     "event": "survey.sent",
+     "actor": "system",
+     "template": "csat_v3",
+     "to": "billing contact"
+    }
+   ]
+  },
+  "NS-70455": {
+   "order_id": "NS-70455",
+   "account_id": "BRIO-12",
+   "placed": "2026-11-04",
+   "packed_at": "2026-11-05 16:10",
+   "delivered": null,
+   "shipping_method": "expedited",
+   "shipping_paid_usd": 12.0,
+   "destination": "Austin, TX",
+   "buyer_is_pro_subscriber": false,
+   "items": [
+    {
+     "sku": "GRD-340",
+     "name": "Burr grinder",
+     "price_usd": 340.0,
+     "condition_reported": null
+    }
+   ],
+   "order_total_usd": 352.0,
+   "currency": "USD",
+   "channel": "web",
+   "gift": false,
+   "promo_codes": [],
+   "risk": {
+    "score": 0.03,
+    "band": "low"
+   },
+   "fulfillment": {
+    "warehouse": "RNO-1",
+    "carrier": "UPS",
+    "service_code": "2DA",
+    "packages": 1
+   },
+   "integration": {
+    "erp_doc": "SO-272268",
+    "wms_ref": "WMS-852064",
+    "sync_state": "ok",
+    "last_sync": "2026-11-06T06:00:00Z"
+   },
+   "audit_log": [
+    {
+     "at": "2026-11-04T09:14:00Z",
+     "event": "order.created",
+     "actor": "system",
+     "channel": "web",
+     "cart_id": "cart_9187855",
+     "ip_country": "US"
+    },
+    {
+     "at": "2026-11-04T09:15:00Z",
+     "event": "payment.authorized",
+     "actor": "system",
+     "processor": "stripe",
+     "auth_code": "A39353",
+     "amount_usd": 352.0,
+     "avs": "Y",
+     "cvv": "M"
+    },
+    {
+     "at": "2026-11-04T09:16:00Z",
+     "event": "fraud.screened",
+     "actor": "system",
+     "score": 0.011,
+     "decision": "approve",
+     "rules_fired": []
+    },
+    {
+     "at": "2026-11-04T09:18:00Z",
+     "event": "tax.calculated",
+     "actor": "system",
+     "engine": "taxjar",
+     "jurisdiction": "Austin, TX",
+     "amount_usd": 0.0,
+     "note": "tax included in listed prices for this fixture"
+    },
+    {
+     "at": "2026-11-04T09:21:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_confirmation",
+     "to": "billing contact",
+     "message_id": "msg_39183747"
+    },
+    {
+     "at": "2026-11-04T09:43:00Z",
+     "event": "inventory.reserved",
+     "actor": "system",
+     "warehouse": "ATL-4",
+     "bins": [
+      "B821"
+     ]
+    },
+    {
+     "at": "2026-11-04T10:24:00Z",
+     "event": "pick.assigned",
+     "actor": "wms-49",
+     "wave": "W9329"
+    },
+    {
+     "at": "2026-11-04T11:01:00Z",
+     "event": "pick.completed",
+     "actor": "dock-12",
+     "duration_s": 351
+    },
+    {
+     "at": "2026-11-05T16:04:00Z",
+     "event": "qa.checked",
+     "actor": "hh-2210",
+     "result": "pass"
+    },
+    {
+     "at": "2026-11-05T16:10:00Z",
+     "event": "order.packed",
+     "actor": "sorter-A",
+     "box": "M2",
+     "weight_lb": 4.7,
+     "local_time": "2026-11-05 16:10",
+     "cutoff_local": "15:00"
+    },
+    {
+     "at": "2026-11-05T16:12:00Z",
+     "event": "label.printed",
+     "actor": "system",
+     "carrier": "UPS",
+     "service": "expedited",
+     "tracking": "1Z181631810610234"
+    },
+    {
+     "at": "2026-11-05T16:13:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_packed",
+     "to": "billing contact",
+     "message_id": "msg_31302955"
+    }
+   ]
+  },
+  "NS-51777": {
+   "order_id": "NS-51777",
+   "account_id": "BRIO-12",
+   "placed": "2026-10-30",
+   "packed_at": "2026-11-02 13:20",
+   "delivered": null,
+   "shipping_method": "standard",
+   "shipping_paid_usd": 0.0,
+   "destination": "Austin, TX",
+   "buyer_is_pro_subscriber": false,
+   "items": [
+    {
+     "sku": "KTL-060",
+     "name": "Gooseneck kettle",
+     "price_usd": 60.0,
+     "condition_reported": null
+    }
+   ],
+   "order_total_usd": 60.0,
+   "currency": "USD",
+   "channel": "web",
+   "gift": false,
+   "promo_codes": [],
+   "risk": {
+    "score": 0.03,
+    "band": "low"
+   },
+   "fulfillment": {
+    "warehouse": "RNO-1",
+    "carrier": "USPS",
+    "service_code": "GND",
+    "packages": 1
+   },
+   "integration": {
+    "erp_doc": "SO-289726",
+    "wms_ref": "WMS-192627",
+    "sync_state": "ok",
+    "last_sync": "2026-11-06T06:00:00Z"
+   },
+   "audit_log": [
+    {
+     "at": "2026-10-30T09:14:00Z",
+     "event": "order.created",
+     "actor": "system",
+     "channel": "web",
+     "cart_id": "cart_0725421",
+     "ip_country": "US"
+    },
+    {
+     "at": "2026-10-30T09:15:00Z",
+     "event": "payment.authorized",
+     "actor": "system",
+     "processor": "stripe",
+     "auth_code": "A10626",
+     "amount_usd": 60.0,
+     "avs": "Y",
+     "cvv": "M"
+    },
+    {
+     "at": "2026-10-30T09:16:00Z",
+     "event": "fraud.screened",
+     "actor": "system",
+     "score": 0.014,
+     "decision": "approve",
+     "rules_fired": []
+    },
+    {
+     "at": "2026-10-30T09:18:00Z",
+     "event": "tax.calculated",
+     "actor": "system",
+     "engine": "taxjar",
+     "jurisdiction": "Austin, TX",
+     "amount_usd": 0.0,
+     "note": "tax included in listed prices for this fixture"
+    },
+    {
+     "at": "2026-10-30T09:21:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_confirmation",
+     "to": "billing contact",
+     "message_id": "msg_84067373"
+    },
+    {
+     "at": "2026-10-30T09:43:00Z",
+     "event": "inventory.reserved",
+     "actor": "system",
+     "warehouse": "RNO-1",
+     "bins": [
+      "B631"
+     ]
+    },
+    {
+     "at": "2026-10-30T10:24:00Z",
+     "event": "pick.assigned",
+     "actor": "wms-78",
+     "wave": "W8720"
+    },
+    {
+     "at": "2026-10-30T11:01:00Z",
+     "event": "pick.completed",
+     "actor": "sorter-C",
+     "duration_s": 315
+    },
+    {
+     "at": "2026-11-02T13:14:00Z",
+     "event": "qa.checked",
+     "actor": "dock-12",
+     "result": "pass"
+    },
+    {
+     "at": "2026-11-02T13:20:00Z",
+     "event": "order.packed",
+     "actor": "sorter-C",
+     "box": "M2",
+     "weight_lb": 3.5,
+     "local_time": "2026-11-02 13:20",
+     "cutoff_local": "15:00"
+    },
+    {
+     "at": "2026-11-02T13:22:00Z",
+     "event": "label.printed",
+     "actor": "system",
+     "carrier": "USPS",
+     "service": "standard",
+     "tracking": "1Z714966896359604"
+    },
+    {
+     "at": "2026-11-02T13:23:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_packed",
+     "to": "billing contact",
+     "message_id": "msg_84914856"
+    }
+   ]
+  },
+  "NS-39120": {
+   "order_id": "NS-39120",
+   "account_id": "ACME-77",
+   "placed": "2026-10-12",
+   "packed_at": "2026-10-13 09:50",
+   "delivered": "2026-10-19",
+   "shipping_method": "standard",
+   "shipping_paid_usd": 0.0,
+   "destination": "Columbus, OH",
+   "buyer_is_pro_subscriber": true,
+   "items": [
+    {
+     "sku": "FRT-075",
+     "name": "Milk frother",
+     "price_usd": 75.0,
+     "condition_reported": "unopened"
+    }
+   ],
+   "order_total_usd": 75.0,
+   "currency": "USD",
+   "channel": "web",
+   "gift": false,
+   "promo_codes": [],
+   "risk": {
+    "score": 0.03,
+    "band": "low"
+   },
+   "fulfillment": {
+    "warehouse": "CMH-2",
+    "carrier": "UPS",
+    "service_code": "GND",
+    "packages": 1
+   },
+   "integration": {
+    "erp_doc": "SO-374429",
+    "wms_ref": "WMS-731163",
+    "sync_state": "ok",
+    "last_sync": "2026-11-06T06:00:00Z"
+   },
+   "audit_log": [
+    {
+     "at": "2026-10-12T09:14:00Z",
+     "event": "order.created",
+     "actor": "system",
+     "channel": "web",
+     "cart_id": "cart_5969849",
+     "ip_country": "US"
+    },
+    {
+     "at": "2026-10-12T09:15:00Z",
+     "event": "payment.authorized",
+     "actor": "system",
+     "processor": "stripe",
+     "auth_code": "A57137",
+     "amount_usd": 75.0,
+     "avs": "Y",
+     "cvv": "M"
+    },
+    {
+     "at": "2026-10-12T09:16:00Z",
+     "event": "fraud.screened",
+     "actor": "system",
+     "score": 0.07,
+     "decision": "approve",
+     "rules_fired": []
+    },
+    {
+     "at": "2026-10-12T09:18:00Z",
+     "event": "tax.calculated",
+     "actor": "system",
+     "engine": "taxjar",
+     "jurisdiction": "Columbus, OH",
+     "amount_usd": 0.0,
+     "note": "tax included in listed prices for this fixture"
+    },
+    {
+     "at": "2026-10-12T09:21:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_confirmation",
+     "to": "billing contact",
+     "message_id": "msg_43039451"
+    },
+    {
+     "at": "2026-10-12T09:43:00Z",
+     "event": "inventory.reserved",
+     "actor": "system",
+     "warehouse": "ATL-4",
+     "bins": [
+      "B671"
+     ]
+    },
+    {
+     "at": "2026-10-12T10:24:00Z",
+     "event": "pick.assigned",
+     "actor": "wms-35",
+     "wave": "W6300"
+    },
+    {
+     "at": "2026-10-12T11:01:00Z",
+     "event": "pick.completed",
+     "actor": "belt-07",
+     "duration_s": 569
+    },
+    {
+     "at": "2026-10-13T09:44:00Z",
+     "event": "qa.checked",
+     "actor": "belt-07",
+     "result": "pass"
+    },
+    {
+     "at": "2026-10-13T09:50:00Z",
+     "event": "order.packed",
+     "actor": "sorter-C",
+     "box": "M2",
+     "weight_lb": 4.0,
+     "local_time": "2026-10-13 09:50",
+     "cutoff_local": "15:00"
+    },
+    {
+     "at": "2026-10-13T09:52:00Z",
+     "event": "label.printed",
+     "actor": "system",
+     "carrier": "UPS",
+     "service": "standard",
+     "tracking": "1Z655501195062331"
+    },
+    {
+     "at": "2026-10-13T09:53:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_packed",
+     "to": "billing contact",
+     "message_id": "msg_82601894"
+    },
+    {
+     "at": "2026-10-14T05:50:00Z",
+     "event": "carrier.picked_up",
+     "actor": "system",
+     "carrier": "UPS",
+     "facility": "origin"
+    },
+    {
+     "at": "2026-10-15T00:09:17Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "origin scan",
+     "facility": "Louisville KY"
+    },
+    {
+     "at": "2026-10-15T18:28:34Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "departed facility",
+     "facility": "Columbus OH"
+    },
+    {
+     "at": "2026-10-16T12:47:51Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "arrived at hub",
+     "facility": "Reno NV"
+    },
+    {
+     "at": "2026-10-17T07:07:08Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "departed hub",
+     "facility": "Louisville KY"
+    },
+    {
+     "at": "2026-10-18T01:26:25Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "arrived at destination facility",
+     "facility": "Reno NV"
+    },
+    {
+     "at": "2026-10-18T19:45:42Z",
+     "event": "carrier.scan",
+     "actor": "ups",
+     "status": "out for delivery",
+     "facility": "Denver CO"
+    },
+    {
+     "at": "2026-10-19T14:05:00Z",
+     "event": "carrier.delivered",
+     "actor": "system",
+     "carrier": "UPS",
+     "signed_by": "front desk",
+     "proof": "photo"
+    },
+    {
+     "at": "2026-10-19T14:08:00Z",
+     "event": "email.sent",
+     "actor": "system",
+     "template": "order_delivered",
+     "to": "billing contact",
+     "message_id": "msg_03446185"
+    },
+    {
+     "at": "2026-10-20T14:08:00Z",
+     "event": "survey.sent",
+     "actor": "system",
+     "template": "csat_v3",
+     "to": "billing contact"
+    }
+   ]
+  }
+ },
+ "accounts": {
+  "ACME-77": {
+   "account_id": "ACME-77",
+   "company": "Acme Outfitters",
+   "plan": "Northstar Pro",
+   "monthly_subscription_fee_usd": 1200.0,
+   "status": "active",
+   "billing_contact": "ap@acme.example",
+   "latest_invoice": {
+    "invoice_date": "2026-11-02",
+    "invoice_weekday": "Monday",
+    "amount_usd": 1200.0,
+    "card_charge": "declined"
+   },
+   "created": "2024-03-11",
+   "billing_entity": "Northstar Commerce US LLC",
+   "currency": "USD",
+   "hosting_region": "us-east",
+   "features": {
+    "advanced_analytics": true,
+    "sso": true,
+    "webhooks": true,
+    "sandbox": true,
+    "beta_flags": [
+     "checkout_v4",
+     "ledger_export"
+    ]
+   },
+   "contacts": [
+    {
+     "role": "billing",
+     "email": "ap@acme.example"
+    },
+    {
+     "role": "operations",
+     "email": "ops@acme.example"
+    },
+    {
+     "role": "security",
+     "email": "security@acme.example"
+    }
+   ],
+   "tax": {
+    "exempt": false,
+    "certificate": null,
+    "nexus_states": [
+     "OH",
+     "TX",
+     "CA"
+    ]
+   },
+   "invoice_history": [
+    {
+     "invoice_id": "INV-202611-2353",
+     "invoice_date": "2026-11-02",
+     "weekday": "Monday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "declined",
+     "pdf": "/billing/invoices/2026-11.pdf",
+     "retries": [
+      {
+       "day": 1,
+       "date": "2026-11-03",
+       "result": "declined"
+      },
+      {
+       "day": 3,
+       "date": "2026-11-05",
+       "result": "declined"
+      },
+      {
+       "day": 7,
+       "date": null,
+       "result": "scheduled"
+      }
+     ]
+    },
+    {
+     "invoice_id": "INV-202610-5680",
+     "invoice_date": "2026-10-01",
+     "weekday": "Thursday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-10.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202609-6359",
+     "invoice_date": "2026-09-01",
+     "weekday": "Tuesday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-09.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202608-1297",
+     "invoice_date": "2026-08-03",
+     "weekday": "Monday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-08.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202607-6288",
+     "invoice_date": "2026-07-01",
+     "weekday": "Wednesday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-07.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202606-5734",
+     "invoice_date": "2026-06-01",
+     "weekday": "Monday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-06.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202605-6270",
+     "invoice_date": "2026-05-01",
+     "weekday": "Friday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-05.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202604-3505",
+     "invoice_date": "2026-04-01",
+     "weekday": "Wednesday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-04.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202603-7724",
+     "invoice_date": "2026-03-02",
+     "weekday": "Monday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-03.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202602-2273",
+     "invoice_date": "2026-02-02",
+     "weekday": "Monday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-02.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202601-5807",
+     "invoice_date": "2026-01-02",
+     "weekday": "Friday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-01.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202512-4136",
+     "invoice_date": "2025-12-01",
+     "weekday": "Monday",
+     "amount_usd": 1200.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 1200.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2025-12.pdf",
+     "retries": []
+    }
+   ]
+  },
+  "BRIO-12": {
+   "account_id": "BRIO-12",
+   "company": "Brio Coffee Co.",
+   "plan": "Northstar Standard",
+   "monthly_subscription_fee_usd": 400.0,
+   "status": "active",
+   "billing_contact": "billing@brio.example",
+   "latest_invoice": {
+    "invoice_date": "2026-11-02",
+    "invoice_weekday": "Monday",
+    "amount_usd": 400.0,
+    "card_charge": "paid"
+   },
+   "created": "2024-03-11",
+   "billing_entity": "Northstar Commerce US LLC",
+   "currency": "USD",
+   "hosting_region": "us-east",
+   "features": {
+    "advanced_analytics": false,
+    "sso": false,
+    "webhooks": true,
+    "sandbox": true,
+    "beta_flags": [
+     "checkout_v4",
+     "ledger_export"
+    ]
+   },
+   "contacts": [
+    {
+     "role": "billing",
+     "email": "billing@brio.example"
+    },
+    {
+     "role": "operations",
+     "email": "ops@brio.example"
+    },
+    {
+     "role": "security",
+     "email": "security@brio.example"
+    }
+   ],
+   "tax": {
+    "exempt": false,
+    "certificate": null,
+    "nexus_states": [
+     "OH",
+     "TX",
+     "CA"
+    ]
+   },
+   "invoice_history": [
+    {
+     "invoice_id": "INV-202611-8276",
+     "invoice_date": "2026-11-02",
+     "weekday": "Monday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-11.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202610-5784",
+     "invoice_date": "2026-10-01",
+     "weekday": "Thursday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-10.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202609-3235",
+     "invoice_date": "2026-09-01",
+     "weekday": "Tuesday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-09.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202608-5096",
+     "invoice_date": "2026-08-03",
+     "weekday": "Monday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-08.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202607-7252",
+     "invoice_date": "2026-07-01",
+     "weekday": "Wednesday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-07.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202606-3603",
+     "invoice_date": "2026-06-01",
+     "weekday": "Monday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-06.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202605-6428",
+     "invoice_date": "2026-05-01",
+     "weekday": "Friday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-05.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202604-1153",
+     "invoice_date": "2026-04-01",
+     "weekday": "Wednesday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-04.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202603-6952",
+     "invoice_date": "2026-03-02",
+     "weekday": "Monday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-03.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202602-1733",
+     "invoice_date": "2026-02-02",
+     "weekday": "Monday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-02.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202601-8451",
+     "invoice_date": "2026-01-02",
+     "weekday": "Friday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2026-01.pdf",
+     "retries": []
+    },
+    {
+     "invoice_id": "INV-202512-3778",
+     "invoice_date": "2025-12-01",
+     "weekday": "Monday",
+     "amount_usd": 400.0,
+     "lines": [
+      {
+       "sku": "SUB-MONTHLY",
+       "description": "Monthly subscription",
+       "amount_usd": 400.0
+      },
+      {
+       "sku": "TAX",
+       "description": "Sales tax",
+       "amount_usd": 0.0
+      }
+     ],
+     "card_charge": "paid",
+     "pdf": "/billing/invoices/2025-12.pdf",
+     "retries": []
+    }
+   ]
+  }
+ },
+ "uptime": {
+  "ACME-77": {
+   "2026-10": {
+    "month": "2026-10",
+    "uptime_percent": 97.2,
+    "planned_maintenance_excluded": true,
+    "measured_on": [
+     "production API",
+     "production storefront"
+    ],
+    "incidents": [
+     {
+      "id": "INC-8736",
+      "date": "2026-10-08",
+      "severity": "Sev-2",
+      "summary": "Elevated 5xx on checkout and orders API"
+     },
+     {
+      "id": "INC-7614",
+      "date": "2026-10-09",
+      "severity": "Sev-2",
+      "summary": "Elevated 5xx on checkout and orders API"
+     },
+     {
+      "id": "INC-7397",
+      "date": "2026-10-21",
+      "severity": "Sev-2",
+      "summary": "Elevated 5xx on checkout and orders API"
+     }
+    ],
+    "daily": [
+     {
+      "date": "2026-10-01",
+      "valid_requests": 227866,
+      "failed_requests": 23,
+      "p95_ms": 147
+     },
+     {
+      "date": "2026-10-02",
+      "valid_requests": 254901,
+      "failed_requests": 6,
+      "p95_ms": 166
+     },
+     {
+      "date": "2026-10-03",
+      "valid_requests": 207162,
+      "failed_requests": 27,
+      "p95_ms": 136
+     },
+     {
+      "date": "2026-10-04",
+      "valid_requests": 194892,
+      "failed_requests": 3,
+      "p95_ms": 117
+     },
+     {
+      "date": "2026-10-05",
+      "valid_requests": 187244,
+      "failed_requests": 10,
+      "p95_ms": 186
+     },
+     {
+      "date": "2026-10-06",
+      "valid_requests": 199613,
+      "failed_requests": 38,
+      "p95_ms": 115
+     },
+     {
+      "date": "2026-10-07",
+      "valid_requests": 251595,
+      "failed_requests": 31,
+      "p95_ms": 184
+     },
+     {
+      "date": "2026-10-08",
+      "valid_requests": 212644,
+      "failed_requests": 61000,
+      "p95_ms": 1014
+     },
+     {
+      "date": "2026-10-09",
+      "valid_requests": 196026,
+      "failed_requests": 58000,
+      "p95_ms": 1047
+     },
+     {
+      "date": "2026-10-10",
+      "valid_requests": 233650,
+      "failed_requests": 12,
+      "p95_ms": 171
+     },
+     {
+      "date": "2026-10-11",
+      "valid_requests": 206446,
+      "failed_requests": 15,
+      "p95_ms": 166
+     },
+     {
+      "date": "2026-10-12",
+      "valid_requests": 233821,
+      "failed_requests": 31,
+      "p95_ms": 114
+     },
+     {
+      "date": "2026-10-13",
+      "valid_requests": 208712,
+      "failed_requests": 26,
+      "p95_ms": 166
+     },
+     {
+      "date": "2026-10-14",
+      "valid_requests": 212582,
+      "failed_requests": 27,
+      "p95_ms": 137
+     },
+     {
+      "date": "2026-10-15",
+      "valid_requests": 245349,
+      "failed_requests": 12,
+      "p95_ms": 114
+     },
+     {
+      "date": "2026-10-16",
+      "valid_requests": 184824,
+      "failed_requests": 16,
+      "p95_ms": 142
+     },
+     {
+      "date": "2026-10-17",
+      "valid_requests": 211770,
+      "failed_requests": 33,
+      "p95_ms": 136
+     },
+     {
+      "date": "2026-10-18",
+      "valid_requests": 210338,
+      "failed_requests": 26,
+      "p95_ms": 143
+     },
+     {
+      "date": "2026-10-19",
+      "valid_requests": 198573,
+      "failed_requests": 20,
+      "p95_ms": 116
+     },
+     {
+      "date": "2026-10-20",
+      "valid_requests": 221224,
+      "failed_requests": 36,
+      "p95_ms": 124
+     },
+     {
+      "date": "2026-10-21",
+      "valid_requests": 254672,
+      "failed_requests": 44000,
+      "p95_ms": 1015
+     },
+     {
+      "date": "2026-10-22",
+      "valid_requests": 244787,
+      "failed_requests": 24,
+      "p95_ms": 121
+     },
+     {
+      "date": "2026-10-23",
+      "valid_requests": 236375,
+      "failed_requests": 13,
+      "p95_ms": 183
+     },
+     {
+      "date": "2026-10-24",
+      "valid_requests": 201686,
+      "failed_requests": 21,
+      "p95_ms": 147
+     },
+     {
+      "date": "2026-10-25",
+      "valid_requests": 241764,
+      "failed_requests": 20,
+      "p95_ms": 163
+     },
+     {
+      "date": "2026-10-26",
+      "valid_requests": 249209,
+      "failed_requests": 13,
+      "p95_ms": 144
+     },
+     {
+      "date": "2026-10-27",
+      "valid_requests": 224371,
+      "failed_requests": 25,
+      "p95_ms": 173
+     },
+     {
+      "date": "2026-10-28",
+      "valid_requests": 189749,
+      "failed_requests": 17,
+      "p95_ms": 134
+     },
+     {
+      "date": "2026-10-29",
+      "valid_requests": 185838,
+      "failed_requests": 25,
+      "p95_ms": 189
+     },
+     {
+      "date": "2026-10-30",
+      "valid_requests": 196729,
+      "failed_requests": 17,
+      "p95_ms": 117
+     },
+     {
+      "date": "2026-10-31",
+      "valid_requests": 201923,
+      "failed_requests": 29,
+      "p95_ms": 182
+     }
+    ]
+   },
+   "2026-09": {
+    "month": "2026-09",
+    "uptime_percent": 99.95,
+    "planned_maintenance_excluded": true,
+    "measured_on": [
+     "production API",
+     "production storefront"
+    ],
+    "incidents": [],
+    "daily": [
+     {
+      "date": "2026-09-01",
+      "valid_requests": 208644,
+      "failed_requests": 0,
+      "p95_ms": 137
+     },
+     {
+      "date": "2026-09-02",
+      "valid_requests": 200544,
+      "failed_requests": 0,
+      "p95_ms": 188
+     },
+     {
+      "date": "2026-09-03",
+      "valid_requests": 213729,
+      "failed_requests": 7,
+      "p95_ms": 160
+     },
+     {
+      "date": "2026-09-04",
+      "valid_requests": 229949,
+      "failed_requests": 14,
+      "p95_ms": 180
+     },
+     {
+      "date": "2026-09-05",
+      "valid_requests": 186999,
+      "failed_requests": 12,
+      "p95_ms": 130
+     },
+     {
+      "date": "2026-09-06",
+      "valid_requests": 259728,
+      "failed_requests": 21,
+      "p95_ms": 181
+     },
+     {
+      "date": "2026-09-07",
+      "valid_requests": 241801,
+      "failed_requests": 33,
+      "p95_ms": 166
+     },
+     {
+      "date": "2026-09-08",
+      "valid_requests": 183459,
+      "failed_requests": 5,
+      "p95_ms": 114
+     },
+     {
+      "date": "2026-09-09",
+      "valid_requests": 257920,
+      "failed_requests": 7,
+      "p95_ms": 172
+     },
+     {
+      "date": "2026-09-10",
+      "valid_requests": 253505,
+      "failed_requests": 16,
+      "p95_ms": 187
+     },
+     {
+      "date": "2026-09-11",
+      "valid_requests": 198187,
+      "failed_requests": 2,
+      "p95_ms": 156
+     },
+     {
+      "date": "2026-09-12",
+      "valid_requests": 190445,
+      "failed_requests": 33,
+      "p95_ms": 111
+     },
+     {
+      "date": "2026-09-13",
+      "valid_requests": 218920,
+      "failed_requests": 22,
+      "p95_ms": 119
+     },
+     {
+      "date": "2026-09-14",
+      "valid_requests": 191159,
+      "failed_requests": 34,
+      "p95_ms": 168
+     },
+     {
+      "date": "2026-09-15",
+      "valid_requests": 229959,
+      "failed_requests": 13,
+      "p95_ms": 149
+     },
+     {
+      "date": "2026-09-16",
+      "valid_requests": 230938,
+      "failed_requests": 14,
+      "p95_ms": 172
+     },
+     {
+      "date": "2026-09-17",
+      "valid_requests": 232436,
+      "failed_requests": 6,
+      "p95_ms": 119
+     },
+     {
+      "date": "2026-09-18",
+      "valid_requests": 195001,
+      "failed_requests": 39,
+      "p95_ms": 156
+     },
+     {
+      "date": "2026-09-19",
+      "valid_requests": 247171,
+      "failed_requests": 27,
+      "p95_ms": 163
+     },
+     {
+      "date": "2026-09-20",
+      "valid_requests": 238227,
+      "failed_requests": 4,
+      "p95_ms": 135
+     },
+     {
+      "date": "2026-09-21",
+      "valid_requests": 219623,
+      "failed_requests": 30,
+      "p95_ms": 164
+     },
+     {
+      "date": "2026-09-22",
+      "valid_requests": 195489,
+      "failed_requests": 35,
+      "p95_ms": 131
+     },
+     {
+      "date": "2026-09-23",
+      "valid_requests": 228706,
+      "failed_requests": 10,
+      "p95_ms": 132
+     },
+     {
+      "date": "2026-09-24",
+      "valid_requests": 199569,
+      "failed_requests": 20,
+      "p95_ms": 173
+     },
+     {
+      "date": "2026-09-25",
+      "valid_requests": 224379,
+      "failed_requests": 16,
+      "p95_ms": 179
+     },
+     {
+      "date": "2026-09-26",
+      "valid_requests": 180639,
+      "failed_requests": 10,
+      "p95_ms": 110
+     },
+     {
+      "date": "2026-09-27",
+      "valid_requests": 220870,
+      "failed_requests": 7,
+      "p95_ms": 179
+     },
+     {
+      "date": "2026-09-28",
+      "valid_requests": 194527,
+      "failed_requests": 31,
+      "p95_ms": 186
+     },
+     {
+      "date": "2026-09-29",
+      "valid_requests": 243471,
+      "failed_requests": 33,
+      "p95_ms": 119
+     },
+     {
+      "date": "2026-09-30",
+      "valid_requests": 248251,
+      "failed_requests": 15,
+      "p95_ms": 162
+     }
+    ]
+   }
+  },
+  "BRIO-12": {
+   "2026-10": {
+    "month": "2026-10",
+    "uptime_percent": 99.4,
+    "planned_maintenance_excluded": true,
+    "measured_on": [
+     "production API",
+     "production storefront"
+    ],
+    "incidents": [
+     {
+      "id": "INC-2109",
+      "date": "2026-10-08",
+      "severity": "Sev-2",
+      "summary": "Elevated 5xx on checkout and orders API"
+     },
+     {
+      "id": "INC-8507",
+      "date": "2026-10-21",
+      "severity": "Sev-2",
+      "summary": "Elevated 5xx on checkout and orders API"
+     }
+    ],
+    "daily": [
+     {
+      "date": "2026-10-01",
+      "valid_requests": 218463,
+      "failed_requests": 22,
+      "p95_ms": 139
+     },
+     {
+      "date": "2026-10-02",
+      "valid_requests": 203647,
+      "failed_requests": 0,
+      "p95_ms": 116
+     },
+     {
+      "date": "2026-10-03",
+      "valid_requests": 259892,
+      "failed_requests": 20,
+      "p95_ms": 179
+     },
+     {
+      "date": "2026-10-04",
+      "valid_requests": 241214,
+      "failed_requests": 36,
+      "p95_ms": 149
+     },
+     {
+      "date": "2026-10-05",
+      "valid_requests": 246409,
+      "failed_requests": 28,
+      "p95_ms": 188
+     },
+     {
+      "date": "2026-10-06",
+      "valid_requests": 237942,
+      "failed_requests": 25,
+      "p95_ms": 128
+     },
+     {
+      "date": "2026-10-07",
+      "valid_requests": 212990,
+      "failed_requests": 38,
+      "p95_ms": 156
+     },
+     {
+      "date": "2026-10-08",
+      "valid_requests": 224570,
+      "failed_requests": 21000,
+      "p95_ms": 1065
+     },
+     {
+      "date": "2026-10-09",
+      "valid_requests": 190821,
+      "failed_requests": 38,
+      "p95_ms": 128
+     },
+     {
+      "date": "2026-10-10",
+      "valid_requests": 203287,
+      "failed_requests": 18,
+      "p95_ms": 157
+     },
+     {
+      "date": "2026-10-11",
+      "valid_requests": 205885,
+      "failed_requests": 36,
+      "p95_ms": 154
+     },
+     {
+      "date": "2026-10-12",
+      "valid_requests": 192250,
+      "failed_requests": 4,
+      "p95_ms": 161
+     },
+     {
+      "date": "2026-10-13",
+      "valid_requests": 203550,
+      "failed_requests": 21,
+      "p95_ms": 157
+     },
+     {
+      "date": "2026-10-14",
+      "valid_requests": 222817,
+      "failed_requests": 11,
+      "p95_ms": 148
+     },
+     {
+      "date": "2026-10-15",
+      "valid_requests": 183037,
+      "failed_requests": 38,
+      "p95_ms": 112
+     },
+     {
+      "date": "2026-10-16",
+      "valid_requests": 248673,
+      "failed_requests": 5,
+      "p95_ms": 155
+     },
+     {
+      "date": "2026-10-17",
+      "valid_requests": 192897,
+      "failed_requests": 10,
+      "p95_ms": 133
+     },
+     {
+      "date": "2026-10-18",
+      "valid_requests": 256568,
+      "failed_requests": 31,
+      "p95_ms": 183
+     },
+     {
+      "date": "2026-10-19",
+      "valid_requests": 190079,
+      "failed_requests": 7,
+      "p95_ms": 132
+     },
+     {
+      "date": "2026-10-20",
+      "valid_requests": 242800,
+      "failed_requests": 14,
+      "p95_ms": 189
+     },
+     {
+      "date": "2026-10-21",
+      "valid_requests": 219697,
+      "failed_requests": 16000,
+      "p95_ms": 1086
+     },
+     {
+      "date": "2026-10-22",
+      "valid_requests": 211120,
+      "failed_requests": 31,
+      "p95_ms": 138
+     },
+     {
+      "date": "2026-10-23",
+      "valid_requests": 220589,
+      "failed_requests": 23,
+      "p95_ms": 139
+     },
+     {
+      "date": "2026-10-24",
+      "valid_requests": 222810,
+      "failed_requests": 34,
+      "p95_ms": 177
+     },
+     {
+      "date": "2026-10-25",
+      "valid_requests": 239229,
+      "failed_requests": 25,
+      "p95_ms": 174
+     },
+     {
+      "date": "2026-10-26",
+      "valid_requests": 232515,
+      "failed_requests": 20,
+      "p95_ms": 146
+     },
+     {
+      "date": "2026-10-27",
+      "valid_requests": 237447,
+      "failed_requests": 26,
+      "p95_ms": 185
+     },
+     {
+      "date": "2026-10-28",
+      "valid_requests": 181727,
+      "failed_requests": 16,
+      "p95_ms": 133
+     },
+     {
+      "date": "2026-10-29",
+      "valid_requests": 250804,
+      "failed_requests": 29,
+      "p95_ms": 181
+     },
+     {
+      "date": "2026-10-30",
+      "valid_requests": 227749,
+      "failed_requests": 25,
+      "p95_ms": 159
+     },
+     {
+      "date": "2026-10-31",
+      "valid_requests": 183659,
+      "failed_requests": 9,
+      "p95_ms": 175
+     }
+    ]
+   },
+   "2026-09": {
+    "month": "2026-09",
+    "uptime_percent": 99.97,
+    "planned_maintenance_excluded": true,
+    "measured_on": [
+     "production API",
+     "production storefront"
+    ],
+    "incidents": [],
+    "daily": [
+     {
+      "date": "2026-09-01",
+      "valid_requests": 225534,
+      "failed_requests": 38,
+      "p95_ms": 149
+     },
+     {
+      "date": "2026-09-02",
+      "valid_requests": 191972,
+      "failed_requests": 16,
+      "p95_ms": 171
+     },
+     {
+      "date": "2026-09-03",
+      "valid_requests": 209119,
+      "failed_requests": 30,
+      "p95_ms": 187
+     },
+     {
+      "date": "2026-09-04",
+      "valid_requests": 188688,
+      "failed_requests": 9,
+      "p95_ms": 140
+     },
+     {
+      "date": "2026-09-05",
+      "valid_requests": 189054,
+      "failed_requests": 19,
+      "p95_ms": 126
+     },
+     {
+      "date": "2026-09-06",
+      "valid_requests": 186145,
+      "failed_requests": 10,
+      "p95_ms": 160
+     },
+     {
+      "date": "2026-09-07",
+      "valid_requests": 256257,
+      "failed_requests": 39,
+      "p95_ms": 180
+     },
+     {
+      "date": "2026-09-08",
+      "valid_requests": 250581,
+      "failed_requests": 16,
+      "p95_ms": 112
+     },
+     {
+      "date": "2026-09-09",
+      "valid_requests": 248729,
+      "failed_requests": 15,
+      "p95_ms": 130
+     },
+     {
+      "date": "2026-09-10",
+      "valid_requests": 192682,
+      "failed_requests": 13,
+      "p95_ms": 114
+     },
+     {
+      "date": "2026-09-11",
+      "valid_requests": 221486,
+      "failed_requests": 5,
+      "p95_ms": 125
+     },
+     {
+      "date": "2026-09-12",
+      "valid_requests": 215471,
+      "failed_requests": 3,
+      "p95_ms": 146
+     },
+     {
+      "date": "2026-09-13",
+      "valid_requests": 259919,
+      "failed_requests": 11,
+      "p95_ms": 129
+     },
+     {
+      "date": "2026-09-14",
+      "valid_requests": 234389,
+      "failed_requests": 8,
+      "p95_ms": 120
+     },
+     {
+      "date": "2026-09-15",
+      "valid_requests": 253394,
+      "failed_requests": 23,
+      "p95_ms": 110
+     },
+     {
+      "date": "2026-09-16",
+      "valid_requests": 252398,
+      "failed_requests": 9,
+      "p95_ms": 174
+     },
+     {
+      "date": "2026-09-17",
+      "valid_requests": 233991,
+      "failed_requests": 9,
+      "p95_ms": 137
+     },
+     {
+      "date": "2026-09-18",
+      "valid_requests": 219074,
+      "failed_requests": 30,
+      "p95_ms": 174
+     },
+     {
+      "date": "2026-09-19",
+      "valid_requests": 188886,
+      "failed_requests": 24,
+      "p95_ms": 131
+     },
+     {
+      "date": "2026-09-20",
+      "valid_requests": 201419,
+      "failed_requests": 16,
+      "p95_ms": 175
+     },
+     {
+      "date": "2026-09-21",
+      "valid_requests": 231291,
+      "failed_requests": 34,
+      "p95_ms": 148
+     },
+     {
+      "date": "2026-09-22",
+      "valid_requests": 232510,
+      "failed_requests": 21,
+      "p95_ms": 131
+     },
+     {
+      "date": "2026-09-23",
+      "valid_requests": 230699,
+      "failed_requests": 3,
+      "p95_ms": 164
+     },
+     {
+      "date": "2026-09-24",
+      "valid_requests": 183676,
+      "failed_requests": 17,
+      "p95_ms": 112
+     },
+     {
+      "date": "2026-09-25",
+      "valid_requests": 219845,
+      "failed_requests": 9,
+      "p95_ms": 120
+     },
+     {
+      "date": "2026-09-26",
+      "valid_requests": 200535,
+      "failed_requests": 7,
+      "p95_ms": 187
+     },
+     {
+      "date": "2026-09-27",
+      "valid_requests": 182015,
+      "failed_requests": 14,
+      "p95_ms": 139
+     },
+     {
+      "date": "2026-09-28",
+      "valid_requests": 252551,
+      "failed_requests": 0,
+      "p95_ms": 171
+     },
+     {
+      "date": "2026-09-29",
+      "valid_requests": 249761,
+      "failed_requests": 11,
+      "p95_ms": 167
+     },
+     {
+      "date": "2026-09-30",
+      "valid_requests": 229736,
+      "failed_requests": 21,
+      "p95_ms": 132
+     }
+    ]
+   }
+  }
+ },
+ "api_usage": {
+  "ACME-77": {
+   "account_id": "ACME-77",
+   "plan": "Northstar Pro",
+   "key_environment": "production",
+   "window": "last 7 days",
+   "peak_requests_per_minute": 450,
+   "responses_429": 1930,
+   "key_id": "key_live_724513",
+   "concurrent_connection_limit": 10,
+   "hourly": [
+    {
+     "hour": "2026-10-30T00:00Z",
+     "max_rpm": 202,
+     "requests": 9292,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T01:00Z",
+     "max_rpm": 115,
+     "requests": 3565,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T02:00Z",
+     "max_rpm": 188,
+     "requests": 8836,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T03:00Z",
+     "max_rpm": 158,
+     "requests": 5846,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T04:00Z",
+     "max_rpm": 232,
+     "requests": 9512,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T05:00Z",
+     "max_rpm": 220,
+     "requests": 11220,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T06:00Z",
+     "max_rpm": 76,
+     "requests": 3648,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T07:00Z",
+     "max_rpm": 121,
+     "requests": 4356,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T08:00Z",
+     "max_rpm": 215,
+     "requests": 10535,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T09:00Z",
+     "max_rpm": 218,
+     "requests": 8066,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T10:00Z",
+     "max_rpm": 189,
+     "requests": 9072,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T11:00Z",
+     "max_rpm": 153,
+     "requests": 4590,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T12:00Z",
+     "max_rpm": 127,
+     "requests": 4826,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T13:00Z",
+     "max_rpm": 93,
+     "requests": 4557,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T14:00Z",
+     "max_rpm": 245,
+     "requests": 7105,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T15:00Z",
+     "max_rpm": 221,
+     "requests": 8398,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T16:00Z",
+     "max_rpm": 201,
+     "requests": 8643,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T17:00Z",
+     "max_rpm": 157,
+     "requests": 4710,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T18:00Z",
+     "max_rpm": 112,
+     "requests": 5600,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T19:00Z",
+     "max_rpm": 78,
+     "requests": 3354,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T20:00Z",
+     "max_rpm": 199,
+     "requests": 8955,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T21:00Z",
+     "max_rpm": 220,
+     "requests": 11000,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T22:00Z",
+     "max_rpm": 130,
+     "requests": 3770,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T23:00Z",
+     "max_rpm": 118,
+     "requests": 5782,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T00:00Z",
+     "max_rpm": 85,
+     "requests": 3230,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T01:00Z",
+     "max_rpm": 221,
+     "requests": 7072,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T02:00Z",
+     "max_rpm": 245,
+     "requests": 9065,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T03:00Z",
+     "max_rpm": 96,
+     "requests": 4224,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T04:00Z",
+     "max_rpm": 197,
+     "requests": 5516,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T05:00Z",
+     "max_rpm": 85,
+     "requests": 2975,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T06:00Z",
+     "max_rpm": 226,
+     "requests": 8136,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T07:00Z",
+     "max_rpm": 226,
+     "requests": 6328,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T08:00Z",
+     "max_rpm": 75,
+     "requests": 2100,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T09:00Z",
+     "max_rpm": 189,
+     "requests": 9450,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T10:00Z",
+     "max_rpm": 104,
+     "requests": 3536,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T11:00Z",
+     "max_rpm": 159,
+     "requests": 5565,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T12:00Z",
+     "max_rpm": 155,
+     "requests": 5735,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T13:00Z",
+     "max_rpm": 166,
+     "requests": 7968,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T14:00Z",
+     "max_rpm": 221,
+     "requests": 8840,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T15:00Z",
+     "max_rpm": 75,
+     "requests": 2475,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T16:00Z",
+     "max_rpm": 172,
+     "requests": 7396,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T17:00Z",
+     "max_rpm": 83,
+     "requests": 3652,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T18:00Z",
+     "max_rpm": 197,
+     "requests": 7289,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T19:00Z",
+     "max_rpm": 210,
+     "requests": 10500,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T20:00Z",
+     "max_rpm": 139,
+     "requests": 4726,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T21:00Z",
+     "max_rpm": 178,
+     "requests": 6764,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T22:00Z",
+     "max_rpm": 111,
+     "requests": 3774,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T23:00Z",
+     "max_rpm": 71,
+     "requests": 3053,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T00:00Z",
+     "max_rpm": 178,
+     "requests": 6408,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T01:00Z",
+     "max_rpm": 151,
+     "requests": 6191,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T02:00Z",
+     "max_rpm": 227,
+     "requests": 9307,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T03:00Z",
+     "max_rpm": 149,
+     "requests": 7003,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T04:00Z",
+     "max_rpm": 120,
+     "requests": 4320,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T05:00Z",
+     "max_rpm": 138,
+     "requests": 6072,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T06:00Z",
+     "max_rpm": 89,
+     "requests": 2492,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T07:00Z",
+     "max_rpm": 170,
+     "requests": 6120,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T08:00Z",
+     "max_rpm": 222,
+     "requests": 8214,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T09:00Z",
+     "max_rpm": 239,
+     "requests": 11472,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T10:00Z",
+     "max_rpm": 100,
+     "requests": 4700,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T11:00Z",
+     "max_rpm": 147,
+     "requests": 4410,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T12:00Z",
+     "max_rpm": 109,
+     "requests": 5123,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T13:00Z",
+     "max_rpm": 450,
+     "requests": 22500,
+     "429": 1930
+    },
+    {
+     "hour": "2026-11-01T14:00Z",
+     "max_rpm": 121,
+     "requests": 4356,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T15:00Z",
+     "max_rpm": 238,
+     "requests": 8092,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T16:00Z",
+     "max_rpm": 231,
+     "requests": 9933,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T17:00Z",
+     "max_rpm": 96,
+     "requests": 4608,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T18:00Z",
+     "max_rpm": 154,
+     "requests": 4312,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T19:00Z",
+     "max_rpm": 183,
+     "requests": 8418,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T20:00Z",
+     "max_rpm": 119,
+     "requests": 3927,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T21:00Z",
+     "max_rpm": 90,
+     "requests": 3150,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T22:00Z",
+     "max_rpm": 199,
+     "requests": 6169,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T23:00Z",
+     "max_rpm": 96,
+     "requests": 3648,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T00:00Z",
+     "max_rpm": 142,
+     "requests": 6532,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T01:00Z",
+     "max_rpm": 215,
+     "requests": 10535,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T02:00Z",
+     "max_rpm": 105,
+     "requests": 5355,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T03:00Z",
+     "max_rpm": 86,
+     "requests": 4214,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T04:00Z",
+     "max_rpm": 112,
+     "requests": 5600,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T05:00Z",
+     "max_rpm": 73,
+     "requests": 2409,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T06:00Z",
+     "max_rpm": 240,
+     "requests": 8160,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T07:00Z",
+     "max_rpm": 134,
+     "requests": 3886,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T08:00Z",
+     "max_rpm": 218,
+     "requests": 8284,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T09:00Z",
+     "max_rpm": 228,
+     "requests": 8664,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T10:00Z",
+     "max_rpm": 222,
+     "requests": 8658,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T11:00Z",
+     "max_rpm": 108,
+     "requests": 3564,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T12:00Z",
+     "max_rpm": 122,
+     "requests": 3538,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T13:00Z",
+     "max_rpm": 80,
+     "requests": 2640,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T14:00Z",
+     "max_rpm": 242,
+     "requests": 7018,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T15:00Z",
+     "max_rpm": 239,
+     "requests": 8604,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T16:00Z",
+     "max_rpm": 238,
+     "requests": 11662,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T17:00Z",
+     "max_rpm": 193,
+     "requests": 5983,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T18:00Z",
+     "max_rpm": 118,
+     "requests": 3776,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T19:00Z",
+     "max_rpm": 167,
+     "requests": 7181,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T20:00Z",
+     "max_rpm": 220,
+     "requests": 9900,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T21:00Z",
+     "max_rpm": 193,
+     "requests": 8685,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T22:00Z",
+     "max_rpm": 149,
+     "requests": 5811,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T23:00Z",
+     "max_rpm": 177,
+     "requests": 9027,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T00:00Z",
+     "max_rpm": 170,
+     "requests": 4930,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T01:00Z",
+     "max_rpm": 76,
+     "requests": 2508,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T02:00Z",
+     "max_rpm": 106,
+     "requests": 4134,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T03:00Z",
+     "max_rpm": 123,
+     "requests": 4551,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T04:00Z",
+     "max_rpm": 127,
+     "requests": 4953,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T05:00Z",
+     "max_rpm": 213,
+     "requests": 7242,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T06:00Z",
+     "max_rpm": 226,
+     "requests": 11074,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T07:00Z",
+     "max_rpm": 155,
+     "requests": 6200,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T08:00Z",
+     "max_rpm": 160,
+     "requests": 7200,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T09:00Z",
+     "max_rpm": 95,
+     "requests": 3325,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T10:00Z",
+     "max_rpm": 115,
+     "requests": 4485,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T11:00Z",
+     "max_rpm": 114,
+     "requests": 5130,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T12:00Z",
+     "max_rpm": 121,
+     "requests": 3388,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T13:00Z",
+     "max_rpm": 73,
+     "requests": 2263,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T14:00Z",
+     "max_rpm": 115,
+     "requests": 4255,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T15:00Z",
+     "max_rpm": 243,
+     "requests": 12393,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T16:00Z",
+     "max_rpm": 149,
+     "requests": 6705,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T17:00Z",
+     "max_rpm": 194,
+     "requests": 5626,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T18:00Z",
+     "max_rpm": 145,
+     "requests": 7395,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T19:00Z",
+     "max_rpm": 167,
+     "requests": 5511,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T20:00Z",
+     "max_rpm": 102,
+     "requests": 4080,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T21:00Z",
+     "max_rpm": 225,
+     "requests": 9450,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T22:00Z",
+     "max_rpm": 156,
+     "requests": 6084,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T23:00Z",
+     "max_rpm": 68,
+     "requests": 2856,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T00:00Z",
+     "max_rpm": 245,
+     "requests": 7840,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T01:00Z",
+     "max_rpm": 181,
+     "requests": 5068,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T02:00Z",
+     "max_rpm": 174,
+     "requests": 5916,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T03:00Z",
+     "max_rpm": 96,
+     "requests": 3648,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T04:00Z",
+     "max_rpm": 142,
+     "requests": 6674,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T05:00Z",
+     "max_rpm": 209,
+     "requests": 6061,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T06:00Z",
+     "max_rpm": 87,
+     "requests": 3741,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T07:00Z",
+     "max_rpm": 108,
+     "requests": 5292,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T08:00Z",
+     "max_rpm": 201,
+     "requests": 5829,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T09:00Z",
+     "max_rpm": 113,
+     "requests": 5311,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T10:00Z",
+     "max_rpm": 128,
+     "requests": 6016,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T11:00Z",
+     "max_rpm": 152,
+     "requests": 7144,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T12:00Z",
+     "max_rpm": 72,
+     "requests": 3672,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T13:00Z",
+     "max_rpm": 236,
+     "requests": 6608,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T14:00Z",
+     "max_rpm": 164,
+     "requests": 6724,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T15:00Z",
+     "max_rpm": 126,
+     "requests": 5796,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T16:00Z",
+     "max_rpm": 102,
+     "requests": 4794,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T17:00Z",
+     "max_rpm": 77,
+     "requests": 2464,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T18:00Z",
+     "max_rpm": 113,
+     "requests": 5311,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T19:00Z",
+     "max_rpm": 140,
+     "requests": 4900,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T20:00Z",
+     "max_rpm": 178,
+     "requests": 9078,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T21:00Z",
+     "max_rpm": 147,
+     "requests": 6615,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T22:00Z",
+     "max_rpm": 229,
+     "requests": 8931,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T23:00Z",
+     "max_rpm": 110,
+     "requests": 5610,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T00:00Z",
+     "max_rpm": 155,
+     "requests": 7595,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T01:00Z",
+     "max_rpm": 206,
+     "requests": 10094,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T02:00Z",
+     "max_rpm": 213,
+     "requests": 8307,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T03:00Z",
+     "max_rpm": 133,
+     "requests": 6251,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T04:00Z",
+     "max_rpm": 152,
+     "requests": 6840,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T05:00Z",
+     "max_rpm": 75,
+     "requests": 3375,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T06:00Z",
+     "max_rpm": 105,
+     "requests": 4095,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T07:00Z",
+     "max_rpm": 213,
+     "requests": 7242,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T08:00Z",
+     "max_rpm": 193,
+     "requests": 8299,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T09:00Z",
+     "max_rpm": 97,
+     "requests": 2910,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T10:00Z",
+     "max_rpm": 227,
+     "requests": 10669,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T11:00Z",
+     "max_rpm": 117,
+     "requests": 3861,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T12:00Z",
+     "max_rpm": 103,
+     "requests": 4635,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T13:00Z",
+     "max_rpm": 102,
+     "requests": 4794,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T14:00Z",
+     "max_rpm": 80,
+     "requests": 3600,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T15:00Z",
+     "max_rpm": 155,
+     "requests": 4650,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T16:00Z",
+     "max_rpm": 79,
+     "requests": 3713,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T17:00Z",
+     "max_rpm": 105,
+     "requests": 4725,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T18:00Z",
+     "max_rpm": 112,
+     "requests": 4032,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T19:00Z",
+     "max_rpm": 226,
+     "requests": 6554,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T20:00Z",
+     "max_rpm": 142,
+     "requests": 6106,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T21:00Z",
+     "max_rpm": 138,
+     "requests": 4692,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T22:00Z",
+     "max_rpm": 231,
+     "requests": 9933,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T23:00Z",
+     "max_rpm": 139,
+     "requests": 6116,
+     "429": 0
+    }
+   ]
+  },
+  "BRIO-12": {
+   "account_id": "BRIO-12",
+   "plan": "Northstar Standard",
+   "key_environment": "production",
+   "window": "last 7 days",
+   "peak_requests_per_minute": 95,
+   "responses_429": 412,
+   "key_id": "key_live_858523",
+   "concurrent_connection_limit": 10,
+   "hourly": [
+    {
+     "hour": "2026-10-30T00:00Z",
+     "max_rpm": 17,
+     "requests": 544,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T01:00Z",
+     "max_rpm": 32,
+     "requests": 1312,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T02:00Z",
+     "max_rpm": 16,
+     "requests": 448,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T03:00Z",
+     "max_rpm": 36,
+     "requests": 1584,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T04:00Z",
+     "max_rpm": 37,
+     "requests": 1110,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T05:00Z",
+     "max_rpm": 26,
+     "requests": 1066,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T06:00Z",
+     "max_rpm": 19,
+     "requests": 779,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T07:00Z",
+     "max_rpm": 16,
+     "requests": 592,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T08:00Z",
+     "max_rpm": 26,
+     "requests": 1274,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T09:00Z",
+     "max_rpm": 26,
+     "requests": 858,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T10:00Z",
+     "max_rpm": 26,
+     "requests": 1300,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T11:00Z",
+     "max_rpm": 19,
+     "requests": 570,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T12:00Z",
+     "max_rpm": 14,
+     "requests": 392,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T13:00Z",
+     "max_rpm": 32,
+     "requests": 1408,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T14:00Z",
+     "max_rpm": 47,
+     "requests": 2068,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T15:00Z",
+     "max_rpm": 41,
+     "requests": 1230,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T16:00Z",
+     "max_rpm": 19,
+     "requests": 836,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T17:00Z",
+     "max_rpm": 35,
+     "requests": 1715,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T18:00Z",
+     "max_rpm": 24,
+     "requests": 1152,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T19:00Z",
+     "max_rpm": 26,
+     "requests": 1144,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T20:00Z",
+     "max_rpm": 49,
+     "requests": 1421,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T21:00Z",
+     "max_rpm": 17,
+     "requests": 510,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T22:00Z",
+     "max_rpm": 22,
+     "requests": 902,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-30T23:00Z",
+     "max_rpm": 22,
+     "requests": 682,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T00:00Z",
+     "max_rpm": 47,
+     "requests": 1786,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T01:00Z",
+     "max_rpm": 46,
+     "requests": 1748,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T02:00Z",
+     "max_rpm": 31,
+     "requests": 992,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T03:00Z",
+     "max_rpm": 51,
+     "requests": 2346,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T04:00Z",
+     "max_rpm": 21,
+     "requests": 966,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T05:00Z",
+     "max_rpm": 18,
+     "requests": 846,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T06:00Z",
+     "max_rpm": 14,
+     "requests": 462,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T07:00Z",
+     "max_rpm": 16,
+     "requests": 576,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T08:00Z",
+     "max_rpm": 48,
+     "requests": 2304,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T09:00Z",
+     "max_rpm": 41,
+     "requests": 1517,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T10:00Z",
+     "max_rpm": 51,
+     "requests": 1989,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T11:00Z",
+     "max_rpm": 23,
+     "requests": 1012,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T12:00Z",
+     "max_rpm": 37,
+     "requests": 1665,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T13:00Z",
+     "max_rpm": 43,
+     "requests": 1505,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T14:00Z",
+     "max_rpm": 42,
+     "requests": 1386,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T15:00Z",
+     "max_rpm": 44,
+     "requests": 2112,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T16:00Z",
+     "max_rpm": 51,
+     "requests": 2295,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T17:00Z",
+     "max_rpm": 15,
+     "requests": 690,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T18:00Z",
+     "max_rpm": 49,
+     "requests": 2254,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T19:00Z",
+     "max_rpm": 26,
+     "requests": 936,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T20:00Z",
+     "max_rpm": 51,
+     "requests": 2499,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T21:00Z",
+     "max_rpm": 50,
+     "requests": 2550,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T22:00Z",
+     "max_rpm": 42,
+     "requests": 1596,
+     "429": 0
+    },
+    {
+     "hour": "2026-10-31T23:00Z",
+     "max_rpm": 24,
+     "requests": 888,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T00:00Z",
+     "max_rpm": 24,
+     "requests": 912,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T01:00Z",
+     "max_rpm": 33,
+     "requests": 1254,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T02:00Z",
+     "max_rpm": 27,
+     "requests": 1215,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T03:00Z",
+     "max_rpm": 44,
+     "requests": 2068,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T04:00Z",
+     "max_rpm": 32,
+     "requests": 1152,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T05:00Z",
+     "max_rpm": 37,
+     "requests": 1813,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T06:00Z",
+     "max_rpm": 24,
+     "requests": 912,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T07:00Z",
+     "max_rpm": 20,
+     "requests": 700,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T08:00Z",
+     "max_rpm": 35,
+     "requests": 1680,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T09:00Z",
+     "max_rpm": 26,
+     "requests": 858,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T10:00Z",
+     "max_rpm": 42,
+     "requests": 1302,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T11:00Z",
+     "max_rpm": 33,
+     "requests": 957,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T12:00Z",
+     "max_rpm": 47,
+     "requests": 1316,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T13:00Z",
+     "max_rpm": 16,
+     "requests": 448,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T14:00Z",
+     "max_rpm": 49,
+     "requests": 1617,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T15:00Z",
+     "max_rpm": 28,
+     "requests": 980,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T16:00Z",
+     "max_rpm": 37,
+     "requests": 1776,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T17:00Z",
+     "max_rpm": 39,
+     "requests": 1560,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T18:00Z",
+     "max_rpm": 29,
+     "requests": 1392,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T19:00Z",
+     "max_rpm": 42,
+     "requests": 2142,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T20:00Z",
+     "max_rpm": 41,
+     "requests": 1517,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T21:00Z",
+     "max_rpm": 46,
+     "requests": 1380,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T22:00Z",
+     "max_rpm": 35,
+     "requests": 1015,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-01T23:00Z",
+     "max_rpm": 20,
+     "requests": 660,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T00:00Z",
+     "max_rpm": 17,
+     "requests": 697,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T01:00Z",
+     "max_rpm": 14,
+     "requests": 560,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T02:00Z",
+     "max_rpm": 24,
+     "requests": 984,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T03:00Z",
+     "max_rpm": 16,
+     "requests": 720,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T04:00Z",
+     "max_rpm": 28,
+     "requests": 1092,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T05:00Z",
+     "max_rpm": 35,
+     "requests": 1540,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T06:00Z",
+     "max_rpm": 36,
+     "requests": 1764,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T07:00Z",
+     "max_rpm": 22,
+     "requests": 616,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T08:00Z",
+     "max_rpm": 36,
+     "requests": 1404,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T09:00Z",
+     "max_rpm": 20,
+     "requests": 800,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T10:00Z",
+     "max_rpm": 50,
+     "requests": 1700,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T11:00Z",
+     "max_rpm": 45,
+     "requests": 1755,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T12:00Z",
+     "max_rpm": 50,
+     "requests": 2050,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T13:00Z",
+     "max_rpm": 49,
+     "requests": 2499,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T14:00Z",
+     "max_rpm": 19,
+     "requests": 760,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T15:00Z",
+     "max_rpm": 24,
+     "requests": 720,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T16:00Z",
+     "max_rpm": 42,
+     "requests": 1680,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T17:00Z",
+     "max_rpm": 47,
+     "requests": 1598,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T18:00Z",
+     "max_rpm": 15,
+     "requests": 450,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T19:00Z",
+     "max_rpm": 32,
+     "requests": 992,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T20:00Z",
+     "max_rpm": 22,
+     "requests": 704,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T21:00Z",
+     "max_rpm": 43,
+     "requests": 1806,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T22:00Z",
+     "max_rpm": 36,
+     "requests": 1476,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-02T23:00Z",
+     "max_rpm": 34,
+     "requests": 1360,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T00:00Z",
+     "max_rpm": 33,
+     "requests": 1320,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T01:00Z",
+     "max_rpm": 20,
+     "requests": 760,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T02:00Z",
+     "max_rpm": 38,
+     "requests": 1672,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T03:00Z",
+     "max_rpm": 18,
+     "requests": 900,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T04:00Z",
+     "max_rpm": 45,
+     "requests": 1845,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T05:00Z",
+     "max_rpm": 37,
+     "requests": 1295,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T06:00Z",
+     "max_rpm": 50,
+     "requests": 2350,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T07:00Z",
+     "max_rpm": 24,
+     "requests": 984,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T08:00Z",
+     "max_rpm": 32,
+     "requests": 992,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T09:00Z",
+     "max_rpm": 35,
+     "requests": 1575,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T10:00Z",
+     "max_rpm": 16,
+     "requests": 704,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T11:00Z",
+     "max_rpm": 29,
+     "requests": 1363,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T12:00Z",
+     "max_rpm": 25,
+     "requests": 1075,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T13:00Z",
+     "max_rpm": 28,
+     "requests": 1232,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T14:00Z",
+     "max_rpm": 95,
+     "requests": 3895,
+     "429": 412
+    },
+    {
+     "hour": "2026-11-03T15:00Z",
+     "max_rpm": 42,
+     "requests": 1722,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T16:00Z",
+     "max_rpm": 48,
+     "requests": 2352,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T17:00Z",
+     "max_rpm": 21,
+     "requests": 903,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T18:00Z",
+     "max_rpm": 14,
+     "requests": 700,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T19:00Z",
+     "max_rpm": 41,
+     "requests": 1599,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T20:00Z",
+     "max_rpm": 44,
+     "requests": 2244,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T21:00Z",
+     "max_rpm": 31,
+     "requests": 1054,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T22:00Z",
+     "max_rpm": 23,
+     "requests": 874,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-03T23:00Z",
+     "max_rpm": 37,
+     "requests": 1184,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T00:00Z",
+     "max_rpm": 30,
+     "requests": 1350,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T01:00Z",
+     "max_rpm": 50,
+     "requests": 2450,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T02:00Z",
+     "max_rpm": 44,
+     "requests": 2068,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T03:00Z",
+     "max_rpm": 22,
+     "requests": 946,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T04:00Z",
+     "max_rpm": 38,
+     "requests": 1938,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T05:00Z",
+     "max_rpm": 44,
+     "requests": 1716,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T06:00Z",
+     "max_rpm": 46,
+     "requests": 1334,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T07:00Z",
+     "max_rpm": 41,
+     "requests": 1476,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T08:00Z",
+     "max_rpm": 51,
+     "requests": 2397,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T09:00Z",
+     "max_rpm": 25,
+     "requests": 1200,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T10:00Z",
+     "max_rpm": 48,
+     "requests": 1584,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T11:00Z",
+     "max_rpm": 15,
+     "requests": 630,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T12:00Z",
+     "max_rpm": 50,
+     "requests": 1850,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T13:00Z",
+     "max_rpm": 22,
+     "requests": 638,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T14:00Z",
+     "max_rpm": 14,
+     "requests": 490,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T15:00Z",
+     "max_rpm": 35,
+     "requests": 1120,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T16:00Z",
+     "max_rpm": 34,
+     "requests": 1292,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T17:00Z",
+     "max_rpm": 42,
+     "requests": 1932,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T18:00Z",
+     "max_rpm": 28,
+     "requests": 1008,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T19:00Z",
+     "max_rpm": 17,
+     "requests": 833,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T20:00Z",
+     "max_rpm": 18,
+     "requests": 522,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T21:00Z",
+     "max_rpm": 42,
+     "requests": 1302,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T22:00Z",
+     "max_rpm": 29,
+     "requests": 1015,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-04T23:00Z",
+     "max_rpm": 44,
+     "requests": 1980,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T00:00Z",
+     "max_rpm": 18,
+     "requests": 810,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T01:00Z",
+     "max_rpm": 24,
+     "requests": 792,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T02:00Z",
+     "max_rpm": 26,
+     "requests": 728,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T03:00Z",
+     "max_rpm": 26,
+     "requests": 1144,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T04:00Z",
+     "max_rpm": 26,
+     "requests": 910,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T05:00Z",
+     "max_rpm": 14,
+     "requests": 616,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T06:00Z",
+     "max_rpm": 44,
+     "requests": 1672,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T07:00Z",
+     "max_rpm": 36,
+     "requests": 1296,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T08:00Z",
+     "max_rpm": 50,
+     "requests": 2000,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T09:00Z",
+     "max_rpm": 50,
+     "requests": 1600,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T10:00Z",
+     "max_rpm": 35,
+     "requests": 1715,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T11:00Z",
+     "max_rpm": 21,
+     "requests": 987,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T12:00Z",
+     "max_rpm": 30,
+     "requests": 1080,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T13:00Z",
+     "max_rpm": 20,
+     "requests": 580,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T14:00Z",
+     "max_rpm": 35,
+     "requests": 1750,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T15:00Z",
+     "max_rpm": 17,
+     "requests": 680,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T16:00Z",
+     "max_rpm": 18,
+     "requests": 612,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T17:00Z",
+     "max_rpm": 29,
+     "requests": 841,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T18:00Z",
+     "max_rpm": 45,
+     "requests": 2295,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T19:00Z",
+     "max_rpm": 38,
+     "requests": 1482,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T20:00Z",
+     "max_rpm": 18,
+     "requests": 864,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T21:00Z",
+     "max_rpm": 19,
+     "requests": 608,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T22:00Z",
+     "max_rpm": 42,
+     "requests": 2100,
+     "429": 0
+    },
+    {
+     "hour": "2026-11-05T23:00Z",
+     "max_rpm": 41,
+     "requests": 1804,
+     "429": 0
+    }
+   ]
+  }
+ },
+ "logins": {
+  "dana@acme.example": {
+   "email": "dana@acme.example",
+   "account_id": "ACME-77",
+   "role": "Finance",
+   "login_method": "password",
+   "two_factor": "totp",
+   "failed_password_attempts_last_15_min": 3,
+   "locked": false,
+   "locked_at": null,
+   "lockout_minutes": null,
+   "password_last_changed": "2026-08-19",
+   "sessions_active": 3,
+   "recent_events": [
+    {
+     "at": "2026-11-05T16:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.45",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-11-05T10:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.163",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-11-04T12:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.122",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-11-03T20:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.112",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-11-02T19:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.71",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-11-02T06:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.178",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-11-01T03:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.203",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-31T17:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.201",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-31T07:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.171",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-30T06:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.158",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-29T08:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.140",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-28T18:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.22",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-27T16:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.167",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-27T03:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.213",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-25T22:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.31",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-24T23:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.71",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-24T18:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.104",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-23T18:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.190",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-22T18:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.245",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-21T22:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.44",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-21T07:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.240",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-20T20:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.121",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-20T11:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.45",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-19T12:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.112",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-18T20:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.235",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-18T01:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.71",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-17T16:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.183",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-16T12:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.232",
+     "device": "Northstar iOS app"
+    }
+   ]
+  },
+  "sam@brio.example": {
+   "email": "sam@brio.example",
+   "account_id": "BRIO-12",
+   "role": "Admin",
+   "login_method": "password",
+   "two_factor": "totp",
+   "failed_password_attempts_last_15_min": 5,
+   "locked": true,
+   "locked_at": "2026-11-06 09:40",
+   "lockout_minutes": 30,
+   "password_last_changed": "2026-08-19",
+   "sessions_active": 2,
+   "recent_events": [
+    {
+     "at": "2026-11-05T14:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.70",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-11-04T10:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.27",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-11-03T10:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.42",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-11-02T13:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.175",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-11-01T17:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.10",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-11-01T05:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.104",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-31T18:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.185",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-31T04:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.71",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-30T10:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.180",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-29T06:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.16",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-28T02:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.137",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-27T11:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.196",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-27T02:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.15",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-26T08:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.65",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-25T13:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.103",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-24T20:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.37",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-24T02:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.198",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-22T23:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.137",
+     "device": "Chrome/Windows"
+    },
+    {
+     "at": "2026-10-22T07:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.28",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-21T22:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.161",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-21T15:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.173",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-20T13:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.161",
+     "device": "Safari/iOS"
+    },
+    {
+     "at": "2026-10-19T08:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.112",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-18T19:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.44",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-18T11:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.238",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-17T22:41:00Z",
+     "event": "totp.verified",
+     "ip": "203.0.113.117",
+     "device": "Chrome/macOS"
+    },
+    {
+     "at": "2026-10-16T21:41:00Z",
+     "event": "session.refresh",
+     "ip": "203.0.113.68",
+     "device": "Northstar iOS app"
+    },
+    {
+     "at": "2026-10-16T11:41:00Z",
+     "event": "login.success",
+     "ip": "203.0.113.225",
+     "device": "Chrome/Windows"
+    }
+   ]
+  }
+ },
+ "returns": {
+  "NS-39120": {
+   "order_id": "NS-39120",
+   "rma": "RMA-220817",
+   "status": "closed",
+   "inspection_passed": true,
+   "closed_date": "2026-11-05",
+   "closed_weekday": "Thursday",
+   "refund_method": "original payment method (credit card)",
+   "label": {
+    "carrier": "UPS",
+    "prepaid": true,
+    "tracking": "1Z293583588417856"
+   },
+   "warehouse_scans": [
+    {
+     "at": "2026-10-29T15:02:00Z",
+     "status": "dropped off",
+     "station": "hh-2210"
+    },
+    {
+     "at": "2026-10-30T02:11:00Z",
+     "status": "in transit",
+     "station": "hh-3391"
+    },
+    {
+     "at": "2026-11-03T13:40:00Z",
+     "status": "received",
+     "station": "belt-07"
+    },
+    {
+     "at": "2026-11-04T09:05:00Z",
+     "status": "inspecting",
+     "station": "sorter-A"
+    },
+    {
+     "at": "2026-11-05T11:30:00Z",
+     "status": "closed",
+     "station": "sorter-A"
+    }
+   ]
+  }
+ },
+ "shipments": {
+  "NS-70455": {
+   "order_id": "NS-70455",
+   "status": "label_created",
+   "carrier": "UPS",
+   "service": "2DA",
+   "last_scan": null,
+   "note": "Awaiting carrier pickup."
+  },
+  "NS-48213": {
+   "order_id": "NS-48213",
+   "status": "delivered",
+   "carrier": "UPS",
+   "delivered": "2026-11-04",
+   "signed_by": "front desk"
+  },
+  "NS-61002": {
+   "order_id": "NS-61002",
+   "status": "delivered",
+   "carrier": "USPS",
+   "delivered": "2026-11-02",
+   "signed_by": null
+  },
+  "NS-39120": {
+   "order_id": "NS-39120",
+   "status": "delivered",
+   "carrier": "UPS",
+   "delivered": "2026-10-19",
+   "signed_by": null
+  },
+  "NS-51777": {
+   "order_id": "NS-51777",
+   "status": "sync_in_progress",
+   "carrier": "USPS",
+   "detail": "Carrier tracking feed is refreshing. Results are not available yet; retry this lookup.",
+   "sync_percent_by_attempt": [
+    24,
+    42,
+    55,
+    66,
+    73,
+    79,
+    83,
+    86,
+    89,
+    91,
+    92,
+    93,
+    94,
+    94.5,
+    95,
+    95.3,
+    95.5,
+    95.7,
+    95.8,
+    95.9,
+    96
+   ]
+  }
+ }
+}
